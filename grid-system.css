@@ -1,0 +1,787 @@
+/**
+ * 網頁專用的格線系統，總共有三個種類: 12、16、10 格
+ *
+ * @author Shane Yi
+ * @version v1.0.0
+ * @license MIT
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* 容器: 基本上跟 bootstrap 的作法是一樣的構造 */
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container:after,
+.container-fluid:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+
+/**
+ * 設定格線系統
+ *
+ * 1. 請勿在 .grid 這一層上覆蓋任何的 CSS 屬性
+ * 2. 欄位的上下間距都固定為 15px
+ * 3. 欄位的左右之間的間距
+ *      - 一般: 15px
+ *      - 寬鬆: 30px
+ *      - 更寬鬆: 50px
+ */
+
+[class*=grid-] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: -15px;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+    position: relative;
+}
+
+[class*=grid-] > [class*=column-] {
+    display: block;
+    background-clip: content-box;
+    padding-bottom: 15px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    position: relative;
+}
+
+.relaxed[class*=grid-] {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.relaxed[class*=grid-] > [class*=column-] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.more-relaxed[class*=grid-] {
+    margin-left: -25px;
+    margin-right: -25px;
+}
+
+.more-relaxed[class*=grid-] > [class*=column-] {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+/* 設定每個欄位的比例 [12欄位] */
+
+.grid-12 > .column-1 {
+    width: 8.333333%;
+}
+
+.grid-12 > .column-2 {
+    width: 16.666667%;
+}
+
+.grid-12 > .column-3 {
+    width: 25%;
+}
+
+.grid-12 > .column-4 {
+    width: 33.333333%;
+}
+
+.grid-12 > .column-5 {
+    width: 41.666667%;
+}
+
+.grid-12 > .column-6 {
+    width: 50%;
+}
+
+.grid-12 > .column-7 {
+    width: 58.333333%;
+}
+
+.grid-12 > .column-8 {
+    width: 66.666667%;
+}
+
+.grid-12 > .column-9 {
+    width: 75%;
+}
+
+.grid-12 > .column-10 {
+    width: 83.333333%;
+}
+
+.grid-12 > .column-11 {
+    width: 91.666667%;
+}
+
+.grid-12 > .column-12 {
+    width: 100%;
+}
+
+
+/* 設定左空欄與右空欄 [12欄位] */
+
+.grid-12 > .prefix-1[class*=column-] {
+    margin-left: 8.333333%;
+}
+
+.grid-12 > .prefix-2[class*=column-] {
+    margin-left: 16.666667%;
+}
+
+.grid-12 > .prefix-3[class*=column-] {
+    margin-left: 25%;
+}
+
+.grid-12 > .prefix-4[class*=column-] {
+    margin-left: 33.333333%;
+}
+
+.grid-12 > .prefix-5[class*=column-] {
+    margin-left: 41.666667%;
+}
+
+.grid-12 > .prefix-6[class*=column-] {
+    margin-left: 50%;
+}
+
+.grid-12 > .prefix-7[class*=column-] {
+    margin-left: 58.333333%;
+}
+
+.grid-12 > .prefix-8[class*=column-] {
+    margin-left: 66.666667%;
+}
+
+.grid-12 > .prefix-9[class*=column-] {
+    margin-left: 75%;
+}
+
+.grid-12 > .prefix-10[class*=column-] {
+    margin-left: 83.333333%;
+}
+
+.grid-12 > .prefix-11[class*=column-] {
+    margin-right: 91.666667%;
+}
+
+.grid-12 > .suffix-1[class*=column-] {
+    margin-right: 8.333333%;
+}
+
+.grid-12 > .suffix-2[class*=column-] {
+    margin-right: 16.666667%;
+}
+
+.grid-12 > .suffix-3[class*=column-] {
+    margin-right: 25%;
+}
+
+.grid-12 > .suffix-4[class*=column-] {
+    margin-right: 33.333333%;
+}
+
+.grid-12 > .suffix-5[class*=column-] {
+    margin-right: 41.666667%;
+}
+
+.grid-12 > .suffix-6[class*=column-] {
+    margin-right: 50%;
+}
+
+.grid-12 > .suffix-7[class*=column-] {
+    margin-right: 58.333333%;
+}
+
+.grid-12 > .suffix-8[class*=column-] {
+    margin-right: 66.666667%;
+}
+
+.grid-12 > .suffix-9[class*=column-] {
+    margin-right: 75%;
+}
+
+.grid-12 > .suffix-10[class*=column-] {
+    margin-right: 83.333333%;
+}
+
+.grid-12 > .suffix-11[class*=column-] {
+    margin-right: 91.666667%;
+}
+
+
+/**
+* [12欄位]
+*
+* 當頁面螢幕大小進入 tablet 或 mobile 時觸發
+* 1. 欄位設計: 每個欄位都會改成等寬的比例
+* 2. 把所有的 "左右空欄" 都消除
+*/
+
+@media (max-width: 991px) {
+    .grid-12[class*=tablet-] > [class*=column-] {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .grid-12.tablet-1 > [class*=column-] {
+        width: 100%;
+    }
+    .grid-12.tablet-2 > [class*=column-] {
+        width: 50%;
+    }
+    .grid-12.tablet-3 > [class*=column-] {
+        width: 33.333333%;
+    }
+    .grid-12.tablet-4 > [class*=column-] {
+        width: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .grid-12[class*=mobile-] > [class*=column-] {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .grid-12.mobile-1 > [class*=column-] {
+        width: 100%;
+    }
+    .grid-12.mobile-2 > [class*=column-] {
+        width: 50%;
+    }
+    .grid-12.mobile-3 > [class*=column-] {
+        width: 33.333333%;
+    }
+}
+
+
+/* 設定每個欄位的比例 [16欄位] */
+
+.grid-16 > .column-1 {
+    width: 6.25%;
+}
+
+.grid-16 > .column-2 {
+    width: 12.5%;
+}
+
+.grid-16 > .column-3 {
+    width: 18.75%;
+}
+
+.grid-16 > .column-4 {
+    width: 25%;
+}
+
+.grid-16 > .column-5 {
+    width: 31.25%;
+}
+
+.grid-16 > .column-6 {
+    width: 37.5%;
+}
+
+.grid-16 > .column-7 {
+    width: 43.75%;
+}
+
+.grid-16 > .column-8 {
+    width: 50%;
+}
+
+.grid-16 > .column-9 {
+    width: 56.25%;
+}
+
+.grid-16 > .column-10 {
+    width: 62.5%;
+}
+
+.grid-16 > .column-11 {
+    width: 68.75%;
+}
+
+.grid-16 > .column-12 {
+    width: 75%;
+}
+
+.grid-16 > .column-13 {
+    width: 81.25%;
+}
+
+.grid-16 > .column-14 {
+    width: 87.5%;
+}
+
+.grid-16 > .column-15 {
+    width: 93.75%;
+}
+
+.grid-16 > .column-16 {
+    width: 100%;
+}
+
+
+/* 設定左空欄與右空欄 [16欄位] */
+
+.grid-16 > .prefix-1[class*=column-] {
+    margin-left: 6.25%;
+}
+
+.grid-16 > .prefix-2[class*=column-] {
+    margin-left: 12.5%;
+}
+
+.grid-16 > .prefix-3[class*=column-] {
+    margin-left: 18.75%;
+}
+
+.grid-16 > .prefix-4[class*=column-] {
+    margin-left: 25%;
+}
+
+.grid-16 > .prefix-5[class*=column-] {
+    margin-left: 31.25%;
+}
+
+.grid-16 > .prefix-6[class*=column-] {
+    margin-left: 37.5%;
+}
+
+.grid-16 > .prefix-7[class*=column-] {
+    margin-left: 43.75%;
+}
+
+.grid-16 > .prefix-8[class*=column-] {
+    margin-left: 50%;
+}
+
+.grid-16 > .prefix-9[class*=column-] {
+    margin-left: 56.25%;
+}
+
+.grid-16 > .prefix-10[class*=column-] {
+    margin-left: 62.5%;
+}
+
+.grid-16 > .prefix-11[class*=column-] {
+    margin-left: 68.75%;
+}
+
+.grid-16 > .prefix-12[class*=column-] {
+    margin-left: 75%;
+}
+
+.grid-16 > .prefix-13[class*=column-] {
+    margin-left: 81.25%;
+}
+
+.grid-16 > .prefix-14[class*=column-] {
+    margin-left: 87.5%;
+}
+
+.grid-16 > .prefix-15[class*=column-] {
+    margin-left: 93.75%;
+}
+
+.grid-16 > .suffix-1[class*=column-] {
+    margin-right: 6.25%;
+}
+
+.grid-16 > .suffix-2[class*=column-] {
+    margin-right: 12.5%;
+}
+
+.grid-16 > .suffix-3[class*=column-] {
+    margin-right: 18.75%;
+}
+
+.grid-16 > .suffix-4[class*=column-] {
+    margin-right: 25%;
+}
+
+.grid-16 > .suffix-5[class*=column-] {
+    margin-right: 31.25%;
+}
+
+.grid-16 > .suffix-6[class*=column-] {
+    margin-right: 37.5%;
+}
+
+.grid-16 > .suffix-7[class*=column-] {
+    margin-right: 43.75%;
+}
+
+.grid-16 > .suffix-8[class*=column-] {
+    margin-right: 50%;
+}
+
+.grid-16 > .suffix-9[class*=column-] {
+    margin-right: 56.25%;
+}
+
+.grid-16 > .suffix-10[class*=column-] {
+    margin-right: 62.5%;
+}
+
+.grid-16 > .suffix-11[class*=column-] {
+    margin-right: 68.75%;
+}
+
+.grid-16 > .suffix-12[class*=column-] {
+    margin-right: 75%;
+}
+
+.grid-16 > .suffix-13[class*=column-] {
+    margin-right: 81.25%;
+}
+
+.grid-16 > .suffix-14[class*=column-] {
+    margin-right: 87.5%;
+}
+
+.grid-16 > .suffix-15[class*=column-] {
+    margin-right: 93.75%;
+}
+
+
+/**
+ * [16欄位]
+ *
+ * 當頁面螢幕大小進入 tablet 或 mobile 時觸發
+ * 1. 欄位設計: 每個欄位都會改成等寬的比例
+ * 2. 把所有的 "左右空欄" 都消除
+ */
+
+@media (max-width: 991px) {
+    .grid-16[class*=tablet-] > [class*=column-] {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .grid-16.tablet-1 > [class*=column-] {
+        width: 100%;
+    }
+    .grid-16.tablet-2 > [class*=column-] {
+        width: 50%;
+    }
+    .grid-16.tablet-3 > [class*=column-] {
+        width: 33.333333%;
+    }
+    .grid-16.tablet-4 > [class*=column-] {
+        width: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .grid-16[class*=mobile-] > [class*=column-] {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .grid-16.mobile-1 > [class*=column-] {
+        width: 100%;
+    }
+    .grid-16.mobile-2 > [class*=column-] {
+        width: 50%;
+    }
+    .grid-16.mobile-3 > [class*=column-] {
+        width: 33.333333%;
+    }
+}
+
+
+/* 設定每個欄位的比例 [10欄位] */
+
+.grid-10 > .column-1 {
+    width: 10%;
+}
+
+.grid-10 > .column-2 {
+    width: 20%;
+}
+
+.grid-10 > .column-3 {
+    width: 30%;
+}
+
+.grid-10 > .column-4 {
+    width: 40%;
+}
+
+.grid-10 > .column-5 {
+    width: 50%;
+}
+
+.grid-10 > .column-6 {
+    width: 60%;
+}
+
+.grid-10 > .column-7 {
+    width: 70%;
+}
+
+.grid-10 > .column-8 {
+    width: 80%;
+}
+
+.grid-10 > .column-9 {
+    width: 90%;
+}
+
+.grid-10 > .column-10 {
+    width: 100%;
+}
+
+
+/* 設定左空欄與右空欄 [10欄位] */
+
+.grid-10 > .prefix-1[class*=column-] {
+    margin-left: 10%;
+}
+
+.grid-10 > .prefix-2[class*=column-] {
+    margin-left: 20%;
+}
+
+.grid-10 > .prefix-3[class*=column-] {
+    margin-left: 30%;
+}
+
+.grid-10 > .prefix-4[class*=column-] {
+    margin-left: 40%;
+}
+
+.grid-10 > .prefix-5[class*=column-] {
+    margin-left: 50%;
+}
+
+.grid-10 > .prefix-6[class*=column-] {
+    margin-left: 60%;
+}
+
+.grid-10 > .prefix-7[class*=column-] {
+    margin-left: 70%;
+}
+
+.grid-10 > .prefix-8[class*=column-] {
+    margin-left: 80%;
+}
+
+.grid-10 > .prefix-9[class*=column-] {
+    margin-left: 90%;
+}
+
+.grid-10 > .suffix-1[class*=column-] {
+    margin-right: 10%;
+}
+
+.grid-10 > .suffix-2[class*=column-] {
+    margin-right: 20%;
+}
+
+.grid-10 > .suffix-3[class*=column-] {
+    margin-right: 30%;
+}
+
+.grid-10 > .suffix-4[class*=column-] {
+    margin-right: 40%;
+}
+
+.grid-10 > .suffix-5[class*=column-] {
+    margin-right: 50%;
+}
+
+.grid-10 > .suffix-6[class*=column-] {
+    margin-right: 60%;
+}
+
+.grid-10 > .suffix-7[class*=column-] {
+    margin-right: 70%;
+}
+
+.grid-10 > .suffix-8[class*=column-] {
+    margin-right: 80%;
+}
+
+.grid-10 > .suffix-9[class*=column-] {
+    margin-right: 90%;
+}
+
+
+/**
+* [10欄位]
+*
+* 當頁面螢幕大小進入 tablet 或 mobile 時觸發
+* 1. 欄位設計: 每個欄位都會改成等寬的比例
+* 2. 把所有的 "左右空欄" 都消除
+*/
+
+@media (max-width: 991px) {
+    .grid-10[class*=tablet-] > [class*=column-] {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .grid-10.tablet-1 > [class*=column-] {
+        width: 100%;
+    }
+    .grid-10.tablet-2 > [class*=column-] {
+        width: 50%;
+    }
+    .grid-10.tablet-3 > [class*=column-] {
+        width: 33.333333%;
+    }
+    .grid-10.tablet-4 > [class*=column-] {
+        width: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .grid-10[class*=mobile-] > [class*=column-] {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .grid-10.mobile-1 > [class*=column-] {
+        width: 100%;
+    }
+    .grid-10.mobile-2 > [class*=column-] {
+        width: 50%;
+    }
+    .grid-10.mobile-3 > [class*=column-] {
+        width: 33.333333%;
+    }
+}
+
+
+/* 於一行中把剩餘的空間都自動填滿 */
+
+[class*=grid-] > .auto-fill[class*=column-] {
+    flex: 1 1 0%;
+}
+
+
+/**
+ * Distribute 分配
+ * center: 將所有欄位集中於中間
+ * spaceAround: 將所有欄位平均分配於一行中
+ * spaceBetween: 將所有欄位散開分配於一行中
+ */
+
+.center[class*=grid-] {
+    justify-content: center;
+}
+
+.spaceAround[class*=grid-] {
+    justify-content: space-around;
+}
+
+.spaceBetween[class*=grid-] {
+    justify-content: space-between;
+}
+
+
+/**
+ * 加入CSS屬性: equal-spacing
+ * 欄位的上下間距就會修改成跟左右間距一樣
+ *   - 一般: 15px
+ *   - 寬鬆: 30px
+ *   - 更寬鬆: 50px
+ */
+
+.equal-spacing[class*=grid-] {
+    margin-bottom: -15px;
+}
+
+.equal-spacing[class*=grid-] > [class*=column-] {
+    padding-bottom: 15px;
+}
+
+.relaxed.equal-spacing[class*=grid-] {
+    margin-bottom: -30px;
+}
+
+.relaxed.equal-spacing[class*=grid-] > [class*=column-] {
+    padding-bottom: 30px;
+}
+
+.more-relaxed.equal-spacing[class*=grid-] {
+    margin-bottom: -50px;
+}
+
+.more-relaxed.equal-spacing[class*=grid-] > [class*=column-] {
+    padding-bottom: 50px;
+}
+
+
+/* [響應式設計] 區塊的顯示與隱藏 */
+
+@media (min-width: 992px) {
+    .tablet-mobile-only,
+    .mobile-tablet-only,
+    .mobile-only,
+    .tablet-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .computer-mobile-only,
+    .mobile-computer-only,
+    .mobile-only,
+    .computer-only {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .computer-tablet-only,
+    .tablet-computer-only,
+    .tablet-only,
+    .computer-only {
+        display: none !important;
+    }
+}
+
+
+/**
+ * 如果 .grid 外面再包一層有使用背景屬性的 div 元素時，底部會產生多餘的背景
+ * 此屬性能修補此 Bug，請加在外面那一層的 div 元素上
+ */
+
+.fix-extra-bottom:after {
+    content: "";
+    display: table;
+}

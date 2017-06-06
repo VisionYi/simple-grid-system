@@ -1,0 +1,25 @@
+{
+  "name": "simple-grid-system",
+  "version": "1.0.0",
+  "description": "網頁專用的格線系統，總共有三個種類: 12、16、10 格",
+  "main": "grid-system.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grid system",
+    "css",
+    "website design",
+    "web page"
+  ],
+  "author": "Shane Yi <scps950613@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.4.1",
+    "gulp-header": "^1.8.8",
+    "gulp-rename": "^1.2.2"
+  }
+}

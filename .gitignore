@@ -1,0 +1,5 @@
+# gulp plugin & library
+node_modules/
+
+# test file
+test/
