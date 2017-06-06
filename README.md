@@ -59,8 +59,8 @@
 #### 3. 支持響應式設計，可以在格線這一層加入 `mobile-*` 或 `tablet-*`，當螢幕尺寸大小進入不同的版面時會觸發堆疊欄位，改變每個欄位的寬度比例
 | 樣式名稱 | 使用的裝置 | 當螢幕尺寸 .. 改變寬度比例 |
 | ------- | --------- | ----------------- |
-|`tablet-1` ~ `tablet-4`| 平板 | < 992px |
-|`mobile-1` ~ `mobile-3`| 行動裝置(手機) | < 768px |
+| `tablet-1` ~ `tablet-4` | 平板 | < 992px |
+| `mobile-1` ~ `mobile-3` | 行動裝置(手機) | < 768px |
 
 \# 特別說明觸發時的情況 :
 - 此格線內的每個欄位都會堆疊成等寬的比例，例如: `mobile-1` 代表每個欄位的寬都會變成 100%
@@ -103,12 +103,12 @@
 #### 6. 響應式設計 - 區塊的隱藏與顯示，當螢幕尺寸大小進入不同的版面時會觸發
 | 樣式名稱 | 使用的裝置 | 當螢幕尺寸 .. 出現 |
 | ------- | --------- | ----------------- |
-|`computer-only`| 電腦 | ≥ 992px |
-|`tablet-only`| 平板 | ≥ 768px && < 992px |
-|`mobile-only`| 行動裝置(手機) | < 768px |
-|`computer-tablet-only`</br>`tablet-computer-only`| 電腦或平板 | ≥ 768px |
-|`tablet-mobile-only`</br>`mobile-tablet-only`| 平板或手機 | < 992px |
-|`mobile-computer-only`</br>`computer-mobile-only`| 電腦或手機 | ≥ 992px \|\| < 768px |
+| `computer-only` | 電腦 | ≥ 992px |
+| `tablet-only` | 平板 | ≥ 768px && < 992px |
+| `mobile-only` | 行動裝置(手機) | < 768px |
+| `computer-tablet-only`</br>`tablet-computer-only` | 電腦或平板 | ≥ 768px |
+| `tablet-mobile-only`</br>`mobile-tablet-only` | 平板或手機 | < 992px |
+| `mobile-computer-only`</br>`computer-mobile-only` | 電腦或手機 | ≥ 992px \|\| < 768px |
 
 #### 7. 容器 - 分為一般型與流動型，使用方式與 CSS Bootstrap framework 的 `container` 是相同的
 - `container` 一般型
