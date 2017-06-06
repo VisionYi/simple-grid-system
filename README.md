@@ -1,6 +1,6 @@
 # Simple Grid System
 
-這是以 Flexbox 為基礎所建構而成的簡易網格系統，由於許多大型或自製的網頁內容都要自己切版設計，所以不太會去碰很成熟的 CSS framework，所以一個簡單好上手的格線系統框架就是您初期設計網頁與切版的好選擇。 [View on demo page]()
+這是以 Flexbox 為基礎所建構而成的簡易網格系統，由於許多大型或自製的網頁內容都要自己切版設計，所以不太會去碰很成熟的 CSS framework，所以一個簡單好上手的格線系統框架就是您初期設計網頁與切版的好選擇。
 
 ## Features
 - 擁有 12、16、10 格的格線系統
@@ -9,13 +9,13 @@
 - 響應式設計只包含簡易常用的方式，不需煩惱每一格在不同螢幕尺寸下的變化與差異
 - 可以調整每格的間格距離
 - 不使用縮寫，可以清楚辨識每個 class 樣式名稱的意義
-- 附加上與 CSS框架 Boostrap 類似的 container 樣式屬性
+- 附加上與 CSS框架 Bootstrap 類似的 container 樣式屬性
 - 附加上響應式設計 - 區塊的顯示與隱藏
 
 ## Browser Support
 
 | IE | Chrome | Firefox | Opera | Safari | Firefox OS | Android |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- |
 | v11.0+ ✔ | v29.0+ ✔ | v22.0+ ✔ | v12.1+ ✔ | v9.0+ ✔ | v1.1+ ✔ | v4.4+ ✔ |
 
 ## Usage
@@ -110,11 +110,11 @@
 |`tablet-mobile-only`</br>`mobile-tablet-only`| 平板或手機 | < 992px |
 |`mobile-computer-only`</br>`computer-mobile-only`| 電腦或手機 | ≥ 992px \|\| < 768px |
 
-#### 7. 容器 - 分為一般型與流動型，使用方式與 CSS Boostrap framework 的 `container` 是相同的
+#### 7. 容器 - 分為一般型與流動型，使用方式與 CSS Bootstrap framework 的 `container` 是相同的
 - `container` 一般型
 - `container-fluid` 流動型
 
-看更多的 Demo 範例請詳見:
+看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example/)
 
 ## License
 MIT

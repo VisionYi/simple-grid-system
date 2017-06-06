@@ -12,6 +12,10 @@
     "website design",
     "web page"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:VisionYi/simple-grid-system.git"
+  },
   "author": "Shane Yi <scps950613@gmail.com>",
   "license": "MIT",
   "devDependencies": {
