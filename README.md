@@ -1,6 +1,6 @@
 # Simple Grid System
 
-這是以 Flexbox 為基礎所建構而成的簡易網格系統，由於許多大型或自製的網頁內容都要自己切版設計，所以不太會去碰很成熟的 CSS framework，所以一個簡單好上手的格線系統框架就是您初期設計網頁與切版的好選擇。
+這是以 Flexbox 為基礎所建構而成的簡易網格系統，由於許多大型或自製的網頁內容都要自己切版設計，所以不太會去碰很成熟的 CSS framework，所以一個簡單好上手的格線系統框架就是您初期設計網頁與切版的好選擇。[View on demo page](https://visionyi.github.io/simple-grid-system/example/)
 
 ## Features
 - 擁有 12、16、10 格的格線系統
@@ -58,7 +58,7 @@
 
 #### 3. 支持響應式設計，可以在格線這一層加入 `mobile-*` 或 `tablet-*`，當螢幕尺寸大小進入不同的版面時會觸發堆疊欄位，改變每個欄位的寬度比例
 | 樣式名稱 | 使用的裝置 | 當螢幕尺寸 .. 改變寬度比例 |
-|--------|----------|------------------|
+| ------- | --------- | ----------------- |
 |`tablet-1` ~ `tablet-4`| 平板 | < 992px |
 |`mobile-1` ~ `mobile-3`| 行動裝置(手機) | < 768px |
 
@@ -102,7 +102,7 @@
 ```
 #### 6. 響應式設計 - 區塊的隱藏與顯示，當螢幕尺寸大小進入不同的版面時會觸發
 | 樣式名稱 | 使用的裝置 | 當螢幕尺寸 .. 出現 |
-|--------|----------|------------------|
+| ------- | --------- | ----------------- |
 |`computer-only`| 電腦 | ≥ 992px |
 |`tablet-only`| 平板 | ≥ 768px && < 992px |
 |`mobile-only`| 行動裝置(手機) | < 768px |
@@ -117,4 +117,4 @@
 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example/)
 
 ## License
-MIT
+[MIT](https://github.com/VisionYi/simple-grid-system/blob/master/LICENSE)
