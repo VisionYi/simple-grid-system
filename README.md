@@ -35,7 +35,7 @@
 - `grid-12` > `column-1` ~ `column-12` 12 格
 - `grid-16` > `column-1` ~ `column-16` 16 格
 
-以下是將一列分成 2 個「欄位」的範例 :
+以下是將一行分成 2 個「欄位」的範例 :
 ```html
 <div class="grid-12">
     <div class="column-6">Two</div>
@@ -63,7 +63,7 @@
 | `mobile-1` ~ `mobile-3` | 行動裝置(手機) | < 768px |
 
 \# 特別說明觸發時的情況 :
-- 此網格內的每個欄位都會堆疊成等寬的比例，例如: `mobile-1` 代表每個欄位的寬都會變成 100%
+- 網格內的每個欄位都會改成等寬的比例，例如: `mobile-2` 欄位的寬都會改成 50%，每行只會有 2 個等寬的欄位
 - 會把所有的 "左右空的欄位" 都消除
 
 範例 :
@@ -95,7 +95,7 @@
 <div class="grid-12 relaxed">
     ...
 </div>
-<!--網格內每格的上下左右距離都會一樣-->
+<!--網格內每個欄位的上下左右之間格距離都會一樣-->
 <div class="grid-12 relaxed equal-spacing">
     ...
 </div>
@@ -115,8 +115,12 @@
 - `container-fluid` 流動型
 
 #### 8. 其他特殊的 class 樣式名稱
-- `auto-fill` 可加在欄位 (column) 這一層，自動填滿這一行的內容，常用於最後一行中補足空間
-- `fix-extra-bottom` 可加在網格 (grid) 的外面一層上，假如外面這一層有使用背景屬性的 div 元素時，底部會產生多餘的背景，此樣式名稱能修補此 Bug
+- `auto-fill`
+    - 可加在欄位 (column) 這一層
+    - 自動填滿這一行的內容，常用於最後一行中補足空間
+- `fix-extra-bottom`
+    - 可加在網格 (grid) 的外面一層上
+    - 如果外面這一層有使用背景屬性的 div 元素時，底部會產生多餘的背景，此樣式名稱能修補此 Bug
 
 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example/)
 
