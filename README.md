@@ -114,9 +114,9 @@
 - `container` 一般型
 - `container-fluid` 流動型
 
-#### 8. 其他特殊的類別名稱
+#### 8. 其他特殊的 class 樣式名稱
 - `auto-fill` 可加在欄位 (column) 這一層，自動填滿這一行的內容，常用於最後一行中補足空間
-- `fix-extra-bottom` 可加在網格 (grid) 的外面一層上，假如外面這一層有使用背景屬性的 div 元素時，底部會產生多餘的背景，此類別名稱能修補此 Bug
+- `fix-extra-bottom` 可加在網格 (grid) 的外面一層上，假如外面這一層有使用背景屬性的 div 元素時，底部會產生多餘的背景，此樣式名稱能修補此 Bug
 
 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example/)
 
