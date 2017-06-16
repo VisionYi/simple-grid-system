@@ -1,9 +1,9 @@
 # Simple Grid System
 
-這是以 Flexbox 為基礎所建構而成的簡易網格系統，由於許多大型或自製的網頁內容都要自己切版設計，所以可能不太會去碰大型的 CSS framework，所以一個簡單好上手的格線系統框架就是您初期設計網頁與切版的好選擇。[View on demo page](https://visionyi.github.io/simple-grid-system/example/)
+這是以 Flexbox 為基礎所建構而成的簡易網格系統，由於許多大型或自製的網頁內容都要自己切版設計，所以可能不太會去碰大型的 CSS framework，所以一個簡單好上手的網格系統框架就是您初期設計網頁與切版的好選擇。[View on demo page](https://visionyi.github.io/simple-grid-system/example/)
 
 ## Features
-- 擁有 12、16、10 格的格線系統
+- 擁有 12、16、10 格的網格系統
 - 只需要兩層 class 的樣式名稱就能使用 : `grid-*` + `column-*`
 - 支援響應式設計 - 手機、平板、電腦 3 種螢幕尺寸上自動縮放
 - 響應式設計只包含簡易常用的方式，不需煩惱每一格在不同螢幕尺寸下的變化與差異
@@ -29,7 +29,7 @@
 
 ### How to use CSS classes
 
-#### 1. 基本使用 `grid-*` 與 `column-*`，可以使用 3 種格線，內容都是相容的
+#### 1. 基本使用 `grid-*` 與 `column-*`，可以使用 3 種網格，內容都是相容的
 - `grid-10`、`grid-12`、`grid-16`
 - `grid-10` > `column-1` ~ `column-10` 10 格
 - `grid-12` > `column-1` ~ `column-12` 12 格
@@ -43,7 +43,7 @@
 </div>
 ```
 
-#### 2. 需要位移欄位或呈現左右空的欄位，可以在欄位這一層加入 `prefix-*` 或 `suffix-*`
+#### 2. 需要位移欄位或呈現左右空的欄位，可以在欄位 (column) 這一層加入 `prefix-*` 或 `suffix-*`
 -  `grid-10` > `prefix-1` ~ `prefix-10`、 `suffix-1` ~ `suffix-10`
 -  `grid-12` > `prefix-1` ~ `prefix-12`、 `suffix-1` ~ `suffix-12`
 -  `grid-16` > `prefix-1` ~ `prefix-16`、 `suffix-1` ~ `suffix-16`
@@ -56,14 +56,14 @@
 </div>
 ```
 
-#### 3. 支持響應式設計，可以在格線這一層加入 `mobile-*` 或 `tablet-*`，當螢幕尺寸大小進入不同的版面時會觸發堆疊欄位，改變每個欄位的寬度比例
+#### 3. 支持響應式設計，可以在網格 (grid) 這一層加入 `mobile-*` 或 `tablet-*`，當螢幕尺寸大小進入不同的版面時會觸發堆疊欄位，改變每個欄位的寬度比例
 | 樣式名稱 | 使用的裝置 | 當螢幕尺寸 .. 改變寬度比例 |
 | ------- | --------- | ----------------- |
 | `tablet-1` ~ `tablet-4` | 平板 | < 992px |
 | `mobile-1` ~ `mobile-3` | 行動裝置(手機) | < 768px |
 
 \# 特別說明觸發時的情況 :
-- 此格線內的每個欄位都會堆疊成等寬的比例，例如: `mobile-1` 代表每個欄位的寬都會變成 100%
+- 此網格內的每個欄位都會堆疊成等寬的比例，例如: `mobile-1` 代表每個欄位的寬都會變成 100%
 - 會把所有的 "左右空的欄位" 都消除
 
 範例 :
@@ -73,7 +73,7 @@
 </div>
 ```
 
-#### 4. 如果想分配一行中的欄位位置，可以在格線這一層加入 3 種方法來配置
+#### 4. 如果想分配一行中的欄位位置，可以在網格 (grid) 這一層加入 3 種方法來配置
 - `center` 集中
 - `spaceAround` 平均分配
 - `spaceBetween` 分散分配
@@ -85,7 +85,7 @@
 </div>
 ```
 
-#### 5. 如果覺得欄位間格距離太狹窄，可以在格線這一層加入`relaxed`、`more-relaxed` 加大左右之間的距離，預設的間格距離為 15 px
+#### 5. 如果覺得欄位間格距離太狹窄，可以在網格 (grid) 這一層加入`relaxed`、`more-relaxed` 加大左右之間的距離，預設的間格距離為 15 px
 - `relaxed` 間格距離: 30px
 - `more-relaxed` 間格距離: 50px
 - `equal-spacing` 使得上下間格距離也變成相同的，搭配前兩個樣式名稱
@@ -95,7 +95,7 @@
 <div class="grid-12 relaxed">
     ...
 </div>
-<!--格線內每格的上下左右距離都會一樣-->
+<!--網格內每格的上下左右距離都會一樣-->
 <div class="grid-12 relaxed equal-spacing">
     ...
 </div>
@@ -113,6 +113,10 @@
 #### 7. 容器 - 分為一般型與流動型，使用方式與 CSS Bootstrap framework 的 `container` 是相同的
 - `container` 一般型
 - `container-fluid` 流動型
+
+#### 8. 其他特殊的類別名稱
+- `auto-fill` 可加在欄位 (column) 這一層，自動填滿這一行的內容，常用於最後一行中補足空間
+- `fix-extra-bottom` 可加在網格 (grid) 的外面一層上，假如外面這一層有使用背景屬性的 div 元素時，底部會產生多餘的背景，此類別名稱能修補此 Bug
 
 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example/)
 
