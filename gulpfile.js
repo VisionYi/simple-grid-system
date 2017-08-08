@@ -21,18 +21,18 @@ function getHeader() {
 }
 
 gulp.task('default', function () {
-    return gulp.src('grid-system.css')
+    return gulp.src('./dist/grid-system.css')
             .pipe(autoPrefix())
             .pipe(cleanCss())
             .pipe(getHeader())
             .pipe(rename('grid-system.min.css'))
-            .pipe(gulp.dest('./'));
+            .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('demo', function () {
     browserSync.init({
         server: './',
-        startPath: './example/demo.html'
+        startPath: './example/index.html'
     });
 
     gulp.watch("./example/**").on('change', browserSync.reload);

@@ -2,9 +2,11 @@
   "name": "simple-grid-system",
   "version": "1.0.0",
   "description": "網頁專用的網格系統，總共有三個種類: 12、16、10 格",
-  "main": "grid-system.css",
+  "main": "./dist/grid-system.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "demo": "gulp demo"
   },
   "keywords": [
     "grid system",
@@ -19,11 +21,13 @@
   "author": "Shane Yi <scps950613@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.18.12",
+    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.4.1",
-    "gulp-header": "^1.8.8",
-    "gulp-rename": "^1.2.2"
+    "gulp-clean-css": "^3.7.0",
+    "gulp-header": "^1.8.9",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "sass-lint": "^1.10.2"
   }
 }
