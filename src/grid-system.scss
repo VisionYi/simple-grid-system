@@ -1,0 +1,239 @@
+// 樣式名稱
+$class-ctn: 'container';
+$class-grid: 'grid';
+$class-col: 'col';
+$class-mob: 'mobile';
+$class-tab: 'tablet';
+$class-comp: 'computer';
+$all-grid: '[class*=#{$class-grid}-]';
+$all-col: '[class*=#{$class-col}-]';
+$all-mob: '[class*=#{$class-mob}-]';
+$all-tab: '[class*=#{$class-tab}-]';
+
+$grid-numbers: (12, 16, 10);
+$size-max-comp: 1200px;
+$size-max-tab: 991px;
+$size-max-mob: 767px;
+$version: 'v1.1.0';
+
+/**
+ * 網頁專用的網格系統 #{$grid-numbers} 格
+ *
+ * @author Shane Yi
+ * @version #{$version}
+ * @license MIT
+ */
+* {
+  box-sizing: border-box;
+}
+
+/* 容器: 基本上跟 bootstrap 的作法是一樣的構造 */
+.#{$class-ctn},
+.#{$class-ctn}-fluid {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 10px;
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+.#{$class-ctn} {
+  @media (min-width: $size-max-mob + 1px) {
+    width: 750px;
+  }
+  @media (min-width: $size-max-tab + 1px) {
+    width: 970px;
+  }
+  @media (min-width: $size-max-comp) {
+    width: 1170px;
+  }
+}
+
+/**
+ * 設定網格系統
+ *
+ * 1. 欄位的上下間距都固定為 15px
+ * 2. 欄位的左右之間的間距
+ *      - 一般: 15px
+ *      - 寬鬆: 30px
+ *      - 更寬鬆: 50px
+ * 3. .equal-spacing: 使欄位的上下間距修改成跟左右間距一樣
+ */
+#{$all-grid} {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: -15px;
+  margin-left: -7.5px;
+  margin-right: -7.5px;
+  position: relative;
+
+  > #{$all-col} {
+    background-clip: content-box;
+    display: block;
+    padding-bottom: 15px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    position: relative;
+  }
+
+  &.relaxed {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    > #{$all-col} {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    &.equal-spacing {
+      margin-bottom: -30px;
+
+      > #{$all-col} {
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  &.more-relaxed {
+    margin-left: -25px;
+    margin-right: -25px;
+
+    > #{$all-col} {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &.equal-spacing {
+      margin-bottom: -50px;
+
+      > #{$all-col} {
+        padding-bottom: 50px;
+      }
+    }
+  }
+
+  // Distribute 分配
+  // center: 將所有欄位集中於中間
+  // spaceAround: 將所有欄位平均分配於一行中
+  // spaceBetween: 將所有欄位散開分配於一行中
+  &.center {
+    justify-content: center;
+  }
+
+  &.space-around {
+    justify-content: space-around;
+  }
+
+  &.space-between {
+    justify-content: space-between;
+  }
+
+  // 於一行中把剩餘的空間都自動填滿
+  > .auto-fill#{$all-col} {
+    flex: 1 1 0%;
+  }
+}
+
+@each $number in $grid-numbers {
+  /* 設定欄位 [#{$number}欄位] */
+  @for $i from 1 through $number {
+
+    // 欄位的比例
+    .#{$class-grid}-#{$number} > .#{$class-col}-#{$i} {
+      width: $i / $number * 100%;
+    }
+
+    // 左空欄
+    @if $i < $number {
+      .#{$class-grid}-#{$number} > .prefix-#{$i}#{$all-col} {
+        margin-left: $i / $number * 100%;
+      }
+    }
+
+    // 右空欄
+    @if $i < $number {
+      .#{$class-grid}-#{$number} > .suffix-#{$i}#{$all-col} {
+        margin-right: $i / $number * 100%;
+      }
+    }
+  }
+
+  /**
+  * [#{$number}欄位]
+  * 當頁面螢幕大小進入 tablet 或 mobile 時觸發
+  * 1. 欄位設計: 每個欄位都會改成等寬的比例
+  * 2. 把所有的 "左右空欄" 都消除
+  */
+  @media (max-width: $size-max-tab) {
+    .#{$class-grid}-#{$number} {
+      &#{$all-tab} > #{$all-col} {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      @for $i from 1 through 4 {
+        &.#{$class-tab}-#{$i} > #{$all-col} {
+          width: 100% / $i;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $size-max-mob) {
+    .#{$class-grid}-#{$number} {
+      &#{$all-mob} > #{$all-col} {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      @for $i from 1 through 3 {
+        &.#{$class-mob}-#{$i} > #{$all-col} {
+          width: 100% / $i;
+        }
+      }
+    }
+  }
+}
+
+/* [響應式設計] 區塊的顯示與隱藏 */
+@media (min-width: $size-max-tab + 1px) {
+  .#{$class-tab}-#{$class-mob}-only,
+  .#{$class-mob}-#{$class-tab}-only,
+  .#{$class-mob}-only,
+  .#{$class-tab}-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: $size-max-mob + 1px) and (max-width: $size-max-tab) {
+  .#{$class-comp}-#{$class-mob}-only,
+  .#{$class-mob}-#{$class-comp}-only,
+  .#{$class-mob}-only,
+  .#{$class-comp}-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: $size-max-mob) {
+  .#{$class-comp}-#{$class-tab}-only,
+  .#{$class-tab}-#{$class-comp}-only,
+  .#{$class-tab}-only,
+  .#{$class-comp}-only {
+    display: none !important;
+  }
+}
+
+/**
+ * 如果 .grid 外面再包一層有使用背景屬性的 div 元素時，底部會產生多餘的背景
+ * 此類別屬性能修補此 Bug，請加在外面那一層的 div 元素上
+ */
+.fix-extra-bottom::after {
+  content: '';
+  display: table;
+}

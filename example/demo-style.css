@@ -16,18 +16,18 @@ body {
     margin-top: 40px;
 }
 
-[class*=grid-] > [class*=column-] {
+[class*=grid-] > [class*=col-] {
     background-color: #42cafd;
     color: #333;
     line-height: 60px;
     text-align: center;
 }
 
-[class*=grid-] [class*=grid-] > [class*=column-] {
+[class*=grid-] [class*=grid-] > [class*=col-] {
     background-color: #3599c3;
 }
 
-[class*=grid-] > [class*=column-][class$="only"] {
+[class*=grid-] > [class*=col-][class$="only"] {
     background-color: yellow;
 }
 

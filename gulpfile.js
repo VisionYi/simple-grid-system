@@ -4,6 +4,7 @@ var rename = require('gulp-rename');
 var autoPrefix = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
+var sass = require('gulp-sass');
 
 function getHeader() {
     var pkg = require('./package.json');
@@ -20,8 +21,20 @@ function getHeader() {
     return header(template, {pkg: pkg});
 }
 
+gulp.task('sass', function () {
+    return gulp.src('./src/*.scss')
+            .pipe(sass({outputStyle: 'expanded', indentWidth:4}).on('error', sass.logError))
+            .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('sass:watch', function () {
+    gulp.watch('./src/*.scss', ['sass']);
+});
+
 gulp.task('default', function () {
-    return gulp.src('./dist/grid-system.css')
+    return gulp.src('./src/grid-system.scss')
+            .pipe(sass({outputStyle: 'expanded', indentWidth: 4}).on('error', sass.logError))
+            .pipe(gulp.dest('./dist'))
             .pipe(autoPrefix())
             .pipe(cleanCss())
             .pipe(getHeader())
