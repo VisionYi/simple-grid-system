@@ -14,6 +14,9 @@ $grid-numbers: (12, 16, 10);
 $size-max-comp: 1200px;
 $size-max-tab: 991px;
 $size-max-mob: 767px;
+$spacing-1: 15px;
+$spacing-2: 30px;
+$spacing-3: 50px;
 $version: 'v1.1.0';
 
 /**
@@ -33,7 +36,7 @@ $version: 'v1.1.0';
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
-  padding-right: 10px;
+  padding-right: 15px;
 
   &::after {
     clear: both;
@@ -57,63 +60,63 @@ $version: 'v1.1.0';
 /**
  * 設定網格系統
  *
- * 1. 欄位的上下間距都固定為 15px
+ * 1. 欄位的上下間距都固定為 #{$spacing-1}
  * 2. 欄位的左右之間的間距
- *      - 一般: 15px
- *      - 寬鬆: 30px
- *      - 更寬鬆: 50px
+ *      - 一般: #{$spacing-1}
+ *      - 寬鬆: #{$spacing-2}
+ *      - 更寬鬆: #{$spacing-3}
  * 3. .equal-spacing: 使欄位的上下間距修改成跟左右間距一樣
  */
 #{$all-grid} {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: -15px;
-  margin-left: -7.5px;
-  margin-right: -7.5px;
+  margin-bottom: -$spacing-1;
+  margin-left: -($spacing-1 / 2);
+  margin-right: -($spacing-1 / 2);
   position: relative;
 
   > #{$all-col} {
     background-clip: content-box;
     display: block;
-    padding-bottom: 15px;
-    padding-left: 7.5px;
-    padding-right: 7.5px;
+    padding-bottom: $spacing-1;
+    padding-left: $spacing-1 / 2;
+    padding-right: $spacing-1 / 2;
     position: relative;
   }
 
   &.relaxed {
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: -($spacing-2 / 2);
+    margin-right: -($spacing-2 / 2);
 
     > #{$all-col} {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: $spacing-2 / 2;
+      padding-right: $spacing-2 / 2;
     }
 
     &.equal-spacing {
-      margin-bottom: -30px;
+      margin-bottom: -$spacing-2;
 
       > #{$all-col} {
-        padding-bottom: 30px;
+        padding-bottom: $spacing-2;
       }
     }
   }
 
   &.more-relaxed {
-    margin-left: -25px;
-    margin-right: -25px;
+    margin-left: -($spacing-3 / 2);
+    margin-right: -($spacing-3 / 2);
 
     > #{$all-col} {
-      padding-left: 25px;
-      padding-right: 25px;
+      padding-left: $spacing-3 / 2;
+      padding-right: $spacing-3 / 2;
     }
 
     &.equal-spacing {
-      margin-bottom: -50px;
+      margin-bottom: -$spacing-3;
 
       > #{$all-col} {
-        padding-bottom: 50px;
+        padding-bottom: $spacing-3;
       }
     }
   }
