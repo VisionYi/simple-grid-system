@@ -42,7 +42,7 @@
 </div>
 ```
 
-#### 2. 需要位移欄位或呈現左右空的欄位，可以在欄位 (column) 這一層加入 `prefix-*` 或 `suffix-*`
+#### 2. 需要位移欄位或呈現左右空的欄位，可以在欄位 (col) 這一層加入 `prefix-*` 或 `suffix-*`
 -  `grid-10` > `prefix-1` ~ `prefix-10`、 `suffix-1` ~ `suffix-10`
 -  `grid-12` > `prefix-1` ~ `prefix-12`、 `suffix-1` ~ `suffix-12`
 -  `grid-16` > `prefix-1` ~ `prefix-16`、 `suffix-1` ~ `suffix-16`
@@ -115,7 +115,7 @@
 
 #### 8. 其他特殊的 class 樣式名稱
 - `auto-fill`
-    - 可加在欄位 (column) 這一層上
+    - 可加在欄位 (col) 這一層上
     - 自動填滿這一行的內容，常用於最後一行中補足空間
 - `fix-extra-bottom`
     - 可加在網格 (grid) 的外面一層上
@@ -124,7 +124,7 @@
 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example/)
 
 ## Update
-### v1.1.0
+### v1.1.0 (2017.08.19)
 - 使用 SCSS 技術重新再製作，以便於日後擴充與修改
 - 樣式名稱 `column` 改為縮寫 `col`
 - 變更一些目錄路徑
