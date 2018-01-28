@@ -129,5 +129,13 @@
 - 樣式名稱 `column` 改為縮寫 `col`
 - 變更一些目錄路徑
 
+## To Do List
+- [ ] 新增功能: Distribute 分配功能加上 `start` 和 `end`
+- [ ] 新增功能: 單純只使用 `col` 樣式，代表平均分配欄位，自行填充滿版
+- [ ] 改善 demo 頁面，(top 功能 & Github 圖片)
+- [ ] 改善 readme.md 說明簡介
+- [ ] 需要把 spacing 改成 gutter
+- [ ] 新增功能: 使用者可自行修改 gutter 間距的大小，使用 CSS Variables
+
 ## License
 [MIT](https://github.com/VisionYi/simple-grid-system/blob/master/LICENSE)
