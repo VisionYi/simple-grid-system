@@ -1,12 +1,12 @@
 {
   "name": "simple-grid-system",
-  "version": "1.1.0",
-  "description": "網頁專用的網格系統 12, 16, 10 格",
+  "version": "1.2.0",
+  "description": "CSS Flexbox 網格系統 12, 16, 10 格的欄位",
   "main": "./dist/grid-system.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp",
-    "demo": "gulp demo"
+    "build": "gulp build",
+    "start": "gulp start"
   },
   "keywords": [
     "grid system",

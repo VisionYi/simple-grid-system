@@ -3,12 +3,12 @@
 這是以 Flexbox 為基礎所建構而成的簡易網格系統，由於許多大型或自製的網頁內容都要自己切版設計，所以可能不太會去碰大型的 CSS framework，所以一個簡單好上手的網格系統框架就是您初期設計網頁與切版的好選擇。[View on demo page](https://visionyi.github.io/simple-grid-system/example/)
 
 ## Features
-- 擁有 12、16、10 格的網格系統
+- 擁有 12、16、10 格欄位的網格系統
 - 只需要兩層 class 的樣式名稱就能使用 : `grid-*` + `col-*`
-- 支援響應式設計 - 手機、平板、電腦 3 種螢幕尺寸上自動縮放
+- 支援 RWD 響應式網頁設計 - 電腦、平板、手機 3 種螢幕尺寸上自動縮放
 - 響應式設計只包含簡易常用的方式，不需煩惱每一格在不同螢幕尺寸下的變化與差異
-- 可以調整每格的間格距離
-- 附加上與 CSS 框架 Bootstrap 類似的 container 樣式名稱
+- 可以調整欄位的間格距離
+- 附加上與 CSS 框架 Bootstrap 4.x 版類似的 `container` 樣式名稱
 - 附加上響應式設計 - 區塊的顯示與隱藏
 
 ## Browser Support
@@ -67,15 +67,19 @@
 
 範例 :
 ```html
-<div class="grid-12 mobile-1 tablet-2">
+<div class="grid-12 tablet-2 mobile-1">
     ...
 </div>
 ```
 
-#### 4. 如果想分配一行中的欄位位置，可以在網格 (grid) 這一層加入 3 種方法來配置
-- `center` 集中
-- `space-around` 平均分配
-- `space-between` 分散分配
+#### 4. 如果想分配或集中於一行中的欄位位置，可以在網格 (grid) 這一層加入以下方法來配置
+| 樣式名稱 | 將所有欄位 ... |
+| ------- | ------------- |
+| `center`| 集中於中間 |
+| `start` | 集中於最前頭(靠左側) |
+| `end`   | 集中於最尾部(靠右側) |
+| `space-around`  | 平均分配於一行中 |
+| `space-between` | 散開分配於一行中 |
 
 範例 :
 ```html
@@ -87,7 +91,7 @@
 #### 5. 如果覺得欄位間格距離太狹窄，可以在網格 (grid) 這一層加入`relaxed`、`more-relaxed` 加大左右之間的距離，預設的間格距離為 15 px
 - `relaxed` 間格距離: 30px
 - `more-relaxed` 間格距離: 50px
-- `equal-spacing` 使得上下間格距離也變成相同的，搭配前兩個樣式名稱
+- `equal-gap` 使得上下間格距離也變成相同的，搭配前兩個樣式名稱
 
 範例 :
 ```html
@@ -95,10 +99,11 @@
     ...
 </div>
 <!--網格內每個欄位的上下左右之間格距離都會一樣-->
-<div class="grid-12 relaxed equal-spacing">
+<div class="grid-12 relaxed equal-gap">
     ...
 </div>
 ```
+
 #### 6. 響應式設計 - 區塊的隱藏與顯示，當螢幕尺寸大小進入不同的版面時會觸發
 | 樣式名稱 | 使用的裝置 | 當螢幕尺寸 .. 出現 |
 | ------- | --------- | ----------------- |
@@ -117,6 +122,8 @@
 - `auto-fill`
     - 可加在欄位 (col) 這一層上
     - 自動填滿這一行的內容，常用於最後一行中補足空間
+- `fill-tablet`、`fill-mobile`
+- `w-100`
 - `fix-extra-bottom`
     - 可加在網格 (grid) 的外面一層上
     - 如果外面這一層有使用背景屬性的 div 元素時，底部會產生多餘的背景，此樣式名稱能修補此 Bug
@@ -129,13 +136,22 @@
 - 樣式名稱 `column` 改為縮寫 `col`
 - 變更一些目錄路徑
 
-## To Do List
-- [ ] 新增功能: Distribute 分配功能加上 `start` 和 `end`
-- [ ] 新增功能: 單純只使用 `col` 樣式，代表平均分配欄位，自行填充滿版
-- [ ] 改善 demo 頁面，(top 功能 & Github 圖片)
+### v1.2.0 (2018.02.20)
+- 改善內容 :
+    - `container` 樣式，更新為類似 CSS Bootstrap v4.x 的板本
+    - `col-*` 樣式，不依靠 CSS `width: **%` 變化欄位，改使用 `flex: 0 0 **%` 更符合 flexbox 性質
+    - `auto-fill` 樣式，單獨使用 CSS `flex-grow`、`flex-shrink`，能夠向下相容 `col-*` 樣式
+- 新增功能 :
+    - `fill-tablet`、`fill-mobile` 樣式，此兩種為 `auto-fill` 的響應式設計版本
+    - `start`、`end` 樣式，作為**分配、集中功能**的其中兩種
+    - `w-100` 樣式，強制中斷欄位跳到新的一行，常用於搭配**分配、集中功能**
+- 更改名稱 :
+    - spacing 改成 gap，樣式名稱 `equal-spacing` 改為 `equal-gap`
+
+## Todo List
 - [ ] 改善 readme.md 說明簡介
-- [ ] 需要把 spacing 改成 gutter
-- [ ] 新增功能: 使用者可自行修改 gutter 間距的大小，使用 CSS Variables
+- [ ] 改善 example demo 頁面 (top 功能 & Github 圖片 & list 優化)
+- [ ] 新增功能: 使用者可自行修改 gap 間距的大小，使用 CSS Variables
 
 ## License
 [MIT](https://github.com/VisionYi/simple-grid-system/blob/master/LICENSE)

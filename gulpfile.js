@@ -22,7 +22,7 @@ function getHeader() {
 }
 
 gulp.task('sass', function () {
-    return gulp.src('./src/*.scss')
+    return gulp.src('./src/grid-system.scss')
             .pipe(sass({outputStyle: 'expanded', indentWidth:4}).on('error', sass.logError))
             .pipe(gulp.dest('./dist'));
 });
@@ -31,10 +31,8 @@ gulp.task('sass:watch', function () {
     gulp.watch('./src/*.scss', ['sass']);
 });
 
-gulp.task('default', function () {
-    return gulp.src('./src/grid-system.scss')
-            .pipe(sass({outputStyle: 'expanded', indentWidth: 4}).on('error', sass.logError))
-            .pipe(gulp.dest('./dist'))
+gulp.task('build', ['sass'], function () {
+    return gulp.src('./dist/grid-system.css')
             .pipe(autoPrefix())
             .pipe(cleanCss())
             .pipe(getHeader())
@@ -42,12 +40,20 @@ gulp.task('default', function () {
             .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('demo', function () {
+gulp.task('demo-example', function () {
     browserSync.init({
         server: './',
         startPath: './example/index.html'
     });
 
-    gulp.watch("./example/**").on('change', browserSync.reload);
+    gulp.watch('./example/**').on('change', browserSync.reload);
 });
 
+/**
+ * 使用此功能前，請先手動把 example/index.html 中引入的 grid-system.min.css 換成 grid-system.css
+ * 正式發布在 Github 時再換回來
+ */
+gulp.task('start', ['demo-example'], function () {
+    // 修改 scss 檔案也會自動重新載入頁面
+    gulp.watch('./src/*.scss', ['sass']).on('change', browserSync.reload);
+});

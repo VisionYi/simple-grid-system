@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /**
- * 網頁專用的網格系統 12, 16, 10 格
+ * simple-grid-system CSS Flexbox 網格系統 12, 16, 10 格的欄位
  *
  * @author Shane Yi
- * @version v1.1.0
+ * @version v1.2.0
  * @license MIT
  */
 * {
@@ -21,56 +21,58 @@
 
 .container::after,
 .container-fluid::after {
-    clear: both;
     content: '';
     display: table;
+    clear: both;
 }
 
 @media (min-width: 768px) {
     .container {
-        width: 750px;
+        max-width: 720px;
     }
 }
 
 @media (min-width: 992px) {
     .container {
-        width: 970px;
+        max-width: 960px;
     }
 }
 
 @media (min-width: 1200px) {
     .container {
-        width: 1170px;
+        max-width: 1140px;
     }
 }
 
 /**
  * 設定網格系統
  *
- * 1. 欄位的上下間距都固定為 15px
- * 2. 欄位的左右之間的間距
+ * 1. 每行上下的間距都固定為 15px
+ * 2. 每個欄位的間距
  *      - 一般: 15px
  *      - 寬鬆: 30px
  *      - 更寬鬆: 50px
- * 3. .equal-spacing: 使欄位的上下間距修改成跟左右間距一樣
+ * 3. .equal-gap: 使每行上下的間距修改成與欄位左右的間距一樣
  */
 [class*=grid-] {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    position: relative;
     margin-bottom: -15px;
     margin-left: -7.5px;
     margin-right: -7.5px;
-    position: relative;
 }
 
 [class*=grid-] > [class*=col-] {
-    background-clip: content-box;
     display: block;
+    position: relative;
+    max-width: unset;
+    min-width: unset;
     padding-bottom: 15px;
     padding-left: 7.5px;
     padding-right: 7.5px;
-    position: relative;
+    background-clip: content-box;
 }
 
 [class*=grid-].relaxed {
@@ -83,11 +85,11 @@
     padding-right: 15px;
 }
 
-[class*=grid-].relaxed.equal-spacing {
+[class*=grid-].relaxed.equal-gap {
     margin-bottom: -30px;
 }
 
-[class*=grid-].relaxed.equal-spacing > [class*=col-] {
+[class*=grid-].relaxed.equal-gap > [class*=col-] {
     padding-bottom: 30px;
 }
 
@@ -101,16 +103,24 @@
     padding-right: 25px;
 }
 
-[class*=grid-].more-relaxed.equal-spacing {
+[class*=grid-].more-relaxed.equal-gap {
     margin-bottom: -50px;
 }
 
-[class*=grid-].more-relaxed.equal-spacing > [class*=col-] {
+[class*=grid-].more-relaxed.equal-gap > [class*=col-] {
     padding-bottom: 50px;
 }
 
 [class*=grid-].center {
     justify-content: center;
+}
+
+[class*=grid-].start {
+    justify-content: flex-start;
+}
+
+[class*=grid-].end {
+    justify-content: flex-end;
 }
 
 [class*=grid-].space-around {
@@ -121,13 +131,9 @@
     justify-content: space-between;
 }
 
-[class*=grid-] > .auto-fill[class*=col-] {
-    flex: 1 1 0%;
-}
-
 /* 設定欄位 [12欄位] */
 .grid-12 > .col-1 {
-    width: 8.33333%;
+    flex: 0 0 8.33333%;
 }
 
 .grid-12 > .prefix-1[class*=col-] {
@@ -139,7 +145,7 @@
 }
 
 .grid-12 > .col-2 {
-    width: 16.66667%;
+    flex: 0 0 16.66667%;
 }
 
 .grid-12 > .prefix-2[class*=col-] {
@@ -151,7 +157,7 @@
 }
 
 .grid-12 > .col-3 {
-    width: 25%;
+    flex: 0 0 25%;
 }
 
 .grid-12 > .prefix-3[class*=col-] {
@@ -163,7 +169,7 @@
 }
 
 .grid-12 > .col-4 {
-    width: 33.33333%;
+    flex: 0 0 33.33333%;
 }
 
 .grid-12 > .prefix-4[class*=col-] {
@@ -175,7 +181,7 @@
 }
 
 .grid-12 > .col-5 {
-    width: 41.66667%;
+    flex: 0 0 41.66667%;
 }
 
 .grid-12 > .prefix-5[class*=col-] {
@@ -187,7 +193,7 @@
 }
 
 .grid-12 > .col-6 {
-    width: 50%;
+    flex: 0 0 50%;
 }
 
 .grid-12 > .prefix-6[class*=col-] {
@@ -199,7 +205,7 @@
 }
 
 .grid-12 > .col-7 {
-    width: 58.33333%;
+    flex: 0 0 58.33333%;
 }
 
 .grid-12 > .prefix-7[class*=col-] {
@@ -211,7 +217,7 @@
 }
 
 .grid-12 > .col-8 {
-    width: 66.66667%;
+    flex: 0 0 66.66667%;
 }
 
 .grid-12 > .prefix-8[class*=col-] {
@@ -223,7 +229,7 @@
 }
 
 .grid-12 > .col-9 {
-    width: 75%;
+    flex: 0 0 75%;
 }
 
 .grid-12 > .prefix-9[class*=col-] {
@@ -235,7 +241,7 @@
 }
 
 .grid-12 > .col-10 {
-    width: 83.33333%;
+    flex: 0 0 83.33333%;
 }
 
 .grid-12 > .prefix-10[class*=col-] {
@@ -247,7 +253,7 @@
 }
 
 .grid-12 > .col-11 {
-    width: 91.66667%;
+    flex: 0 0 91.66667%;
 }
 
 .grid-12 > .prefix-11[class*=col-] {
@@ -259,7 +265,7 @@
 }
 
 .grid-12 > .col-12 {
-    width: 100%;
+    flex: 0 0 100%;
 }
 
 /**
@@ -274,16 +280,16 @@
         margin-right: 0;
     }
     .grid-12.tablet-1 > [class*=col-] {
-        width: 100%;
+        flex: 0 0 100%;
     }
     .grid-12.tablet-2 > [class*=col-] {
-        width: 50%;
+        flex: 0 0 50%;
     }
     .grid-12.tablet-3 > [class*=col-] {
-        width: 33.33333%;
+        flex: 0 0 33.33333%;
     }
     .grid-12.tablet-4 > [class*=col-] {
-        width: 25%;
+        flex: 0 0 25%;
     }
 }
 
@@ -293,19 +299,19 @@
         margin-right: 0;
     }
     .grid-12.mobile-1 > [class*=col-] {
-        width: 100%;
+        flex: 0 0 100%;
     }
     .grid-12.mobile-2 > [class*=col-] {
-        width: 50%;
+        flex: 0 0 50%;
     }
     .grid-12.mobile-3 > [class*=col-] {
-        width: 33.33333%;
+        flex: 0 0 33.33333%;
     }
 }
 
 /* 設定欄位 [16欄位] */
 .grid-16 > .col-1 {
-    width: 6.25%;
+    flex: 0 0 6.25%;
 }
 
 .grid-16 > .prefix-1[class*=col-] {
@@ -317,7 +323,7 @@
 }
 
 .grid-16 > .col-2 {
-    width: 12.5%;
+    flex: 0 0 12.5%;
 }
 
 .grid-16 > .prefix-2[class*=col-] {
@@ -329,7 +335,7 @@
 }
 
 .grid-16 > .col-3 {
-    width: 18.75%;
+    flex: 0 0 18.75%;
 }
 
 .grid-16 > .prefix-3[class*=col-] {
@@ -341,7 +347,7 @@
 }
 
 .grid-16 > .col-4 {
-    width: 25%;
+    flex: 0 0 25%;
 }
 
 .grid-16 > .prefix-4[class*=col-] {
@@ -353,7 +359,7 @@
 }
 
 .grid-16 > .col-5 {
-    width: 31.25%;
+    flex: 0 0 31.25%;
 }
 
 .grid-16 > .prefix-5[class*=col-] {
@@ -365,7 +371,7 @@
 }
 
 .grid-16 > .col-6 {
-    width: 37.5%;
+    flex: 0 0 37.5%;
 }
 
 .grid-16 > .prefix-6[class*=col-] {
@@ -377,7 +383,7 @@
 }
 
 .grid-16 > .col-7 {
-    width: 43.75%;
+    flex: 0 0 43.75%;
 }
 
 .grid-16 > .prefix-7[class*=col-] {
@@ -389,7 +395,7 @@
 }
 
 .grid-16 > .col-8 {
-    width: 50%;
+    flex: 0 0 50%;
 }
 
 .grid-16 > .prefix-8[class*=col-] {
@@ -401,7 +407,7 @@
 }
 
 .grid-16 > .col-9 {
-    width: 56.25%;
+    flex: 0 0 56.25%;
 }
 
 .grid-16 > .prefix-9[class*=col-] {
@@ -413,7 +419,7 @@
 }
 
 .grid-16 > .col-10 {
-    width: 62.5%;
+    flex: 0 0 62.5%;
 }
 
 .grid-16 > .prefix-10[class*=col-] {
@@ -425,7 +431,7 @@
 }
 
 .grid-16 > .col-11 {
-    width: 68.75%;
+    flex: 0 0 68.75%;
 }
 
 .grid-16 > .prefix-11[class*=col-] {
@@ -437,7 +443,7 @@
 }
 
 .grid-16 > .col-12 {
-    width: 75%;
+    flex: 0 0 75%;
 }
 
 .grid-16 > .prefix-12[class*=col-] {
@@ -449,7 +455,7 @@
 }
 
 .grid-16 > .col-13 {
-    width: 81.25%;
+    flex: 0 0 81.25%;
 }
 
 .grid-16 > .prefix-13[class*=col-] {
@@ -461,7 +467,7 @@
 }
 
 .grid-16 > .col-14 {
-    width: 87.5%;
+    flex: 0 0 87.5%;
 }
 
 .grid-16 > .prefix-14[class*=col-] {
@@ -473,7 +479,7 @@
 }
 
 .grid-16 > .col-15 {
-    width: 93.75%;
+    flex: 0 0 93.75%;
 }
 
 .grid-16 > .prefix-15[class*=col-] {
@@ -485,7 +491,7 @@
 }
 
 .grid-16 > .col-16 {
-    width: 100%;
+    flex: 0 0 100%;
 }
 
 /**
@@ -500,16 +506,16 @@
         margin-right: 0;
     }
     .grid-16.tablet-1 > [class*=col-] {
-        width: 100%;
+        flex: 0 0 100%;
     }
     .grid-16.tablet-2 > [class*=col-] {
-        width: 50%;
+        flex: 0 0 50%;
     }
     .grid-16.tablet-3 > [class*=col-] {
-        width: 33.33333%;
+        flex: 0 0 33.33333%;
     }
     .grid-16.tablet-4 > [class*=col-] {
-        width: 25%;
+        flex: 0 0 25%;
     }
 }
 
@@ -519,19 +525,19 @@
         margin-right: 0;
     }
     .grid-16.mobile-1 > [class*=col-] {
-        width: 100%;
+        flex: 0 0 100%;
     }
     .grid-16.mobile-2 > [class*=col-] {
-        width: 50%;
+        flex: 0 0 50%;
     }
     .grid-16.mobile-3 > [class*=col-] {
-        width: 33.33333%;
+        flex: 0 0 33.33333%;
     }
 }
 
 /* 設定欄位 [10欄位] */
 .grid-10 > .col-1 {
-    width: 10%;
+    flex: 0 0 10%;
 }
 
 .grid-10 > .prefix-1[class*=col-] {
@@ -543,7 +549,7 @@
 }
 
 .grid-10 > .col-2 {
-    width: 20%;
+    flex: 0 0 20%;
 }
 
 .grid-10 > .prefix-2[class*=col-] {
@@ -555,7 +561,7 @@
 }
 
 .grid-10 > .col-3 {
-    width: 30%;
+    flex: 0 0 30%;
 }
 
 .grid-10 > .prefix-3[class*=col-] {
@@ -567,7 +573,7 @@
 }
 
 .grid-10 > .col-4 {
-    width: 40%;
+    flex: 0 0 40%;
 }
 
 .grid-10 > .prefix-4[class*=col-] {
@@ -579,7 +585,7 @@
 }
 
 .grid-10 > .col-5 {
-    width: 50%;
+    flex: 0 0 50%;
 }
 
 .grid-10 > .prefix-5[class*=col-] {
@@ -591,7 +597,7 @@
 }
 
 .grid-10 > .col-6 {
-    width: 60%;
+    flex: 0 0 60%;
 }
 
 .grid-10 > .prefix-6[class*=col-] {
@@ -603,7 +609,7 @@
 }
 
 .grid-10 > .col-7 {
-    width: 70%;
+    flex: 0 0 70%;
 }
 
 .grid-10 > .prefix-7[class*=col-] {
@@ -615,7 +621,7 @@
 }
 
 .grid-10 > .col-8 {
-    width: 80%;
+    flex: 0 0 80%;
 }
 
 .grid-10 > .prefix-8[class*=col-] {
@@ -627,7 +633,7 @@
 }
 
 .grid-10 > .col-9 {
-    width: 90%;
+    flex: 0 0 90%;
 }
 
 .grid-10 > .prefix-9[class*=col-] {
@@ -639,7 +645,7 @@
 }
 
 .grid-10 > .col-10 {
-    width: 100%;
+    flex: 0 0 100%;
 }
 
 /**
@@ -654,16 +660,16 @@
         margin-right: 0;
     }
     .grid-10.tablet-1 > [class*=col-] {
-        width: 100%;
+        flex: 0 0 100%;
     }
     .grid-10.tablet-2 > [class*=col-] {
-        width: 50%;
+        flex: 0 0 50%;
     }
     .grid-10.tablet-3 > [class*=col-] {
-        width: 33.33333%;
+        flex: 0 0 33.33333%;
     }
     .grid-10.tablet-4 > [class*=col-] {
-        width: 25%;
+        flex: 0 0 25%;
     }
 }
 
@@ -673,13 +679,13 @@
         margin-right: 0;
     }
     .grid-10.mobile-1 > [class*=col-] {
-        width: 100%;
+        flex: 0 0 100%;
     }
     .grid-10.mobile-2 > [class*=col-] {
-        width: 50%;
+        flex: 0 0 50%;
     }
     .grid-10.mobile-3 > [class*=col-] {
-        width: 33.33333%;
+        flex: 0 0 33.33333%;
     }
 }
 
@@ -709,6 +715,30 @@
     .computer-only {
         display: none !important;
     }
+}
+
+/* 把一行中剩餘的空間都自動填滿 */
+[class*=grid-] > .auto-fill[class*=col-] {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+@media (max-width: 991px) {
+    [class*=grid-] > .fill-tablet[class*=col-] {
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    [class*=grid-] > .fill-mobile[class*=col-] {
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
+
+[class*=grid-] > .w-100 {
+    flex: 0 0 100%;
 }
 
 /**

@@ -13,13 +13,13 @@ body {
 }
 
 [class*=grid-] + [class*=grid-] {
-    margin-top: 40px;
+    margin-top: 35px;
 }
 
 [class*=grid-] > [class*=col-] {
     background-color: #42cafd;
     color: #333;
-    line-height: 60px;
+    line-height: 50px;
     text-align: center;
 }
 
@@ -54,17 +54,47 @@ pre {
 
 .project {
     color: #4685b9;
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
 }
 
 .list {
     padding-left: 10px;
     margin-bottom: 0;
-    line-height: 22px;
+    line-height: 25px;
 }
 
 .title {
     color: #4685b9;
     font-size: 22px;
+}
+
+.view-github {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.github-icon {
+    display: none;
+    margin-left: 15px;
+    vertical-align: text-bottom;
+}
+
+.top {
+    font-size: 20px;
+}
+
+.gray {
+    color: rgb(125, 125, 125);
+}
+
+@media (max-width: 767px) {
+    .view-github {
+        display: none;
+    }
+
+    .github-icon {
+        display: inline-block;
+    }
 }
