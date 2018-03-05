@@ -3,7 +3,7 @@
  * simple-grid-system CSS Flexbox 網格系統 12, 16, 10 格的欄位
  *
  * @author Shane Yi
- * @version v1.2.0
+ * @version v1.2.2
  * @license MIT
  */
 * {
@@ -67,8 +67,6 @@
 [class*=grid-] > [class*=col-] {
     display: block;
     position: relative;
-    max-width: unset;
-    min-width: unset;
     padding-bottom: 15px;
     padding-left: 7.5px;
     padding-right: 7.5px;
@@ -134,138 +132,150 @@
 /* 設定欄位 [12欄位] */
 .grid-12 > .col-1 {
     flex: 0 0 8.33333%;
+    max-width: 8.33333%;
 }
 
-.grid-12 > .prefix-1[class*=col-] {
+.grid-12 > .left-1[class*=col-] {
     margin-left: 8.33333%;
 }
 
-.grid-12 > .suffix-1[class*=col-] {
+.grid-12 > .right-1[class*=col-] {
     margin-right: 8.33333%;
 }
 
 .grid-12 > .col-2 {
     flex: 0 0 16.66667%;
+    max-width: 16.66667%;
 }
 
-.grid-12 > .prefix-2[class*=col-] {
+.grid-12 > .left-2[class*=col-] {
     margin-left: 16.66667%;
 }
 
-.grid-12 > .suffix-2[class*=col-] {
+.grid-12 > .right-2[class*=col-] {
     margin-right: 16.66667%;
 }
 
 .grid-12 > .col-3 {
     flex: 0 0 25%;
+    max-width: 25%;
 }
 
-.grid-12 > .prefix-3[class*=col-] {
+.grid-12 > .left-3[class*=col-] {
     margin-left: 25%;
 }
 
-.grid-12 > .suffix-3[class*=col-] {
+.grid-12 > .right-3[class*=col-] {
     margin-right: 25%;
 }
 
 .grid-12 > .col-4 {
     flex: 0 0 33.33333%;
+    max-width: 33.33333%;
 }
 
-.grid-12 > .prefix-4[class*=col-] {
+.grid-12 > .left-4[class*=col-] {
     margin-left: 33.33333%;
 }
 
-.grid-12 > .suffix-4[class*=col-] {
+.grid-12 > .right-4[class*=col-] {
     margin-right: 33.33333%;
 }
 
 .grid-12 > .col-5 {
     flex: 0 0 41.66667%;
+    max-width: 41.66667%;
 }
 
-.grid-12 > .prefix-5[class*=col-] {
+.grid-12 > .left-5[class*=col-] {
     margin-left: 41.66667%;
 }
 
-.grid-12 > .suffix-5[class*=col-] {
+.grid-12 > .right-5[class*=col-] {
     margin-right: 41.66667%;
 }
 
 .grid-12 > .col-6 {
     flex: 0 0 50%;
+    max-width: 50%;
 }
 
-.grid-12 > .prefix-6[class*=col-] {
+.grid-12 > .left-6[class*=col-] {
     margin-left: 50%;
 }
 
-.grid-12 > .suffix-6[class*=col-] {
+.grid-12 > .right-6[class*=col-] {
     margin-right: 50%;
 }
 
 .grid-12 > .col-7 {
     flex: 0 0 58.33333%;
+    max-width: 58.33333%;
 }
 
-.grid-12 > .prefix-7[class*=col-] {
+.grid-12 > .left-7[class*=col-] {
     margin-left: 58.33333%;
 }
 
-.grid-12 > .suffix-7[class*=col-] {
+.grid-12 > .right-7[class*=col-] {
     margin-right: 58.33333%;
 }
 
 .grid-12 > .col-8 {
     flex: 0 0 66.66667%;
+    max-width: 66.66667%;
 }
 
-.grid-12 > .prefix-8[class*=col-] {
+.grid-12 > .left-8[class*=col-] {
     margin-left: 66.66667%;
 }
 
-.grid-12 > .suffix-8[class*=col-] {
+.grid-12 > .right-8[class*=col-] {
     margin-right: 66.66667%;
 }
 
 .grid-12 > .col-9 {
     flex: 0 0 75%;
+    max-width: 75%;
 }
 
-.grid-12 > .prefix-9[class*=col-] {
+.grid-12 > .left-9[class*=col-] {
     margin-left: 75%;
 }
 
-.grid-12 > .suffix-9[class*=col-] {
+.grid-12 > .right-9[class*=col-] {
     margin-right: 75%;
 }
 
 .grid-12 > .col-10 {
     flex: 0 0 83.33333%;
+    max-width: 83.33333%;
 }
 
-.grid-12 > .prefix-10[class*=col-] {
+.grid-12 > .left-10[class*=col-] {
     margin-left: 83.33333%;
 }
 
-.grid-12 > .suffix-10[class*=col-] {
+.grid-12 > .right-10[class*=col-] {
     margin-right: 83.33333%;
 }
 
 .grid-12 > .col-11 {
     flex: 0 0 91.66667%;
+    max-width: 91.66667%;
 }
 
-.grid-12 > .prefix-11[class*=col-] {
+.grid-12 > .left-11[class*=col-] {
     margin-left: 91.66667%;
 }
 
-.grid-12 > .suffix-11[class*=col-] {
+.grid-12 > .right-11[class*=col-] {
     margin-right: 91.66667%;
 }
 
 .grid-12 > .col-12 {
     flex: 0 0 100%;
+    max-width: 100%;
 }
 
 /**
@@ -281,15 +291,19 @@
     }
     .grid-12.tablet-1 > [class*=col-] {
         flex: 0 0 100%;
+        max-width: 100%;
     }
     .grid-12.tablet-2 > [class*=col-] {
         flex: 0 0 50%;
+        max-width: 50%;
     }
     .grid-12.tablet-3 > [class*=col-] {
         flex: 0 0 33.33333%;
+        max-width: 33.33333%;
     }
     .grid-12.tablet-4 > [class*=col-] {
         flex: 0 0 25%;
+        max-width: 25%;
     }
 }
 
@@ -300,198 +314,217 @@
     }
     .grid-12.mobile-1 > [class*=col-] {
         flex: 0 0 100%;
+        max-width: 100%;
     }
     .grid-12.mobile-2 > [class*=col-] {
         flex: 0 0 50%;
+        max-width: 50%;
     }
     .grid-12.mobile-3 > [class*=col-] {
         flex: 0 0 33.33333%;
+        max-width: 33.33333%;
     }
 }
 
 /* 設定欄位 [16欄位] */
 .grid-16 > .col-1 {
     flex: 0 0 6.25%;
+    max-width: 6.25%;
 }
 
-.grid-16 > .prefix-1[class*=col-] {
+.grid-16 > .left-1[class*=col-] {
     margin-left: 6.25%;
 }
 
-.grid-16 > .suffix-1[class*=col-] {
+.grid-16 > .right-1[class*=col-] {
     margin-right: 6.25%;
 }
 
 .grid-16 > .col-2 {
     flex: 0 0 12.5%;
+    max-width: 12.5%;
 }
 
-.grid-16 > .prefix-2[class*=col-] {
+.grid-16 > .left-2[class*=col-] {
     margin-left: 12.5%;
 }
 
-.grid-16 > .suffix-2[class*=col-] {
+.grid-16 > .right-2[class*=col-] {
     margin-right: 12.5%;
 }
 
 .grid-16 > .col-3 {
     flex: 0 0 18.75%;
+    max-width: 18.75%;
 }
 
-.grid-16 > .prefix-3[class*=col-] {
+.grid-16 > .left-3[class*=col-] {
     margin-left: 18.75%;
 }
 
-.grid-16 > .suffix-3[class*=col-] {
+.grid-16 > .right-3[class*=col-] {
     margin-right: 18.75%;
 }
 
 .grid-16 > .col-4 {
     flex: 0 0 25%;
+    max-width: 25%;
 }
 
-.grid-16 > .prefix-4[class*=col-] {
+.grid-16 > .left-4[class*=col-] {
     margin-left: 25%;
 }
 
-.grid-16 > .suffix-4[class*=col-] {
+.grid-16 > .right-4[class*=col-] {
     margin-right: 25%;
 }
 
 .grid-16 > .col-5 {
     flex: 0 0 31.25%;
+    max-width: 31.25%;
 }
 
-.grid-16 > .prefix-5[class*=col-] {
+.grid-16 > .left-5[class*=col-] {
     margin-left: 31.25%;
 }
 
-.grid-16 > .suffix-5[class*=col-] {
+.grid-16 > .right-5[class*=col-] {
     margin-right: 31.25%;
 }
 
 .grid-16 > .col-6 {
     flex: 0 0 37.5%;
+    max-width: 37.5%;
 }
 
-.grid-16 > .prefix-6[class*=col-] {
+.grid-16 > .left-6[class*=col-] {
     margin-left: 37.5%;
 }
 
-.grid-16 > .suffix-6[class*=col-] {
+.grid-16 > .right-6[class*=col-] {
     margin-right: 37.5%;
 }
 
 .grid-16 > .col-7 {
     flex: 0 0 43.75%;
+    max-width: 43.75%;
 }
 
-.grid-16 > .prefix-7[class*=col-] {
+.grid-16 > .left-7[class*=col-] {
     margin-left: 43.75%;
 }
 
-.grid-16 > .suffix-7[class*=col-] {
+.grid-16 > .right-7[class*=col-] {
     margin-right: 43.75%;
 }
 
 .grid-16 > .col-8 {
     flex: 0 0 50%;
+    max-width: 50%;
 }
 
-.grid-16 > .prefix-8[class*=col-] {
+.grid-16 > .left-8[class*=col-] {
     margin-left: 50%;
 }
 
-.grid-16 > .suffix-8[class*=col-] {
+.grid-16 > .right-8[class*=col-] {
     margin-right: 50%;
 }
 
 .grid-16 > .col-9 {
     flex: 0 0 56.25%;
+    max-width: 56.25%;
 }
 
-.grid-16 > .prefix-9[class*=col-] {
+.grid-16 > .left-9[class*=col-] {
     margin-left: 56.25%;
 }
 
-.grid-16 > .suffix-9[class*=col-] {
+.grid-16 > .right-9[class*=col-] {
     margin-right: 56.25%;
 }
 
 .grid-16 > .col-10 {
     flex: 0 0 62.5%;
+    max-width: 62.5%;
 }
 
-.grid-16 > .prefix-10[class*=col-] {
+.grid-16 > .left-10[class*=col-] {
     margin-left: 62.5%;
 }
 
-.grid-16 > .suffix-10[class*=col-] {
+.grid-16 > .right-10[class*=col-] {
     margin-right: 62.5%;
 }
 
 .grid-16 > .col-11 {
     flex: 0 0 68.75%;
+    max-width: 68.75%;
 }
 
-.grid-16 > .prefix-11[class*=col-] {
+.grid-16 > .left-11[class*=col-] {
     margin-left: 68.75%;
 }
 
-.grid-16 > .suffix-11[class*=col-] {
+.grid-16 > .right-11[class*=col-] {
     margin-right: 68.75%;
 }
 
 .grid-16 > .col-12 {
     flex: 0 0 75%;
+    max-width: 75%;
 }
 
-.grid-16 > .prefix-12[class*=col-] {
+.grid-16 > .left-12[class*=col-] {
     margin-left: 75%;
 }
 
-.grid-16 > .suffix-12[class*=col-] {
+.grid-16 > .right-12[class*=col-] {
     margin-right: 75%;
 }
 
 .grid-16 > .col-13 {
     flex: 0 0 81.25%;
+    max-width: 81.25%;
 }
 
-.grid-16 > .prefix-13[class*=col-] {
+.grid-16 > .left-13[class*=col-] {
     margin-left: 81.25%;
 }
 
-.grid-16 > .suffix-13[class*=col-] {
+.grid-16 > .right-13[class*=col-] {
     margin-right: 81.25%;
 }
 
 .grid-16 > .col-14 {
     flex: 0 0 87.5%;
+    max-width: 87.5%;
 }
 
-.grid-16 > .prefix-14[class*=col-] {
+.grid-16 > .left-14[class*=col-] {
     margin-left: 87.5%;
 }
 
-.grid-16 > .suffix-14[class*=col-] {
+.grid-16 > .right-14[class*=col-] {
     margin-right: 87.5%;
 }
 
 .grid-16 > .col-15 {
     flex: 0 0 93.75%;
+    max-width: 93.75%;
 }
 
-.grid-16 > .prefix-15[class*=col-] {
+.grid-16 > .left-15[class*=col-] {
     margin-left: 93.75%;
 }
 
-.grid-16 > .suffix-15[class*=col-] {
+.grid-16 > .right-15[class*=col-] {
     margin-right: 93.75%;
 }
 
 .grid-16 > .col-16 {
     flex: 0 0 100%;
+    max-width: 100%;
 }
 
 /**
@@ -507,15 +540,19 @@
     }
     .grid-16.tablet-1 > [class*=col-] {
         flex: 0 0 100%;
+        max-width: 100%;
     }
     .grid-16.tablet-2 > [class*=col-] {
         flex: 0 0 50%;
+        max-width: 50%;
     }
     .grid-16.tablet-3 > [class*=col-] {
         flex: 0 0 33.33333%;
+        max-width: 33.33333%;
     }
     .grid-16.tablet-4 > [class*=col-] {
         flex: 0 0 25%;
+        max-width: 25%;
     }
 }
 
@@ -526,126 +563,139 @@
     }
     .grid-16.mobile-1 > [class*=col-] {
         flex: 0 0 100%;
+        max-width: 100%;
     }
     .grid-16.mobile-2 > [class*=col-] {
         flex: 0 0 50%;
+        max-width: 50%;
     }
     .grid-16.mobile-3 > [class*=col-] {
         flex: 0 0 33.33333%;
+        max-width: 33.33333%;
     }
 }
 
 /* 設定欄位 [10欄位] */
 .grid-10 > .col-1 {
     flex: 0 0 10%;
+    max-width: 10%;
 }
 
-.grid-10 > .prefix-1[class*=col-] {
+.grid-10 > .left-1[class*=col-] {
     margin-left: 10%;
 }
 
-.grid-10 > .suffix-1[class*=col-] {
+.grid-10 > .right-1[class*=col-] {
     margin-right: 10%;
 }
 
 .grid-10 > .col-2 {
     flex: 0 0 20%;
+    max-width: 20%;
 }
 
-.grid-10 > .prefix-2[class*=col-] {
+.grid-10 > .left-2[class*=col-] {
     margin-left: 20%;
 }
 
-.grid-10 > .suffix-2[class*=col-] {
+.grid-10 > .right-2[class*=col-] {
     margin-right: 20%;
 }
 
 .grid-10 > .col-3 {
     flex: 0 0 30%;
+    max-width: 30%;
 }
 
-.grid-10 > .prefix-3[class*=col-] {
+.grid-10 > .left-3[class*=col-] {
     margin-left: 30%;
 }
 
-.grid-10 > .suffix-3[class*=col-] {
+.grid-10 > .right-3[class*=col-] {
     margin-right: 30%;
 }
 
 .grid-10 > .col-4 {
     flex: 0 0 40%;
+    max-width: 40%;
 }
 
-.grid-10 > .prefix-4[class*=col-] {
+.grid-10 > .left-4[class*=col-] {
     margin-left: 40%;
 }
 
-.grid-10 > .suffix-4[class*=col-] {
+.grid-10 > .right-4[class*=col-] {
     margin-right: 40%;
 }
 
 .grid-10 > .col-5 {
     flex: 0 0 50%;
+    max-width: 50%;
 }
 
-.grid-10 > .prefix-5[class*=col-] {
+.grid-10 > .left-5[class*=col-] {
     margin-left: 50%;
 }
 
-.grid-10 > .suffix-5[class*=col-] {
+.grid-10 > .right-5[class*=col-] {
     margin-right: 50%;
 }
 
 .grid-10 > .col-6 {
     flex: 0 0 60%;
+    max-width: 60%;
 }
 
-.grid-10 > .prefix-6[class*=col-] {
+.grid-10 > .left-6[class*=col-] {
     margin-left: 60%;
 }
 
-.grid-10 > .suffix-6[class*=col-] {
+.grid-10 > .right-6[class*=col-] {
     margin-right: 60%;
 }
 
 .grid-10 > .col-7 {
     flex: 0 0 70%;
+    max-width: 70%;
 }
 
-.grid-10 > .prefix-7[class*=col-] {
+.grid-10 > .left-7[class*=col-] {
     margin-left: 70%;
 }
 
-.grid-10 > .suffix-7[class*=col-] {
+.grid-10 > .right-7[class*=col-] {
     margin-right: 70%;
 }
 
 .grid-10 > .col-8 {
     flex: 0 0 80%;
+    max-width: 80%;
 }
 
-.grid-10 > .prefix-8[class*=col-] {
+.grid-10 > .left-8[class*=col-] {
     margin-left: 80%;
 }
 
-.grid-10 > .suffix-8[class*=col-] {
+.grid-10 > .right-8[class*=col-] {
     margin-right: 80%;
 }
 
 .grid-10 > .col-9 {
     flex: 0 0 90%;
+    max-width: 90%;
 }
 
-.grid-10 > .prefix-9[class*=col-] {
+.grid-10 > .left-9[class*=col-] {
     margin-left: 90%;
 }
 
-.grid-10 > .suffix-9[class*=col-] {
+.grid-10 > .right-9[class*=col-] {
     margin-right: 90%;
 }
 
 .grid-10 > .col-10 {
     flex: 0 0 100%;
+    max-width: 100%;
 }
 
 /**
@@ -661,15 +711,19 @@
     }
     .grid-10.tablet-1 > [class*=col-] {
         flex: 0 0 100%;
+        max-width: 100%;
     }
     .grid-10.tablet-2 > [class*=col-] {
         flex: 0 0 50%;
+        max-width: 50%;
     }
     .grid-10.tablet-3 > [class*=col-] {
         flex: 0 0 33.33333%;
+        max-width: 33.33333%;
     }
     .grid-10.tablet-4 > [class*=col-] {
         flex: 0 0 25%;
+        max-width: 25%;
     }
 }
 
@@ -680,12 +734,15 @@
     }
     .grid-10.mobile-1 > [class*=col-] {
         flex: 0 0 100%;
+        max-width: 100%;
     }
     .grid-10.mobile-2 > [class*=col-] {
         flex: 0 0 50%;
+        max-width: 50%;
     }
     .grid-10.mobile-3 > [class*=col-] {
         flex: 0 0 33.33333%;
+        max-width: 33.33333%;
     }
 }
 
@@ -719,21 +776,30 @@
 
 /* 把一行中剩餘的空間都自動填滿 */
 [class*=grid-] > .auto-fill[class*=col-] {
+    margin-left: 0;
+    margin-right: 0;
     flex-grow: 1;
     flex-shrink: 1;
+    max-width: 100%;
 }
 
 @media (max-width: 991px) {
     [class*=grid-] > .fill-tablet[class*=col-] {
+        margin-left: 0;
+        margin-right: 0;
         flex-grow: 1;
         flex-shrink: 1;
+        max-width: 100%;
     }
 }
 
 @media (max-width: 767px) {
     [class*=grid-] > .fill-mobile[class*=col-] {
+        margin-left: 0;
+        margin-right: 0;
         flex-grow: 1;
         flex-shrink: 1;
+        max-width: 100%;
     }
 }
 

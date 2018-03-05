@@ -1,6 +1,6 @@
 {
   "name": "simple-grid-system",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "CSS Flexbox 網格系統 12, 16, 10 格的欄位",
   "main": "./dist/grid-system.css",
   "scripts": {

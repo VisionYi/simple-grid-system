@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Grid System | 網格系統</title>
+    <meta name="generator" content="Simple Grid System | 網格系統">
+    <meta name="author" content="VisionYi">
+    <meta name="description" content="這是以 CSS Flexbox 為基礎所建構而成的網格系統，簡易且直覺的使用方式，讓網頁在設計排版上可以輕鬆快速地完成。">
+    <meta property="og:title" content="Simple Grid System | 網格系統">
+    <meta property="og:site_name" content="Simple Grid System | 網格系統">
+    <meta property="og:url" content="https://visionyi.github.io/simple-grid-system/example/index.html">
+    <meta property="og:description" content="這是以 CSS Flexbox 為基礎所建構而成的網格系統，簡易且直覺的使用方式，讓網頁在設計排版上可以輕鬆快速地完成。">
 
     <link rel="stylesheet" type="text/css" href="../dist/grid-system.min.css">
     <link rel="stylesheet" type="text/css" href="./demo-style.css">
@@ -15,7 +22,7 @@
         <img class="view-github" width="150" height="150" src="./view-on-github.png" alt="view on GitHub">
     </a>
     <h1 class="project">
-        Simple Grid System (v1.2.0)
+        Simple Grid System (v1.2.2)
         <a href="https://github.com/VisionYi/simple-grid-system" title="View on Github">
             <svg class="github-icon" aria-hidden="true" height="30" width="30" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
         </a>
@@ -36,7 +43,7 @@
     </div>
 
     <div class="container">
-        <h2 id="main" class="title">Grid System RWD 網格系統 - 響應式網頁設計: 電腦、平板、手機 3 種螢幕上自動縮放 <a class="top" href="#">🔝</a></h2>
+        <h2 id="main" class="title">Grid System RWD 網格系統 - 響應式網頁設計: 電腦、平板、手機 3 種螢幕上自動縮放 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12 tablet-4 mobile-3">
             <div class="col-2">
                 <div class="computer-only">col-2</div>
@@ -109,12 +116,12 @@
             </div>
         </div>
         <div class="grid-12 mobile-1">
-            <div class="col-8">
-                <div class="tablet-computer-only">col-8</div>
+            <div class="col-7">
+                <div class="tablet-computer-only">col-7</div>
                 <div class="mobile-only">100%</div>
             </div>
-            <div class="col-4">
-                <div class="tablet-computer-only">col-4</div>
+            <div class="col-5">
+                <div class="tablet-computer-only">col-5</div>
                 <div class="mobile-only">100%</div>
             </div>
         </div>
@@ -140,14 +147,14 @@
     &lt;div class="col-4">&lt;/div>
 &lt;/div>
 &lt;div class="grid-12 mobile-1">
-    &lt;div class="col-8">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
+    &lt;div class="col-7">&lt;/div>
+    &lt;div class="col-5">&lt;/div>
 &lt;/div>
 </pre>
     </div>
 
     <div class="container">
-        <h2 id="auto-fill" class="title">Auto-fill, used to fill the remaining space 自動填滿，用於填滿剩餘空間 <a class="top" href="#">🔝</a></h2>
+        <h2 id="auto-fill" class="title">Auto-fill, used to fill the remaining space 自動填滿，用於填滿剩餘空間 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12 tablet-4 mobile-3">
             <div class="col-2">
                 <div class="computer-only">col-2</div>
@@ -180,28 +187,6 @@
                 <div class="mobile-only">33.3%</div>
             </div>
         </div>
-        <div class="grid-12 tablet-3 mobile-2">
-            <div class="col-3">
-                <div class="computer-only">col-3</div>
-                <div class="tablet-only">33.3%</div>
-                <div class="mobile-only">25%</div>
-            </div>
-            <div class="col-3">
-                <div class="computer-only">col-3</div>
-                <div class="tablet-only">33.3%</div>
-                <div class="mobile-only">25%</div>
-            </div>
-            <div class="col-3">
-                <div class="computer-only">col-3</div>
-                <div class="tablet-only">33.3%</div>
-                <div class="mobile-only">25%</div>
-            </div>
-            <div class="col-3 auto-fill">
-                <div class="computer-only">col-3</div>
-                <div class="tablet-only">auto-fill</div>
-                <div class="mobile-only">25%</div>
-            </div>
-        </div>
         <div class="grid-12">
             <div class="col-3">col-3</div>
             <div class="col- auto-fill">col- auto-fill</div>
@@ -227,12 +212,6 @@
     &lt;div class="col-2 auto-fill">&lt;/div>
     &lt;div class="col-2 auto-fill">&lt;/div>
 &lt;/div>
-&lt;div class="grid-12 tablet-3 mobile-2">
-    &lt;div class="col-3">&lt;/div>
-    &lt;div class="col-3">&lt;/div>
-    &lt;div class="col-3">&lt;/div>
-    &lt;div class="col-3 auto-fill">&lt;/div>
-&lt;/div>
 &lt;div class="grid-12">
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col- auto-fill">&lt;/div>
@@ -246,7 +225,7 @@
     </div>
 
     <div class="container">
-        <h2 id="automatic-line-breaks" class="title">Automatic line breaks 自動換行 <a class="top" href="#">🔝</a></h2>
+        <h2 id="automatic-line-breaks" class="title">Automatic line breaks 自動換行 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12">
             <div class="col-2">col-2</div>
             <div class="col-4">col-4</div>
@@ -269,7 +248,7 @@
     </div>
 
     <div class="container">
-        <h2 id="relaxed-spacing" class="title">Relaxed gap (spacing) 加大間格距離 <a class="top" href="#">🔝</a></h2>
+        <h2 id="relaxed-spacing" class="title">Relaxed gap (spacing) 加大間格距離 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12">
             <div class="col-4">col-4</div>
             <div class="col-4">col-4</div>
@@ -318,46 +297,44 @@
     </div>
 
     <div class="container">
-        <h2 id="empty-columns" class="title">Right or left empty columns 左右空(位移)的欄位 <a class="top" href="#">🔝</a></h2>
-        <div class="grid-12">
-            <div class="col-7 suffix-1">col-7 suffix-1</div>
-            <div class="col-4">col-4</div>
-        </div>
+        <h2 id="empty-columns" class="title">Right or left empty columns 左右空(位移)的欄位 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12 mobile-2">
-            <div class="col-3 prefix-2">
-                <div class="tablet-computer-only">col-3 prefix-2</div>
+            <div class="col-4 left-1 right-2">
+                <div class="tablet-computer-only">col-4 left-1 right-2</div>
                 <div class="mobile-only">50%</div>
             </div>
-            <div class="col-3 prefix-2 suffix-2">
-                <div class="tablet-computer-only">col-3 prefix-2 suffix-2</div>
+            <div class="col-4">
+                <div class="tablet-computer-only">col-4</div>
                 <div class="mobile-only">50%</div>
             </div>
-            <div class="col-4 prefix-1">
-                <div class="tablet-computer-only">col-4 prefix-1</div>
-                <div class="mobile-only">50%</div>
+        </div>
+        <div class="grid-12 mobile-1">
+            <div class="col-6 right-1 fill-tablet">
+                <div class="computer-only">col-6 right-1</div>
+                <div class="tablet-only">fill-tablet (col-7)</div>
+                <div class="mobile-only">100%</div>
             </div>
-            <div class="col-4 prefix-2 suffix-1">
-                <div class="tablet-computer-only">col-4 prefix-2 suffix-1</div>
-                <div class="mobile-only">50%</div>
+            <div class="col-4 left-1 fill-tablet">
+                <div class="computer-only">col-4 left-1</div>
+                <div class="tablet-only">fill-tablet (col-5)</div>
+                <div class="mobile-only">100%</div>
             </div>
         </div>
         <h2>Source Code</h2>
 <pre>
-&lt;div class="grid-12">
-    &lt;div class="col-8 suffix-1">&lt;/div>
-    &lt;div class="col-3">&lt;/div>
-&lt;/div>
 &lt;div class="grid-12 mobile-2">
-    &lt;div class="col-3 prefix-2">&lt;/div>
-    &lt;div class="col-3 prefix-2 suffix-2">&lt;/div>
-    &lt;div class="col-4 prefix-1">&lt;/div>
-    &lt;div class="col-4 prefix-2 suffix-1">&lt;/div>
+    &lt;div class="col-4 left-1 right-2">&lt;/div>
+    &lt;div class="col-4">&lt;/div>
+&lt;/div>
+&lt;div class="grid-12 mobile-1">
+    &lt;div class="col-6 right-1 fill-tablet">&lt;/div>
+    &lt;div class="col-4 left-1 fill-tablet">&lt;/div>
 &lt;/div>
 </pre>
     </div>
 
     <div class="container">
-        <h2 id="distribution" class="title">Distribution, Put together 分配、集中 <a class="top" href="#">🔝</a></h2>
+        <h2 id="distribution" class="title">Distribution, Put together 分配、集中 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12 start mobile-3">
             <div class="col-3">
                 <div class="tablet-computer-only">col-3 <span class="gray">(start)</span></div>
@@ -459,7 +436,7 @@
     </div>
 
     <div class="container">
-        <h2 id="column-breaks" class="title">Column breaks, directly break to a new line 中斷欄位，直接跳到新的一行 <a class="top" href="#">🔝</a></h2>
+        <h2 id="column-breaks" class="title">Column breaks, directly break to a new line 中斷欄位，直接跳到新的一行 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12 center mobile-2">
             <div class="col-6 fill-mobile">
                 <div class="tablet-computer-only">col-6 <span class="gray">(center)</span></div>
@@ -499,7 +476,7 @@
     </div>
 
     <div class="container">
-        <h2 id="varied-responsive-design" class="title">Varied responsive design, Nesting columns 多變化的響應式設計、巢狀疊層 <a class="top" href="#">🔝</a></h2>
+        <h2 id="varied-responsive-design" class="title">Varied responsive design, Nesting columns 多變化的響應式設計、巢狀疊層 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12 tablet-3 mobile-2">
             <div class="col-3">
                 <div class="computer-only">col-3</div>
@@ -524,22 +501,22 @@
                     <div class="col-6">
                         <div class="computer-only">col-9 -> col-6</div>
                         <div class="tablet-only">col-9 -> 100%</div>
-                        <div class="mobile-only">100%</div>
+                        <div class="mobile-only">100% -> 100%</div>
                     </div>
                     <div class="col-6">
                         <div class="computer-only">col-9 -> col-6</div>
                         <div class="tablet-only">col-9 -> 100%</div>
-                        <div class="mobile-only">100%</div>
+                        <div class="mobile-only">100% -> 100%</div>
                     </div>
                     <div class="col-6">
                         <div class="computer-only">col-9 -> col-6</div>
                         <div class="tablet-only">col-9 -> 100%</div>
-                        <div class="mobile-only">100%</div>
+                        <div class="mobile-only">100% -> 100%</div>
                     </div>
                     <div class="col-6">
                         <div class="computer-only">col-9 -> col-6</div>
                         <div class="tablet-only">col-9 -> 100%</div>
-                        <div class="mobile-only">100%</div>
+                        <div class="mobile-only">100% -> 100%</div>
                     </div>
                 </div>
             </div>
@@ -567,39 +544,99 @@
     </div>
 
     <div class="container">
-        <h2 id="other-column-grid" class="title">12 column, 16 column, 10 column grid system 擁有 12、16、10 欄位的網格系統 <a class="top" href="#">🔝</a></h2>
-        <div class="grid-12">
-            <div class="col-4">col-4 <span class="gray">(grid-12)</span></div>
-            <div class="col-4">col-4 <span class="gray">(grid-12)</span></div>
-            <div class="col-4">col-4 <span class="gray">(grid-12)</span></div>
+        <h2 id="other-column-grid" class="title">12 column, 16 column, 10 column grid system 擁有 12、16、10 欄位的網格系統 <a class="top" href="#" title="Top">🔝</a></h2>
+        <div class="grid-12 tablet-2 mobile-1">
+            <div class="col-4">
+                <span class="computer-only">col-4</span>
+                <span class="tablet-only">50%</span>
+                <span class="mobile-only">100%</span>
+                <span class="gray">(grid-12)</span>
+            </div>
+            <div class="col-4">
+                <span class="computer-only">col-4</span>
+                <span class="tablet-only">50%</span>
+                <span class="mobile-only">100%</span>
+                <span class="gray">(grid-12)</span>
+            </div>
+            <div class="col-4">
+                <span class="computer-only">col-4</span>
+                <span class="tablet-only">50%</span>
+                <span class="mobile-only">100%</span>
+                <span class="gray">(grid-12)</span>
+            </div>
         </div>
-        <div class="grid-16">
-            <div class="col-4">col-4 <span class="gray">(grid-16)</span></div>
-            <div class="col-4">col-4 <span class="gray">(grid-16)</span></div>
-            <div class="col-4">col-4 <span class="gray">(grid-16)</span></div>
-            <div class="col-4">col-4 <span class="gray">(grid-16)</span></div>
+        <div class="grid-16 tablet-3 mobile-2">
+            <div class="col-4">
+                <span class="computer-only">col-4</span>
+                <span class="tablet-only">33.33%</span>
+                <span class="mobile-only">50%</span>
+                <span class="gray">(grid-16)</span>
+            </div>
+            <div class="col-4">
+                <span class="computer-only">col-4</span>
+                <span class="tablet-only">33.33%</span>
+                <span class="mobile-only">50%</span>
+                <span class="gray">(grid-16)</span>
+            </div>
+            <div class="col-4">
+                <span class="computer-only">col-4</span>
+                <span class="tablet-only">33.33%</span>
+                <span class="mobile-only">50%</span>
+                <span class="gray">(grid-16)</span>
+            </div>
+            <div class="col-4">
+                <span class="computer-only">col-4</span>
+                <span class="tablet-only">33.33%</span>
+                <span class="mobile-only">50%</span>
+                <span class="gray">(grid-16)</span>
+            </div>
         </div>
-        <div class="grid-10">
-            <div class="col-2">col-2 <span class="gray">(grid-10)</span></div>
-            <div class="col-2">col-2 <span class="gray">(grid-10)</span></div>
-            <div class="col-2">col-2 <span class="gray">(grid-10)</span></div>
-            <div class="col-2">col-2 <span class="gray">(grid-10)</span></div>
-            <div class="col-2">col-2 <span class="gray">(grid-10)</span></div>
+        <div class="grid-10 tablet-4 mobile-3">
+            <div class="col-2">
+                <span class="computer-only">col-2</span>
+                <span class="tablet-only">25%</span>
+                <span class="mobile-only">33.33%</span>
+                <span class="gray">(grid-10)</span>
+            </div>
+            <div class="col-2">
+                <span class="computer-only">col-2</span>
+                <span class="tablet-only">25%</span>
+                <span class="mobile-only">33.33%</span>
+                <span class="gray">(grid-10)</span>
+            </div>
+            <div class="col-2">
+                <span class="computer-only">col-2</span>
+                <span class="tablet-only">25%</span>
+                <span class="mobile-only">33.33%</span>
+                <span class="gray">(grid-10)</span>
+            </div>
+            <div class="col-2">
+                <span class="computer-only">col-2</span>
+                <span class="tablet-only">25%</span>
+                <span class="mobile-only">33.33%</span>
+                <span class="gray">(grid-10)</span>
+            </div>
+            <div class="col-2">
+                <span class="computer-only">col-2</span>
+                <span class="tablet-only">25%</span>
+                <span class="mobile-only">33.33%</span>
+                <span class="gray">(grid-10)</span>
+            </div>
         </div>
         <h2>Source Code</h2>
 <pre>
-&lt;div class="grid-12">
+&lt;div class="grid-12 tablet-2 mobile-1">
     &lt;div class="col-4">&lt;/div>
     &lt;div class="col-4">&lt;/div>
     &lt;div class="col-4">&lt;/div>
 &lt;/div>
-&lt;div class="grid-16">
+&lt;div class="grid-16 tablet-3 mobile-2">
     &lt;div class="col-4">&lt;/div>
     &lt;div class="col-4">&lt;/div>
     &lt;div class="col-4">&lt;/div>
     &lt;div class="col-4">&lt;/div>
 &lt;/div>
-&lt;div class="grid-10">
+&lt;div class="grid-10 tablet-4 mobile-3">
     &lt;div class="col-2">&lt;/div>
     &lt;div class="col-2">&lt;/div>
     &lt;div class="col-2">&lt;/div>

@@ -1,5 +1,6 @@
 # gulp plugin & library
 node_modules/
+.vscode/
 
 # test file
 example/test
