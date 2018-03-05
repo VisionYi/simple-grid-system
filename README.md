@@ -1,6 +1,6 @@
 # Simple Grid System
 
-這是以 CSS Flexbox 為基礎所建構而成的網格系統，簡易且直覺的使用方式，讓網頁在設計排版上可以輕鬆快速地完成。[View on demo page](https://visionyi.github.io/simple-grid-system/example/)
+這是以 CSS Flexbox 為基礎所建構而成的網格系統，簡易且直覺的使用方式，讓網頁在設計排版上可以輕鬆快速地完成。
 
 如果你覺得現今流行的 CSS 框架中的網格設計，在使用上必須加入過多的樣式名稱是很麻煩的事，或是不想為每一個欄位都去思考排版方式，那你就應該要來試試這款 Simple Grid System。
 
