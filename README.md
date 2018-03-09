@@ -23,7 +23,7 @@
 | v11.0+ ✔ | v29.0+ ✔ | v22.0+ ✔ | v12.1+ ✔ | v9.0+ ✔ | v1.1+ ✔ | v4.4+ ✔ |
 
 ## Usage
-直接使用 `dist` 資料夾裡的 `grid-system.min.css` 這個是已被壓縮最小化的檔案，此版本有使用 [Autolefter](https://github.com/postcss/autolefter) 加入 CSS leftes，可以支援更多瀏覽器的使用。
+直接使用 `dist` 資料夾裡的 `grid-system.min.css` 這個已被壓縮最小化的檔案，此版本有使用 [Autoprefixer](https://github.com/postcss/autoprefixer) 加入 CSS prefixes，可以支援更多瀏覽器的使用。
 
 ### Include the CSS file in your page
 ```html
@@ -172,7 +172,7 @@
 ### v1.2.0 (2018.02.20)
 - 改善內容 :
     - `container` 樣式，更新為類似 CSS Bootstrap v4.x 的板本
-    - `col-*` 樣式，不依靠 CSS `width: **%` 變化欄位，改使用 `flex: 0 0 **%` 更符合 flexbox 性質
+    - `col-*` 樣式，不依靠 CSS `width: **%` 變化欄位，改使用 `flex: 0 0 **%` 更符合 CSS Flex 的性質
     - `auto-fill` 樣式，單獨使用 CSS `flex-grow`、`flex-shrink`，能夠向下相容 `col-*` 樣式
 - 新增功能 :
     - `fill-tablet`、`fill-mobile` 樣式，此兩種為 `auto-fill` 的響應式設計版本
