@@ -23,18 +23,11 @@ function getHeader() {
     return header(template, {pkg: pkg});
 }
 
-gulp.task('sass', () =>
+gulp.task('build', () =>
     gulp.src(`./src/${FILE_NAME}.scss`)
-        .pipe(sass({outputStyle: 'expanded', indentWidth:4}).on('error', sass.logError))
+        .pipe(sass({outputStyle: 'expanded', indentWidth: 4}).on('error', sass.logError))
+        .pipe(gulp.dest('./example'))
         .pipe(gulp.dest('./dist'))
-);
-
-gulp.task('sass:watch', () => {
-    gulp.watch('./src/*.scss', ['sass']);
-});
-
-gulp.task('build', ['sass'], () =>
-    gulp.src(`./dist/${FILE_NAME}.css`)
         .pipe(autoPrefix())
         .pipe(cleanCss())
         .pipe(getHeader())
@@ -51,11 +44,8 @@ gulp.task('demo-example', () => {
     gulp.watch('./example/**').on('change', browserSync.reload);
 });
 
-/**
- * 使用此功能前，請先手動把 example/index.html 中引入的 grid-system.min.css 換成 grid-system.css
- * 正式發布在 Github 時再換回來
- */
-gulp.task('start', ['sass', 'demo-example'], () => {
+
+gulp.task('start', ['build', 'demo-example'], () => {
     // 修改 scss 檔案也會自動重新載入頁面
-    gulp.watch('./src/*.scss', ['sass']).on('change', browserSync.reload);
+    gulp.watch('./src/*.scss', ['build']).on('change', browserSync.reload);
 });

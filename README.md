@@ -153,7 +153,7 @@
     - 可加在網格 (grid) 的外面一層上
     - 如果外面這一層有使用背景屬性的 div 元素時，底部會產生多餘的背景，此樣式名稱能修補此 Bug
 
-\# 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example/)
+\# 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system)
 
 ## Update
 ### v1.2.2 (2018.03.05)
