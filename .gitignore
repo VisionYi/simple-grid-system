@@ -1,6 +1,3 @@
 # gulp plugin & library
 node_modules/
 .vscode/
-
-# demo file
-example/

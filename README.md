@@ -4,6 +4,8 @@
 
 如果你覺得現今流行的 CSS 框架中的網格設計，在使用上必須加入過多的樣式名稱是很麻煩的事，或是不想為每一個欄位都去思考排版方式，那你就應該要來試試這款 Simple Grid System。
 
+\# [View on demo page](https://visionyi.github.io/simple-grid-system/example)
+
 ## Features
 - 擁有 12、16、10 格欄位的網格系統
 - 只需要兩層 class 的樣式名稱就能使用 : `grid-*` + `col-*`
@@ -153,7 +155,7 @@
     - 可加在網格 (grid) 的外面一層上
     - 如果外面這一層有使用背景屬性的 div 元素時，底部會產生多餘的背景，此樣式名稱能修補此 Bug
 
-\# 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system)
+\# 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example)
 
 ## Update
 ### v1.2.2 (2018.03.05)

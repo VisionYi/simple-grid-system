@@ -8,6 +8,9 @@ var sass = require('gulp-sass');
 
 const FILE_NAME = 'grid-system';
 
+/**
+ * 讓發佈的主檔案加上 作者、版本、license 資訊
+ */
 function getHeader() {
     var pkg = require('./package.json');
     var template = [
@@ -35,17 +38,14 @@ gulp.task('build', () =>
         .pipe(gulp.dest('./dist'))
 );
 
-gulp.task('demo-example', () => {
+gulp.task('start', ['build'], () => {
+    // demo example
     browserSync.init({
         server: './',
         startPath: './example/index.html'
     });
-
     gulp.watch('./example/**').on('change', browserSync.reload);
-});
 
-
-gulp.task('start', ['build', 'demo-example'], () => {
     // 修改 scss 檔案也會自動重新載入頁面
     gulp.watch('./src/*.scss', ['build']).on('change', browserSync.reload);
 });
