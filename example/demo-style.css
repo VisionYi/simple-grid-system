@@ -2,7 +2,7 @@ body {
     background-color: #fff;
     color: #000;
     font-family: "Open Sans", "Microsoft JhengHei", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
 }
@@ -12,40 +12,57 @@ body {
     padding-bottom: 40px;
 }
 
-[class*=grid-] + [class*=grid-] {
-    margin-top: 35px;
+[class^=grid] {
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
 }
 
-[class*=grid-] > [class*=col-] {
+[class^=grid] + [class^=grid] {
+    margin-top: 20px;
+}
+
+[class^=col] {
     background-color: #42cafd;
     color: #333;
-    line-height: 50px;
+    line-height: 3.2;
     text-align: center;
 }
 
-[class*=grid-] [class*=grid-] > [class*=col-] {
-    background-color: #3599c3;
+[class^=col][class$=only] {
+    background-color: #FDEB42;
 }
 
-[class*=grid-] > [class*=col-][class$="only"] {
-    background-color: yellow;
+[class^=col] [class^=grid] > [class^=col] {
+    background-color: #029DD7;
+}
+
+[class^=col] [class^=col] [class^=grid] > [class^=col] {
+    background-color: #0278A4;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
 }
 
 a {
     text-decoration: none;
-    font-size: 15px;
-}
-
-h2 {
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 pre {
     margin: 0;
     padding: 15px;
     overflow: auto;
-    font-size: 85%;
-    line-height: 1.45;
+    font-size: 0.8rem;
+    line-height: 1.5;
     background-color: #f7f7f7;
     border: 1px solid #ccd5ff;
     border-radius: 3px;
@@ -54,19 +71,17 @@ pre {
 
 .project {
     color: #4685b9;
-    font-size: 35px;
     text-align: center;
 }
 
 .list {
-    padding-left: 10px;
+    padding-left: 15px;
     margin-bottom: 0;
-    line-height: 25px;
+    line-height: 1.8;
 }
 
 .title {
     color: #4685b9;
-    font-size: 22px;
 }
 
 .view-github {
@@ -82,7 +97,7 @@ pre {
 }
 
 .top {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .gray {

@@ -1,0 +1,228 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+/* 容器: 基本上跟 bootstrap v4.x 的作法是一樣的構造 */
+.container,
+.container-fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.container {
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+/* 區塊的顯示與隱藏 */
+.tablet-mobile-only,
+.mobile-tablet-only,
+.mobile-only,
+.tablet-only {
+  @include respond-to('desktop') {
+    display: none !important;
+  }
+}
+
+.desktop-mobile-only,
+.mobile-desktop-only,
+.mobile-only,
+.desktop-only {
+  @include respond-to('tablet') {
+    display: none !important;
+  }
+}
+
+.desktop-tablet-only,
+.tablet-desktop-only,
+.tablet-only,
+.desktop-only {
+  @include respond-to('mobile') {
+    display: none !important;
+  }
+}
+
+/**
+ * 設定基礎的網格系統
+ * 每個欄位的間距都固定為 #{$col-gap}
+ * 每行上下的間距都固定為 #{$row-gap}
+ */
+%grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: -($row-gap);
+  margin-left: -($col-gap / 2);
+  margin-right: -($col-gap / 2);
+}
+
+%col {
+  display: block;
+  position: relative;
+  padding-bottom: $row-gap;
+  padding-left: $col-gap / 2;
+  padding-right: $col-gap / 2;
+  background-clip: content-box;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@each $columns in $grid-columns {
+
+  // 設定網格的基礎屬性內容
+  .grid,
+  .grid-#{$columns} {
+    @extend %grid;
+  }
+
+  @for $i from 1 through $columns {
+
+    // 設定欄位的基礎屬性內容  (取最大的網格欄位數)
+    @if($columns == $grid-max-columns) {
+      .col,
+      .col-#{$i} {
+        @extend %col;
+      }
+    }
+
+    // 設定每個欄位的比例
+    .grid-#{$columns} > .col-#{$i} {
+      flex: 0 0 percentage($i / $columns);
+      max-width: percentage($i / $columns);
+    }
+
+    // 設定推移欄位，製造空欄位
+    @if $i < $columns {
+      .grid-#{$columns} > .offset-#{$i} {
+        margin-left: percentage($i / $columns);
+      }
+    }
+  }
+}
+
+/**
+ * 當頁面螢幕大小進入 #{map-keys($responsive-max-col)} 時觸發
+ * 1. 欄位設計: 每個欄位都會改成等寬的比例
+ * 2. 把所有的推移的欄位 (空欄位) 都消除
+ */
+@include make-responsive-all();
+
+/* fill 自動填滿系列 */
+@include make-fill-all();
+
+/* first, last 排序系列 */
+@include make-order-all();
+
+/* 去除 所有的間距 */
+.no-gap {
+  margin: 0;
+
+  > .col,
+  > [class*=col-] {
+    padding: 0;
+  }
+}
+
+/* 去除 行與行之間的間距 */
+.no-gap-row {
+  margin-bottom: 0;
+
+  > .col,
+  > [class*=col-] {
+    padding-bottom: 0;
+  }
+}
+
+/* 去除 欄與欄之間的間距 */
+.no-gap-col {
+  margin-left: 0;
+  margin-right: 0;
+
+  > .col,
+  > [class*=col-] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/**
+ * 對齊功能 (分配與集中)
+ * center: 將所有欄位集中於中間
+ * right: 將所有欄位集中於右側
+ * space-around: 將所有欄位平均分配於一行中
+ * space-between: 將所有欄位散開分配於一行中
+ * top:
+ * middle:
+ * bottom:
+ */
+.align-center {
+  justify-content: center;
+}
+
+.align-right{
+  justify-content: flex-end;
+}
+
+.align-space-around {
+  justify-content: space-around;
+}
+
+.align-space-between {
+  justify-content: space-between;
+}
+
+.align-top {
+  align-items: flex-start;
+  align-content: flex-start;
+  height: calc(100% + #{$row-gap});
+}
+
+.align-middle {
+  align-items: center;
+  align-content: center;
+  height: calc(100% + #{$row-gap});
+}
+
+.align-bottom {
+  align-items: flex-end;
+  align-content: flex-end;
+  height: calc(100% + #{$row-gap});
+}
+
+/* 填滿一整行，用來強制中斷欄位跳到新的一行 */
+.w-100 {
+  width: 100%;
+}
+
+/**
+ * 如果 .grid 外面再包一層有使用背景屬性的 div 元素時，底部會產生多餘的背景
+ * 此類別屬性能修補此 Bug，請加在外面那一層的 div 元素上
+ */
+.fix-extra-bottom::after {
+  content: '';
+  display: table;
+}

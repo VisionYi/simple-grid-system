@@ -1,0 +1,71 @@
+// Mixin to manage responsive breakpoint areas
+@mixin respond-to($point-key, $areas: $breakpoint-areas) {
+  @if map-has-key($areas, $point-key) {
+    @media #{map-get($areas, $point-key)} {
+      @content;
+    }
+  }
+  @else {
+    @warn "#{$point-key} doesn't exist in the map.";
+  }
+}
+
+// 響應式設計，在特定的螢幕大小時，會產生的最大欄位數
+@mixin make-responsive-all() {
+  @each $point-key in map-keys($responsive-max-col) {
+    // 全部包進 media query 裡
+    @include respond-to($point-key) {
+      @for $i from 1 through map-get($responsive-max-col, $point-key) {
+        .#{$point-key}-#{$i} > .col,
+        .#{$point-key}-#{$i} > [class*=col-] {
+          margin-left: 0;
+          max-width: 100% / $i;
+          flex: 1 1 (100% / $i);
+        }
+      }
+    }
+  }
+}
+
+
+// fill 系列的 class 內容
+@mixin fill-content($class-name, $columns: $grid-max-columns) {
+  .#{$class-name} > .col,
+  .#{$class-name} > [class*=col-] {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  @for $i from 1 through $columns {
+    .#{$class-name} > .col-#{$i} {
+      flex-grow: $i;
+      flex-shrink: $i;
+    }
+  }
+}
+
+@mixin make-fill-all() {
+  @each $class-name, $point-key in $fill-on-breakpoint {
+    @if ($point-key == 'none') {
+      @include fill-content($class-name);
+    }
+    @else {
+      @include respond-to($point-key) {
+        @include fill-content($class-name);
+      }
+    }
+  }
+}
+
+@mixin make-order-all() {
+  @each $name, $point-key in $order-on-breakpoint {
+    @include respond-to($point-key) {
+      .#{$name}-first {
+        order: -1;
+      }
+      .#{$name}-last {
+        order: 1;
+      }
+    }
+  }
+}

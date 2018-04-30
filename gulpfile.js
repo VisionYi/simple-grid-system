@@ -1,10 +1,11 @@
 var gulp = require('gulp');
-var cleanCss = require('gulp-clean-css');
+var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
-var autoPrefix = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var sass = require('gulp-sass');
+var postCSS = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var browserSync = require('browser-sync').create();
 
 const FILE_NAME = 'grid-system';
 
@@ -26,23 +27,26 @@ function getHeader() {
     return header(template, {pkg: pkg});
 }
 
+/**
+ * sass 預處理 + 自動加 CSS prefix + 壓縮最小化 + 加上註解標頭 + 改名稱.min
+ */
 gulp.task('build', () =>
     gulp.src(`./src/${FILE_NAME}.scss`)
-        .pipe(sass({outputStyle: 'expanded', indentWidth: 4}).on('error', sass.logError))
+        .pipe(sass({outputStyle: 'expanded', indentWidth: 2}).on('error', sass.logError))
         .pipe(gulp.dest('./example'))
+        .pipe(postCSS([ autoprefixer() ]))
         .pipe(gulp.dest('./dist'))
-        .pipe(autoPrefix())
-        .pipe(cleanCss())
+        .pipe(cleanCSS())
         .pipe(getHeader())
         .pipe(rename(`${FILE_NAME}.min.css`))
         .pipe(gulp.dest('./dist'))
 );
 
 gulp.task('start', ['build'], () => {
-    // demo example
+    /* demo example */
     browserSync.init({
         server: './',
-        startPath: './example/index.html'
+        startPath: 'example/index.html'
     });
     gulp.watch('./example/**').on('change', browserSync.reload);
 

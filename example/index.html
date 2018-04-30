@@ -22,7 +22,7 @@
         <img class="view-github" width="150" height="150" src="./view-on-github.png" alt="view on GitHub">
     </a>
     <h1 class="project">
-        Simple Grid System (v1.2.2)
+        Simple Grid System (v1.3.0)
         <a href="https://github.com/VisionYi/simple-grid-system" title="View on Github">
             <svg class="github-icon" aria-hidden="true" height="30" width="30" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
         </a>
@@ -33,7 +33,6 @@
             <li><a href="#main">Grid System RWD 網格系統 - 響應式網頁設計</a></li>
             <li><a href="#auto-fill">Auto-fill, used to fill the remaining space 自動填滿，用於填滿剩餘空間</a></li>
             <li><a href="#automatic-line-breaks">Automatic line breaks 自動換行</a></li>
-            <li><a href="#relaxed-spacing">Relaxed gap (spacing) 加大間格距離</a></li>
             <li><a href="#empty-columns">Right or left empty columns 左右空(位移)的欄位</a></li>
             <li><a href="#distribution">Distribution, Put together 分配、集中</a></li>
             <li><a href="#column-breaks">Column breaks, directly break to a new line 中斷欄位，直接跳到新的一行</a></li>
@@ -43,89 +42,89 @@
     </div>
 
     <div class="container">
-        <h2 id="main" class="title">Grid System RWD 網格系統 - 響應式網頁設計: 電腦、平板、手機 3 種螢幕上自動縮放 <a class="top" href="#" title="Top">🔝</a></h2>
+        <h2 id="main" class="title">Grid System RWD 網格系統 - 響應式網頁設計: 桌面、平板、手機 3 種螢幕上自動縮放 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12 tablet-4 mobile-3">
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
         </div>
         <div class="grid-12 tablet-3 mobile-2">
             <div class="col-3">
-                <div class="computer-only">col-3</div>
+                <div class="desktop-only">col-3</div>
                 <div class="tablet-only">33.3%</div>
                 <div class="mobile-only">25%</div>
             </div>
             <div class="col-3">
-                <div class="computer-only">col-3</div>
+                <div class="desktop-only">col-3</div>
                 <div class="tablet-only">33.3%</div>
                 <div class="mobile-only">25%</div>
             </div>
             <div class="col-3">
-                <div class="computer-only">col-3</div>
+                <div class="desktop-only">col-3</div>
                 <div class="tablet-only">33.3%</div>
                 <div class="mobile-only">25%</div>
             </div>
             <div class="col-3">
-                <div class="computer-only">col-3</div>
+                <div class="desktop-only">col-3</div>
                 <div class="tablet-only">33.3%</div>
                 <div class="mobile-only">25%</div>
             </div>
         </div>
         <div class="grid-12 tablet-2 mobile-1">
             <div class="col-4">
-                <div class="computer-only">col-4</div>
+                <div class="desktop-only">col-4</div>
                 <div class="tablet-only">50%</div>
                 <div class="mobile-only">100%</div>
             </div>
             <div class="col-4">
-                <div class="computer-only">col-4</div>
+                <div class="desktop-only">col-4</div>
                 <div class="tablet-only">50%</div>
                 <div class="mobile-only">100%</div>
             </div>
             <div class="col-4">
-                <div class="computer-only">col-4</div>
+                <div class="desktop-only">col-4</div>
                 <div class="tablet-only">50%</div>
                 <div class="mobile-only">100%</div>
             </div>
         </div>
         <div class="grid-12 mobile-1">
             <div class="col-7">
-                <div class="tablet-computer-only">col-7</div>
+                <div class="tablet-desktop-only">col-7</div>
                 <div class="mobile-only">100%</div>
             </div>
             <div class="col-5">
-                <div class="tablet-computer-only">col-5</div>
+                <div class="tablet-desktop-only">col-5</div>
                 <div class="mobile-only">100%</div>
             </div>
         </div>
-        <h2>Source Code</h2>
+        <h3>Source Code</h3>
 <pre>
 &lt;div class="grid-12 tablet-4 mobile-3">
     &lt;div class="col-2">&lt;/div>
@@ -155,71 +154,63 @@
 
     <div class="container">
         <h2 id="auto-fill" class="title">Auto-fill, used to fill the remaining space 自動填滿，用於填滿剩餘空間 <a class="top" href="#" title="Top">🔝</a></h2>
-        <div class="grid-12 tablet-4 mobile-3">
+        <div class="grid-12 tablet-4 mobile-3 filled">
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-2">
-                <div class="computer-only">col-2</div>
+                <div class="desktop-only">col-2</div>
                 <div class="tablet-only">25%</div>
                 <div class="mobile-only">33.3%</div>
             </div>
-            <div class="col-2 auto-fill">
-                <div class="computer-only">col-2</div>
-                <div class="tablet-only">auto-fill</div>
+            <div class="col-2">
+                <div class="desktop-only">col-2</div>
+                <div class="tablet-only">filled</div>
                 <div class="mobile-only">33.3%</div>
             </div>
-            <div class="col-2 auto-fill">
-                <div class="computer-only">col-2</div>
-                <div class="tablet-only">auto-fill</div>
+            <div class="col-2">
+                <div class="desktop-only">col-2</div>
+                <div class="tablet-only">filled</div>
                 <div class="mobile-only">33.3%</div>
             </div>
         </div>
-        <div class="grid-12">
+        <!-- <div class="grid-12">
             <div class="col-3">col-3</div>
-            <div class="col- auto-fill">col- auto-fill</div>
-        </div>
-        <div class="grid-12">
-            <div class="col-3">col-3</div>
-            <div class="col-3 fill-mobile">
-                <div class="computer-tablet-only">col-3</div>
-                <div class="mobile-only">fill-mobile</div>
+            <div class="col-3">
+                <div class="desktop-tablet-only">col-3</div>
+                <div class="mobile-only">filled</div>
             </div>
-            <div class="col-3 fill-tablet">
-                <div class="computer-only">col-3</div>
-                <div class="tablet-mobile-only">fill-tablet</div>
+            <div class="col-3">
+                <div class="desktop-only">col-3</div>
+                <div class="tablet-mobile-only">filled</div>
             </div>
-        </div>
-        <h2>Source Code</h2>
+        </div> -->
+        <h3>Source Code</h3>
 <pre>
-&lt;div class="grid-12 tablet-4 mobile-3">
+&lt;div class="grid-12 tablet-4 mobile-3 filled">
     &lt;div class="col-2">&lt;/div>
     &lt;div class="col-2">&lt;/div>
     &lt;div class="col-2">&lt;/div>
     &lt;div class="col-2">&lt;/div>
-    &lt;div class="col-2 auto-fill">&lt;/div>
-    &lt;div class="col-2 auto-fill">&lt;/div>
+    &lt;div class="col-2">&lt;/div>
+    &lt;div class="col-2">&lt;/div>
 &lt;/div>
-&lt;div class="grid-12">
+&lt;div class="grid-12 mobile-filled tablet-filled">
     &lt;div class="col-3">&lt;/div>
-    &lt;div class="col- auto-fill">&lt;/div>
-&lt;/div>
-&lt;div class="grid-12">
     &lt;div class="col-3">&lt;/div>
-    &lt;div class="col-3 fill-mobile">&lt;/div>
-    &lt;div class="col-3 fill-tablet">&lt;/div>
+    &lt;div class="col-3">&lt;/div>
 &lt;/div>
 </pre>
     </div>
@@ -234,7 +225,7 @@
             <div class="col-6">col-6</div>
             <div class="col-2">col-2</div>
         </div>
-        <h2>Source Code</h2>
+        <h3>Source Code</h3>
 <pre>
 &lt;div class="grid-12">
     &lt;div class="col-2">&lt;/div>
@@ -248,186 +239,137 @@
     </div>
 
     <div class="container">
-        <h2 id="relaxed-spacing" class="title">Relaxed gap (spacing) 加大間格距離 <a class="top" href="#" title="Top">🔝</a></h2>
-        <div class="grid-12">
-            <div class="col-4">col-4</div>
-            <div class="col-4">col-4</div>
-            <div class="col-4">col-4</div>
-        </div>
-        <div class="grid-12 relaxed equal-gap">
-            <div class="col-4">col-4 <span class="gray">(relaxed equal-gap)</span></div>
-            <div class="col-4">col-4 <span class="gray">(relaxed equal-gap)</span></div>
-            <div class="col-4">col-4 <span class="gray">(relaxed equal-gap)</span></div>
-            <div class="col-4">col-4 <span class="gray">(relaxed equal-gap)</span></div>
-            <div class="col-4">col-4 <span class="gray">(relaxed equal-gap)</span></div>
-            <div class="col-4">col-4 <span class="gray">(relaxed equal-gap)</span></div>
-        </div>
-        <div class="grid-12 more-relaxed">
-            <div class="col-4">col-4 <span class="gray">(more-relaxed)</span></div>
-            <div class="col-4">col-4 <span class="gray">(more-relaxed)</span></div>
-            <div class="col-4">col-4 <span class="gray">(more-relaxed)</span></div>
-            <div class="col-4">col-4 <span class="gray">(more-relaxed)</span></div>
-            <div class="col-4">col-4 <span class="gray">(more-relaxed)</span></div>
-            <div class="col-4">col-4 <span class="gray">(more-relaxed)</span></div>
-        </div>
-        <h2>Source Code</h2>
-<pre>
-&lt;div class="grid-12">
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-&lt;/div>
-&lt;div class="grid-12 relaxed equal-gap">
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-&lt;/div>
-&lt;div class="grid-12 more-relaxed">
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
-&lt;/div>
-</pre>
-    </div>
-
-    <div class="container">
-        <h2 id="empty-columns" class="title">Right or left empty columns 左右空(位移)的欄位 <a class="top" href="#" title="Top">🔝</a></h2>
+        <h2 id="empty-columns" class="title">Empty columns 空(位移)的欄位 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12 mobile-2">
-            <div class="col-4 left-1 right-2">
-                <div class="tablet-computer-only">col-4 left-1 right-2</div>
+            <div class="col-4 offset-1">
+                <div class="tablet-desktop-only">col-4 offset-1</div>
                 <div class="mobile-only">50%</div>
             </div>
+            <div class="col-4 offset-2">
+                <div class="tablet-desktop-only">col-4 offset-2</div>
+                <div class="mobile-only">50%</div>
+            </div>
+        </div>
+        <div class="grid-12 tablet-filled mobile-1">
             <div class="col-4">
-                <div class="tablet-computer-only">col-4</div>
-                <div class="mobile-only">50%</div>
-            </div>
-        </div>
-        <div class="grid-12 mobile-1">
-            <div class="col-6 right-1 fill-tablet">
-                <div class="computer-only">col-6 right-1</div>
-                <div class="tablet-only">fill-tablet (col-7)</div>
+                <div class="desktop-only">col-4</div>
+                <div class="tablet-only">tablet-filled</div>
                 <div class="mobile-only">100%</div>
             </div>
-            <div class="col-4 left-1 fill-tablet">
-                <div class="computer-only">col-4 left-1</div>
-                <div class="tablet-only">fill-tablet (col-5)</div>
+            <div class="col-6 offset-1">
+                <div class="desktop-only">col-6 offset-1</div>
+                <div class="tablet-only">tablet-filled</div>
                 <div class="mobile-only">100%</div>
             </div>
         </div>
-        <h2>Source Code</h2>
+        <h3>Source Code</h3>
 <pre>
 &lt;div class="grid-12 mobile-2">
-    &lt;div class="col-4 left-1 right-2">&lt;/div>
-    &lt;div class="col-4">&lt;/div>
+    &lt;div class="col-4 offset-1">&lt;/div>
+    &lt;div class="col-4 offset-2">&lt;/div>
 &lt;/div>
-&lt;div class="grid-12 mobile-1">
-    &lt;div class="col-6 right-1 fill-tablet">&lt;/div>
-    &lt;div class="col-4 left-1 fill-tablet">&lt;/div>
+&lt;div class="grid-12 tablet-filled mobile-1">
+    &lt;div class="col-4">&lt;/div>
+    &lt;div class="col-6 offset-1">&lt;/div>
 &lt;/div>
 </pre>
     </div>
 
     <div class="container">
         <h2 id="distribution" class="title">Distribution, Put together 分配、集中 <a class="top" href="#" title="Top">🔝</a></h2>
-        <div class="grid-12 start mobile-3">
+        <div class="grid-12 mobile-3">
             <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(start)</span></div>
+                <div class="tablet-desktop-only">col-3</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(start)</span></div>
+                <div class="tablet-desktop-only">col-3</div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(start)</span></div>
-                <div class="mobile-only">33.3%</div>
-            </div>
-        </div>
-        <div class="grid-12 center mobile-3">
-            <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(center)</span></div>
-                <div class="mobile-only">33.3%</div>
-            </div>
-            <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(center)</span></div>
-                <div class="mobile-only">33.3%</div>
-            </div>
-            <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(center)</span></div>
+                <div class="tablet-desktop-only">col-3</div>
                 <div class="mobile-only">33.3%</div>
             </div>
         </div>
-        <div class="grid-12 end mobile-3">
+        <div class="grid-12 align-center mobile-3">
             <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(end)</span></div>
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-center)</span></div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(end)</span></div>
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-center)</span></div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(end)</span></div>
-                <div class="mobile-only">33.3%</div>
-            </div>
-        </div>
-        <div class="grid-12 space-around mobile-3">
-            <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(space-around)</span></div>
-                <div class="mobile-only">33.3%</div>
-            </div>
-            <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(space-around)</span></div>
-                <div class="mobile-only">33.3%</div>
-            </div>
-            <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(space-around)</span></div>
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-center)</span></div>
                 <div class="mobile-only">33.3%</div>
             </div>
         </div>
-        <div class="grid-12 space-between mobile-3">
+        <div class="grid-12 align-right mobile-3">
             <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(space-between)</span></div>
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-right)</span></div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(space-between)</span></div>
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-right)</span></div>
                 <div class="mobile-only">33.3%</div>
             </div>
             <div class="col-3">
-                <div class="tablet-computer-only">col-3 <span class="gray">(space-between)</span></div>
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-right)</span></div>
                 <div class="mobile-only">33.3%</div>
             </div>
         </div>
-        <h2>Source Code</h2>
+        <div class="grid-12 align-space-around mobile-3">
+            <div class="col-3">
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-space-around)</span></div>
+                <div class="mobile-only">33.3%</div>
+            </div>
+            <div class="col-3">
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-space-around)</span></div>
+                <div class="mobile-only">33.3%</div>
+            </div>
+            <div class="col-3">
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-space-around)</span></div>
+                <div class="mobile-only">33.3%</div>
+            </div>
+        </div>
+        <div class="grid-12 align-space-between mobile-3">
+            <div class="col-3">
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-space-between)</span></div>
+                <div class="mobile-only">33.3%</div>
+            </div>
+            <div class="col-3">
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-space-between)</span></div>
+                <div class="mobile-only">33.3%</div>
+            </div>
+            <div class="col-3">
+                <div class="tablet-desktop-only">col-3 <span class="gray">(align-space-between)</span></div>
+                <div class="mobile-only">33.3%</div>
+            </div>
+        </div>
+        <h3>Source Code</h3>
 <pre>
-&lt;div class="grid-12 start mobile-3">
+&lt;div class="grid-12 mobile-3">
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
 &lt;/div>
-&lt;div class="grid-12 center mobile-3">
+&lt;div class="grid-12 align-center mobile-3">
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
 &lt;/div>
-&lt;div class="grid-12 end mobile-3">
+&lt;div class="grid-12 align-right mobile-3">
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
 &lt;/div>
-&lt;div class="grid-12 space-around mobile-3">
+&lt;div class="grid-12 align-space-around mobile-3">
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
 &lt;/div>
-&lt;div class="grid-12 space-between mobile-3">
+&lt;div class="grid-12 align-space-between mobile-3">
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
@@ -437,34 +379,34 @@
 
     <div class="container">
         <h2 id="column-breaks" class="title">Column breaks, directly break to a new line 中斷欄位，直接跳到新的一行 <a class="top" href="#" title="Top">🔝</a></h2>
-        <div class="grid-12 center mobile-2">
-            <div class="col-6 fill-mobile">
-                <div class="tablet-computer-only">col-6 <span class="gray">(center)</span></div>
-                <div class="mobile-only">fill-mobile</div>
+        <div class="grid-12 align-center mobile-1 tablet-2">
+            <div class="col-6">
+                <div class="tablet-desktop-only">col-6 <span class="gray">(align-center)</span></div>
+                <div class="mobile-only">tablet-filled</div>
             </div>
             <div class="w-100"></div>
             <div class="col-5">
-                <div class="tablet-computer-only">col-5 <span class="gray">(center)</span></div>
-                <div class="mobile-only">50%</div>
+                <div class="tablet-desktop-only">col-5 <span class="gray">(align-center)</span></div>
+                <div class="mobile-only">100%</div>
             </div>
             <div class="col-5">
-                <div class="tablet-computer-only">col-5 <span class="gray">(center)</span></div>
-                <div class="mobile-only">50%</div>
+                <div class="tablet-desktop-only">col-5 <span class="gray">(align-center)</span></div>
+                <div class="mobile-only">100%</div>
             </div>
             <div class="w-100"></div>
             <div class="col-5">
-                <div class="tablet-computer-only">col-5 <span class="gray">(center)</span></div>
-                <div class="mobile-only">50%</div>
+                <div class="tablet-desktop-only">col-5 <span class="gray">(align-center)</span></div>
+                <div class="mobile-only">100%</div>
             </div>
             <div class="col-5">
-                <div class="tablet-computer-only">col-5 <span class="gray">(center)</span></div>
-                <div class="mobile-only">50%</div>
+                <div class="tablet-desktop-only">col-5 <span class="gray">(align-center)</span></div>
+                <div class="mobile-only">100%</div>
             </div>
         </div>
-        <h2>Source Code</h2>
+        <h3>Source Code</h3>
 <pre>
-&lt;div class="grid-12 center mobile-2">
-    &lt;div class="col-6 fill-mobile">&lt;/div>
+&lt;div class="grid-12 align-center mobile-1 tablet-2">
+    &lt;div class="col-6">&lt;/div>
     &lt;div class="w-100">&lt;/div>
     &lt;div class="col-5">&lt;/div>
     &lt;div class="col-5">&lt;/div>
@@ -477,60 +419,80 @@
 
     <div class="container">
         <h2 id="varied-responsive-design" class="title">Varied responsive design, Nesting columns 多變化的響應式設計、巢狀疊層 <a class="top" href="#" title="Top">🔝</a></h2>
-        <div class="grid-12 tablet-3 mobile-2">
-            <div class="col-3">
-                <div class="computer-only">col-3</div>
+        <div class="grid desktop-4 tablet-3 mobile-2">
+            <div class="col">
+                <div class="desktop-only">col</div>
                 <div class="tablet-only">33.33%</div>
                 <div class="mobile-only">50%</div>
             </div>
-            <div class="col-3">
-                <div class="computer-only">col-3</div>
+            <div class="col">
+                <div class="desktop-only">col</div>
                 <div class="tablet-only">33.33%</div>
                 <div class="mobile-only">50%</div>
             </div>
-            <div class="col-3 tablet-computer-only">
-                <div class="computer-only">col-3 tablet-computer-only</div>
-                <div class="tablet-only">33.33% tablet-computer-only</div>
+            <div class="col tablet-desktop-only">
+                <div class="desktop-only">col tablet-desktop-only</div>
+                <div class="tablet-only">33.33% tablet-desktop-only</div>
             </div>
-            <div class="col-3 computer-only">col-3 computer-only</div>
+            <div class="col desktop-only">col desktop-only</div>
         </div>
-        <div class="grid-12 mobile-1">
-            <div class="col-3 tablet-computer-only">col-3 tablet-computer-only</div>
+        <div class="grid-12 tablet-filled mobile-1">
+            <div class="col-3 tablet-desktop-only">col-3 tablet-desktop-only</div>
+            <div class="col-6">col-6</div>
+            <div class="col-3 desktop-only">col-3 desktop-only</div>
+        </div>
+
+        <div class="grid-12 filled">
             <div class="col-9">
-                <div class="grid-12 tablet-1">
-                    <div class="col-6">
-                        <div class="computer-only">col-9 -> col-6</div>
-                        <div class="tablet-only">col-9 -> 100%</div>
+                <div class="grid mobile-1 tablet-2 desktop-2">
+                    <div class="col">
+                        <div class="desktop-only">col-9 -> 50%</div>
+                        <div class="tablet-only">100% -> 50%</div>
                         <div class="mobile-only">100% -> 100%</div>
                     </div>
-                    <div class="col-6">
-                        <div class="computer-only">col-9 -> col-6</div>
-                        <div class="tablet-only">col-9 -> 100%</div>
+                    <div class="col">
+                        <div class="desktop-only">col-9 -> 50%</div>
+                        <div class="tablet-only">100% -> 50%</div>
                         <div class="mobile-only">100% -> 100%</div>
                     </div>
-                    <div class="col-6">
-                        <div class="computer-only">col-9 -> col-6</div>
-                        <div class="tablet-only">col-9 -> 100%</div>
+                    <div class="col">
+                        <div class="desktop-only">col-9 -> 50%</div>
+                        <div class="tablet-only">100% -> 50%</div>
                         <div class="mobile-only">100% -> 100%</div>
                     </div>
-                    <div class="col-6">
-                        <div class="computer-only">col-9 -> col-6</div>
-                        <div class="tablet-only">col-9 -> 100%</div>
+                    <div class="col">
+                        <div class="desktop-only">col-9 -> 50%</div>
+                        <div class="tablet-only">100% -> 50%</div>
                         <div class="mobile-only">100% -> 100%</div>
                     </div>
                 </div>
             </div>
+            <div class="col-3 desktop-only">col-3 desktop-only</div>
         </div>
-        <h2>Source Code</h2>
+        <div class="grid-12 filled">
+            <div class="col-9">
+                <div class="grid-12 mobile-1">
+                    <div class="col-4">
+                        <div class="grid-12 align-center mobile-2">
+                            <div class="col-11">picture</div>
+                            <div class="col-11">info</div>
+                        </div>
+                    </div>
+                    <div class="col-8">col-9 -> col-8</div>
+                </div>
+            </div>
+            <div class="col-3 desktop-only">col-3 desktop-only</div>
+        </div>
+        <h3>Source Code</h3>
 <pre>
 &lt;div class="grid-12 tablet-3 mobile-2">
     &lt;div class="col-3">&lt;/div>
     &lt;div class="col-3">&lt;/div>
-    &lt;div class="col-3 tablet-computer-only">&lt;/div>
-    &lt;div class="col-3 computer-only">&lt;/div>
+    &lt;div class="col-3 tablet-desktop-only">&lt;/div>
+    &lt;div class="col-3 desktop-only">&lt;/div>
 &lt;/div>
 &lt;div class="grid-12 mobile-1">
-    &lt;div class="col-3 tablet-computer-only">&lt;/div>
+    &lt;div class="col-3 tablet-desktop-only">&lt;/div>
     &lt;div class="col-9">
         &lt;div class="grid-12 tablet-1">
             &lt;div class="col-6">&lt;/div>
@@ -547,19 +509,19 @@
         <h2 id="other-column-grid" class="title">12 column, 16 column, 10 column grid system 擁有 12、16、10 欄位的網格系統 <a class="top" href="#" title="Top">🔝</a></h2>
         <div class="grid-12 tablet-2 mobile-1">
             <div class="col-4">
-                <span class="computer-only">col-4</span>
+                <span class="desktop-only">col-4</span>
                 <span class="tablet-only">50%</span>
                 <span class="mobile-only">100%</span>
                 <span class="gray">(grid-12)</span>
             </div>
             <div class="col-4">
-                <span class="computer-only">col-4</span>
+                <span class="desktop-only">col-4</span>
                 <span class="tablet-only">50%</span>
                 <span class="mobile-only">100%</span>
                 <span class="gray">(grid-12)</span>
             </div>
             <div class="col-4">
-                <span class="computer-only">col-4</span>
+                <span class="desktop-only">col-4</span>
                 <span class="tablet-only">50%</span>
                 <span class="mobile-only">100%</span>
                 <span class="gray">(grid-12)</span>
@@ -567,25 +529,25 @@
         </div>
         <div class="grid-16 tablet-3 mobile-2">
             <div class="col-4">
-                <span class="computer-only">col-4</span>
+                <span class="desktop-only">col-4</span>
                 <span class="tablet-only">33.33%</span>
                 <span class="mobile-only">50%</span>
                 <span class="gray">(grid-16)</span>
             </div>
             <div class="col-4">
-                <span class="computer-only">col-4</span>
+                <span class="desktop-only">col-4</span>
                 <span class="tablet-only">33.33%</span>
                 <span class="mobile-only">50%</span>
                 <span class="gray">(grid-16)</span>
             </div>
             <div class="col-4">
-                <span class="computer-only">col-4</span>
+                <span class="desktop-only">col-4</span>
                 <span class="tablet-only">33.33%</span>
                 <span class="mobile-only">50%</span>
                 <span class="gray">(grid-16)</span>
             </div>
             <div class="col-4">
-                <span class="computer-only">col-4</span>
+                <span class="desktop-only">col-4</span>
                 <span class="tablet-only">33.33%</span>
                 <span class="mobile-only">50%</span>
                 <span class="gray">(grid-16)</span>
@@ -593,37 +555,37 @@
         </div>
         <div class="grid-10 tablet-4 mobile-3">
             <div class="col-2">
-                <span class="computer-only">col-2</span>
+                <span class="desktop-only">col-2</span>
                 <span class="tablet-only">25%</span>
                 <span class="mobile-only">33.33%</span>
                 <span class="gray">(grid-10)</span>
             </div>
             <div class="col-2">
-                <span class="computer-only">col-2</span>
+                <span class="desktop-only">col-2</span>
                 <span class="tablet-only">25%</span>
                 <span class="mobile-only">33.33%</span>
                 <span class="gray">(grid-10)</span>
             </div>
             <div class="col-2">
-                <span class="computer-only">col-2</span>
+                <span class="desktop-only">col-2</span>
                 <span class="tablet-only">25%</span>
                 <span class="mobile-only">33.33%</span>
                 <span class="gray">(grid-10)</span>
             </div>
             <div class="col-2">
-                <span class="computer-only">col-2</span>
+                <span class="desktop-only">col-2</span>
                 <span class="tablet-only">25%</span>
                 <span class="mobile-only">33.33%</span>
                 <span class="gray">(grid-10)</span>
             </div>
             <div class="col-2">
-                <span class="computer-only">col-2</span>
+                <span class="desktop-only">col-2</span>
                 <span class="tablet-only">25%</span>
                 <span class="mobile-only">33.33%</span>
                 <span class="gray">(grid-10)</span>
             </div>
         </div>
-        <h2>Source Code</h2>
+        <h3>Source Code</h3>
 <pre>
 &lt;div class="grid-12 tablet-2 mobile-1">
     &lt;div class="col-4">&lt;/div>

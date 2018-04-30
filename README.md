@@ -158,6 +158,42 @@
 \# 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example)
 
 ## Update
+### v1.3.0 (2018.04.30)
+- 改善內容:
+    - SASS/SCSS 目錄結構改善，使用 SASS mixin 重構程式碼
+    - CSS 選擇器改善，為了提高 CSS Selector 在瀏覽器執行的效率
+    - container 直接改成 bootstrap v4.x 版的 container 內容
+    - 集中與分配的功能做一個重新修改，名稱也改為 `align-*`
+    - RWD breakpoints 斷點修改
+        - 767.99 含以下 -- mobile
+        - 768 含以上 ~ 991.99 含以下 -- tablet
+        - 992px 含以上 -- desktop
+    - 響應式自動縮放 CSS 樣式
+        - `mobile-1` ~ `mobile-4`
+        - `tablet-1` ~ `tablet-6`
+        - `desktop-1` ~ `desktop-8`
+    - **自動填滿剩餘空間的功能**大幅修改
+        - 改加入到 grid 層，代表底下的每個 `col-*` 都會觸發功能，為了能更簡易地使用
+        - 當觸發功能時，會以自身原始 `col-*` 的數字比例去填滿空間
+        - 樣式名稱有 `filled`, `tablet-filled`, `mobile-filled`
+        <!-- - 例: 當 col 層只有 `col-3`, `col-7` 兩個欄位數時，會以 3:7 的比例去填滿剩餘的空間 -->
+- 更改名稱:
+    - `computer` -> `desktop`
+    - `left-*` -> `offset-*`
+    - `fill` -> `filled`
+- 新增內容:
+    - `desktop-*` 樣式系列，響應式自動縮放的桌面(電腦)螢幕版
+    - `no-gap` 樣式系列，去除網格的間隙
+    - `first`, `last` 排序的樣式系列，在不同螢幕大小下時可排序欄位
+    - `align-*` 樣式系列，垂直和平行的對齊功能，為原始的集中與分配功能之加強版
+    - `grid`, `col` 兩個樣式:
+        - 為了更快速開發，不考慮傳統欄位數目，直接使用**響應式自動縮放 CSS 樣式**
+        - `col` 預設為全屏寬度 100%
+        <!-- - 這裡 `grid`, `col` 是一起的組合，需避免與 `grid-*`, `col-*` 系列搭配使用 -->
+- 移除內容:
+    - `relaxed`, `equal-gap` 樣式系列，由於讓使用者來自訂會比較方便，固定寬度會不夠彈性因此移除
+    - `left-*`, `right-*` 樣式系列，以後版本都會以 `offset-*` 來代替
+
 ### v1.2.2 (2018.03.05)
 - 改善內容 :
     - `fill` 樣式系列的內容增加消除左右空欄的機制

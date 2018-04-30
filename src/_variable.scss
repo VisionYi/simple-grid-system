@@ -1,0 +1,40 @@
+// 不同格數欄位的類型
+$grid-columns: (12, 16, 10);
+// 取出最大數
+$grid-max-columns: max($grid-columns...);
+
+// 每個欄位的間距、每行上下的間距
+$col-gap: 15px;
+$row-gap: 15px;
+
+// media query 斷點範圍
+$breakpoint-areas: (
+  desktop: '(min-width: 992px)',
+  tablet-up: '(min-width: 768px)',
+  tablet: '(max-width: 991.99px) and (min-width: 768px)',
+  tablet-down: '(max-width: 991.99px)',
+  mobile: '(max-width: 767.99px)',
+);
+
+// 響應式設計，在特定的螢幕大小時，會產生的最大欄位數，每個欄位寬度都是均分的
+$responsive-max-col: (
+  desktop: 8,
+  tablet: 6,
+  mobile: 4,
+);
+
+// fill 自動填滿系列
+$fill-on-breakpoint: (
+  filled: 'none',
+  tablet-filled: 'tablet',
+  mobile-filled: 'mobile',
+);
+
+// first, last 排序系列
+$order-on-breakpoint: (
+  desktop: 'desktop',
+  tablet: 'tablet',
+  mobile: 'mobile',
+);
+
+$version: 'v1.3.0';
