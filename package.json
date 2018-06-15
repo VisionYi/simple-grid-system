@@ -1,10 +1,9 @@
 {
   "name": "simple-grid-system",
-  "version": "1.3.0",
-  "description": "CSS Flexbox 網格系統",
-  "main": "./dist/grid-system.css",
+  "version": "1.3.0-beta",
+  "description": "CSS Flexbox Grid System (https://github.com/VisionYi/simple-grid-system)",
+  "main": "./dist/grid-system.min.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
     "start": "gulp start"
   },
@@ -18,8 +17,8 @@
     "type": "git",
     "url": "git@github.com:VisionYi/simple-grid-system.git"
   },
-  "author": "Shane-Yi Hong <scps950613@gmail.com>",
-  "license": "MIT",
+  "author": "Shane-Yi Hong",
+  "license": "MIT (https://github.com/VisionYi/simple-grid-system/blob/master/LICENSE)",
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "browser-sync": "^2.23.6",

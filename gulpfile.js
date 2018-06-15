@@ -16,10 +16,9 @@ function getHeader() {
     var pkg = require('./package.json');
     var template = [
         '/**',
-        ' * <%= pkg.name %> - <%= pkg.description %>',
-        ' * @author <%= pkg.author %>',
-        ' * @version v<%= pkg.version %>',
-        ' * @license <%= pkg.license %>',
+        ' * <%= pkg.name %> v<%= pkg.version %> - <%= pkg.description %>',
+        ' * Author - <%= pkg.author %>',
+        ' * License - <%= pkg.license %>',
         ' */',
         ''
     ].join('\n');
@@ -33,6 +32,7 @@ function getHeader() {
 gulp.task('build', () =>
     gulp.src(`./src/${FILE_NAME}.scss`)
         .pipe(sass({outputStyle: 'expanded', indentWidth: 2}).on('error', sass.logError))
+        .pipe(getHeader())
         .pipe(gulp.dest('./example'))
         .pipe(postCSS([ autoprefixer() ]))
         .pipe(gulp.dest('./dist'))
