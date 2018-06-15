@@ -15,7 +15,7 @@ html {
   padding-left: 15px;
   padding-right: 15px;
 
-  &::after {
+  &:after {
     content: '';
     display: table;
     clear: both;
@@ -70,31 +70,33 @@ html {
  * 每個欄位的間距都固定為 #{$col-gap}
  * 每行上下的間距都固定為 #{$row-gap}
  */
+.grid,
 %grid {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   position: relative;
-  margin-bottom: -($row-gap);
+  flex-flow: row wrap;
   margin-left: -($col-gap / 2);
   margin-right: -($col-gap / 2);
+  margin-bottom: -($row-gap);
 }
 
+.col,
 %col {
   display: block;
   position: relative;
-  padding-bottom: $row-gap;
   padding-left: $col-gap / 2;
   padding-right: $col-gap / 2;
+  margin-bottom: $row-gap;
   background-clip: content-box;
-  flex: 0 0 100%;
   max-width: 100%;
+  min-width: 0;
+  width: 100%;
+  flex: 0 0 auto;
 }
 
 @each $columns in $grid-columns {
 
   // 設定網格的基礎屬性內容
-  .grid,
   .grid-#{$columns} {
     @extend %grid;
   }
@@ -102,8 +104,7 @@ html {
   @for $i from 1 through $columns {
 
     // 設定欄位的基礎屬性內容  (取最大的網格欄位數)
-    @if($columns == $grid-max-columns) {
-      .col,
+    @if ($columns == $grid-max-columns) {
       .col-#{$i} {
         @extend %col;
       }
@@ -111,12 +112,11 @@ html {
 
     // 設定每個欄位的比例
     .grid-#{$columns} > .col-#{$i} {
-      flex: 0 0 percentage($i / $columns);
-      max-width: percentage($i / $columns);
+      width: percentage($i / $columns);
     }
 
     // 設定推移欄位，製造空欄位
-    @if $i < $columns {
+    @if ($i < $columns) {
       .grid-#{$columns} > .offset-#{$i} {
         margin-left: percentage($i / $columns);
       }
@@ -124,10 +124,20 @@ html {
   }
 }
 
+/* 欄位寬度就是本身內容的長度，會隨著內容自動改變欄位寬度 */
+.col-auto {
+  @extend %col;
+  width: auto;
+}
+
+/* 使欄位推移到整個容器的最右側 */
+.offset-auto {
+  margin-left: auto;
+}
+
 /**
- * 當頁面螢幕大小進入 #{map-keys($responsive-max-col)} 時觸發
- * 1. 欄位設計: 每個欄位都會改成等寬的比例
- * 2. 把所有的推移的欄位 (空欄位) 都消除
+ * 當頁面螢幕大小進入 #{map-keys($responsive-max-col)} 時觸發功能
+ * 每個欄位都會改成等寬的比例
  */
 @include make-responsive-all();
 
@@ -139,21 +149,16 @@ html {
 
 /* 去除 所有的間距 */
 .no-gap {
-  margin: 0;
-
-  > .col,
-  > [class*=col-] {
-    padding: 0;
-  }
-}
-
-/* 去除 行與行之間的間距 */
-.no-gap-row {
+  margin-left: 0;
+  margin-right: 0;
   margin-bottom: 0;
 
   > .col,
   > [class*=col-] {
-    padding-bottom: 0;
+    background-clip: initial;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -164,20 +169,31 @@ html {
 
   > .col,
   > [class*=col-] {
+    background-clip: initial;
     padding-left: 0;
     padding-right: 0;
   }
 }
 
+/* 去除 行與行之間的間距 */
+.no-gap-row {
+  margin-bottom: 0;
+
+  > .col,
+  > [class*=col-] {
+    margin-bottom: 0;
+  }
+}
+
 /**
  * 對齊功能 (分配與集中)
- * center: 將所有欄位集中於中間
- * right: 將所有欄位集中於右側
- * space-around: 將所有欄位平均分配於一行中
- * space-between: 將所有欄位散開分配於一行中
- * top:
- * middle:
- * bottom:
+ * align-center: 將所有欄位集中於中間
+ * align-right: 將所有欄位集中於右側
+ * align-space-around: 將所有欄位平均分配於一行中
+ * align-space-between: 將所有欄位散開分配於一行中
+ * align-top: 將所有欄位靠上對齊
+ * align-middle: 將所有欄位置中對齊
+ * align-bottom: 將所有欄位靠下對齊
  */
 .align-center {
   justify-content: center;
@@ -195,22 +211,44 @@ html {
   justify-content: space-between;
 }
 
+%have-gap-height {
+  height: calc(100% + #{$row-gap});
+}
+%no-gap-height {
+  height: 100%;
+}
+
 .align-top {
   align-items: flex-start;
   align-content: flex-start;
-  height: calc(100% + #{$row-gap});
+  @extend %have-gap-height;
+
+  &.no-gap,
+  &.no-gap-row {
+    @extend %no-gap-height;
+  }
 }
 
 .align-middle {
   align-items: center;
   align-content: center;
-  height: calc(100% + #{$row-gap});
+  @extend %have-gap-height;
+
+  &.no-gap,
+  &.no-gap-row {
+    @extend %no-gap-height;
+  }
 }
 
 .align-bottom {
   align-items: flex-end;
   align-content: flex-end;
-  height: calc(100% + #{$row-gap});
+  @extend %have-gap-height;
+
+  &.no-gap,
+  &.no-gap-row {
+    @extend %no-gap-height;
+  }
 }
 
 /* 填滿一整行，用來強制中斷欄位跳到新的一行 */
@@ -222,7 +260,7 @@ html {
  * 如果 .grid 外面再包一層有使用背景屬性的 div 元素時，底部會產生多餘的背景
  * 此類別屬性能修補此 Bug，請加在外面那一層的 div 元素上
  */
-.fix-extra-bottom::after {
+.fix-extra-bottom:after {
   content: '';
   display: table;
 }

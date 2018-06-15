@@ -19,8 +19,7 @@
         .#{$point-key}-#{$i} > .col,
         .#{$point-key}-#{$i} > [class*=col-] {
           margin-left: 0;
-          max-width: 100% / $i;
-          flex: 1 1 (100% / $i);
+          width: 100% / $i;
         }
       }
     }
@@ -33,13 +32,15 @@
   .#{$class-name} > .col,
   .#{$class-name} > [class*=col-] {
     margin-left: 0;
-    max-width: 100%;
+  }
+
+  .#{$class-name} > .col-auto {
+    flex: 1 1 auto;
   }
 
   @for $i from 1 through $columns {
     .#{$class-name} > .col-#{$i} {
-      flex-grow: $i;
-      flex-shrink: $i;
+      flex: $i $i auto;
     }
   }
 }
