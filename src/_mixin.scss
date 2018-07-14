@@ -26,45 +26,47 @@
   }
 }
 
-
-// fill 系列的 class 內容
-@mixin fill-content($class-name, $columns: $grid-max-columns) {
-  .#{$class-name} > .col,
-  .#{$class-name} > [class*=col-] {
+// flex 系列的 class 內容
+@mixin flex-content($class-name, $columns: $grid-max-columns) {
+  .#{$class-name}.col,
+  .#{$class-name}[class*=col-] {
     margin-left: 0;
   }
 
-  .#{$class-name} > .col-auto {
-    flex: 1 1 auto;
+  .#{$class-name}.col,
+  .#{$class-name}.col-auto {
+    flex: 1 1 0%;
   }
 
-  @for $i from 1 through $columns {
-    .#{$class-name} > .col-#{$i} {
+  @for $i from 1 through ($columns - 2) {
+    .#{$class-name}.col-#{$i} {
       flex: $i $i auto;
     }
   }
 }
 
-@mixin make-fill-all() {
-  @each $class-name, $point-key in $fill-on-breakpoint {
+// flex 能彈性地自動調整大小
+@mixin make-flex-all() {
+  @each $class-name, $point-key in $flex-on-breakpoint {
     @if ($point-key == 'none') {
-      @include fill-content($class-name);
+      @include flex-content($class-name);
     }
     @else {
       @include respond-to($point-key) {
-        @include fill-content($class-name);
+        @include flex-content($class-name);
       }
     }
   }
 }
 
+// order 排序系列
 @mixin make-order-all() {
   @each $name, $point-key in $order-on-breakpoint {
     @include respond-to($point-key) {
-      .#{$name}-first {
+      .order-first-#{$name} {
         order: -1;
       }
-      .#{$name}-last {
+      .order-last-#{$name} {
         order: 1;
       }
     }

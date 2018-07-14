@@ -8,15 +8,16 @@
 
 ## Features
 - 擁有 12、16、10 格欄位的網格系統
-- 支援 RWD 響應式網頁設計 - 電腦、平板、手機 3 種螢幕尺寸上自動縮放
-- 可以調整欄位之間的間格距離
+- 支援 RWD 響應式網頁設計 - 電腦桌面、平板、手機 3 種螢幕尺寸上自動堆疊與縮放
+- 欄位能夠自動堆疊，自動產生間隙距離
+- 可以消除 col 欄與欄之間 或 row 行與行之間 的間隙距離
 - 網格設計上的概念 :
-    - 只包含常用且直覺的排版方式
-    - 不需煩惱每一格或每一欄位在不同螢幕尺寸下的變化與差異
-    - 加上**自動填滿**功能，可以讓排版方式更有彈性，且不失原始的排版基底概念
+  - 只包含常用且直覺的排版方式
+  - 不需煩惱每一格或每一欄位在不同螢幕尺寸下的變化與差異
+  - 加上 **欄位比例自動縮放(填滿剩餘空間)** 的功能，可以讓排版方式更有彈性
 - 附加其他功能 :
-    - 與 CSS 框架 Bootstrap 4.x 版類似的 `container` 樣式名稱
-    - 響應式設計 - 區塊的顯示與隱藏
+  - 與 CSS 框架 Bootstrap 4.x 版類似的 `container` 樣式名稱
+  - 響應式設計 - 區塊的顯示與隱藏
 
 ## Browser Support
 | IE | Chrome | Firefox | Opera | Safari | Firefox OS | Android |
@@ -36,14 +37,15 @@
 - grid 層的樣式名稱
   - grid 系列
   - 響應式設計系列
-  - filled 系列
   - align 系列
   - no-gap 系列
 
 - col 層的樣式名稱
   - col 系列
   - offset 系列
-  - first, last 排序系列
+  - flexible 系列
+  - order 排序系列
+  - hidden & show-only 隱藏與顯示系列
 
 #### 1. 基本使用 `grid-*` 與 `col-*`，可以使用 3 種網格，內容都是相容的
 - `grid-10`、`grid-12`、`grid-16`
@@ -55,8 +57,8 @@
 以下是將一行分成 2 個「欄位」的範例 :
 ```html
 <div class="grid-12">
-    <div class="col-6">Two</div>
-    <div class="col-6">Column</div>
+  <div class="col-6">Two</div>
+  <div class="col-6">Column</div>
 </div>
 ```
 
@@ -69,8 +71,8 @@
 範例 :
 ```html
 <div class="grid-12">
-    <div class="col-4 offset-2"></div>
-    <div class="col-4 offset-auto"></div>
+  <div class="col-4 offset-2"></div>
+  <div class="col-4 offset-auto"></div>
 </div>
 ```
 
@@ -88,26 +90,28 @@
 範例 :
 ```html
 <div class="grid desktop-3 tablet-2 mobile-1">
-    ...
+  ...
 </div>
 ```
 
-#### 4. 有時候在其他螢幕尺寸下，想讓欄位能夠**自動填滿剩餘的空間**時，可以在網格 (grid) 這一層加入 `filled` 系列的樣式名稱
-| 樣式名稱 | 使用的裝置 | 當螢幕尺寸 ... 所有欄位觸發自動填滿 |
+#### 4. 想填滿剩餘的空間或讓欄位比例自動縮放，可以在欄位 (col) 這一層加入 `flexible` 系列的樣式名稱，這能彈性地自動調整大小
+| 樣式名稱 | 使用的裝置 | 當螢幕尺寸 ... 觸發自動調整大小效果 |
 | ------- | --------- | ----------------- |
-| `filled` | 全部尺寸 | --------- |
-| `tablet-filled` | 平板 (中螢幕) | < 992px && ≥ 768px |
-| `mobile-filled` | 行動裝置(手機) | < 768px |
+| `flexible` | 全部尺寸 | --------- |
+| `flexible-tablet` | 平板(中螢幕)以下 | < 992px |
+| `flexible-mobile` | 行動裝置(手機) | < 768px |
 
 \# 特別說明觸發時的情況 :
 - 當同時有兩個欄位以上都觸發效果時，會依照原始欄位大小的寬度比例去填滿剩餘的空間
 - 會把內部所有的 `offset-*` "空的欄位" 都消除掉
+- 此效果與 `col` 或 `col-auto` 一起搭配時，效果會有所不同
+- 當內容無法再縮小或文字無法再換行時，會自動將欄位跳至下一行
 
 範例 :
 ```html
-<div class="grid-12 tablet-filled mobile-1">
-    <div class="col-3"></div>
-    <div class="col-5"></div>
+<div class="grid-12 mobile-1">
+  <div class="col-3 flexible"></div>
+  <div class="col-5 flexible"></div>
 </div>
 ```
 
@@ -125,50 +129,59 @@
 範例 :
 ```html
 <div class="grid-12 align-center">
-    ...
+  ...
 </div>
 ```
 
-#### 6. 想在不同螢幕尺寸下排序欄位位置，可以在欄位 (col) 這一層加入 `*-first`、`*-last`
-- `first` 將欄位移至最前的位置
-- `last` 將欄位移至最後的位置
+#### 6. 想在不同螢幕尺寸下排序欄位位置，可以在欄位 (col) 這一層加入 `order-first-*`、`order-last-*` 樣式系列
+- `order-first-*` 將欄位移至最前的位置
+- `order-last-*` 將欄位移至最後的位置
 
 | 樣式名稱 | 使用的裝置 | 當螢幕尺寸 ... 排序移動位置 |
 | ------- | --------- | ----------------- |
-| `desktop-first` `desktop-last` | 電腦桌面 (大螢幕) | ≥ 992px |
-| `tablet-first` `tablet-last` | 平板 (中螢幕) | < 992px && ≥ 768px |
-| `mobile-first` `mobile-last` | 行動裝置 (手機) | < 768px |
+| `order-first-desktop` `order-last-desktop` | 電腦桌面 (大螢幕) | ≥ 992px |
+| `order-first-tablet` `order-last-tablet` | 平板 (中螢幕) | < 992px && ≥ 768px |
+| `order-first-mobile` `order-last-mobile` | 行動裝置 (手機) | < 768px |
 
 範例 :
 ```html
 <div class="grid-12">
-    <div class="col-4 tablet-last"></div>
-    <div class="col-4 tablet-first"></div>
-    <div class="col-4"></div>
+  <div class="col-4 order-last-mobile"></div>
+  <div class="col-4 order-first-mobile"></div>
+  <div class="col-4"></div>
 </div>
 ```
 
 #### 7. 如果想要消除網格中的間距，可以在網格 (grid) 這一層加入 `no-gap` 系列的樣式名稱
-- `no-gap` 消除 **所有的間距**
-- `no-gap-col` 消除 **欄與欄之間的間距**
-- `no-gap-row` 消除 **行與行之間的間距**
+- 每格欄位的間距預設為 15px
+- `no-gap` 將消除 **所有的間距**
+- `no-gap-col` 將消除 **欄與欄之間的間距**
+- `no-gap-row` 將消除 **行與行之間的間距**
 
 範例 :
 ```html
 <div class="grid-12 no-gap">
-    ...
+  ...
 </div>
 ```
 
-#### 8. 響應式設計 - 區塊的隱藏與顯示，當螢幕尺寸大小進入不同的版面時會觸發
-| 樣式名稱 | 使用的裝置 | 當螢幕尺寸 ... 出現 |
-| ------- | --------- | ----------------- |
-| `desktop-only` | 電腦 | ≥ 992px |
-| `tablet-only` | 平板 | ≥ 768px && < 992px |
-| `mobile-only` | 行動裝置(手機) | < 768px |
-| `desktop-tablet-only` </br>`tablet-desktop-only` | 電腦或平板 | ≥ 768px |
-| `tablet-mobile-only` </br>`mobile-tablet-only` | 平板或手機 | < 992px |
-| `mobile-desktop-only` </br>`desktop-mobile-only` | 電腦或手機 | ≥ 992px \|\| < 768px |
+#### 8. 響應式設計 - 區塊的隱藏與顯示，當螢幕尺寸大小進入不同的版面時就會觸發
+- `hidden-*` 在指定的螢幕尺寸下時隱藏元素
+- `show-only-*` 在指定的螢幕尺寸下時顯示元素，其他情況下都為隱藏
+
+| 樣式名稱 | 使用的裝置 | 當螢幕尺寸 ... 隱藏元素 |
+| ------- | --------- | ------------------------ |
+| `hidden-desktop` | 電腦桌面(大螢幕) | ≥ 992px |
+| `hidden-tablet` | 平板(中螢幕) | ≥ 768px && < 992px |
+| `hidden-mobile` | 行動裝置(手機) | < 768px |
+| `hidden-tablet-desktop` | 平板(中螢幕)以上 | ≥ 768px |
+| `hidden-tablet-mobile` | 平板(中螢幕)以下 | < 992px |
+
+| 樣式名稱 | 使用的裝置 | 當螢幕尺寸 ... 才顯示元素 |
+| ------- | --------- | ------------------------ |
+| `show-only-desktop` | 電腦桌面(大螢幕) | ≥ 992px |
+| `show-only-tablet`  | 平板(中螢幕) | ≥ 768px && < 992px |
+| `show-only-mobile`  | 行動裝置(手機) | < 768px |
 
 #### 9. 容器 - 分為一般型與流動型，使用方式與 CSS 框架 Bootstrap v4.x 的 `container` 是類似的
 - `container` 一般型
@@ -176,12 +189,10 @@
 
 #### 10. 其他特殊的 class 樣式名稱
 - `w-100`
-    - 強制中斷欄位跳到新的一行，擁有 `width:100%` 的特性，常用於搭配**分配、集中功能**
-    - 可直接加入在欄位與欄位之間單獨成一行
-
-- `fix-extra-bottom`
-    - 可加在網格 (grid) 的外面一層上
-    - 如果外面這一層有使用背景屬性的 div 元素時，底部會產生多餘的背景，此樣式名稱能修補此 Bug
+  - CSS 內容為 `width: 100% !important`
+  - 用於強制中斷欄位跳到新的一行，常與**分配、集中功能**一起搭配使用
+  - 可直接加入在欄位與欄位之間單獨成一行
+  - 也可以當作 helper classes
 
 \# 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example)
 

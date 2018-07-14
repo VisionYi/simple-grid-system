@@ -7,13 +7,27 @@ $grid-max-columns: max($grid-columns...);
 $col-gap: 15px;
 $row-gap: 15px;
 
+// RWD 斷點
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+);
+$container-max-width: (
+  xs: 540px,
+  sm: 720px,
+  md: 960px,
+  lg: 1140px,
+);
+
 // media query 斷點範圍
 $breakpoint-areas: (
-  desktop: '(min-width: 992px)',
-  tablet-up: '(min-width: 768px)',
-  tablet: '(max-width: 991.99px) and (min-width: 768px)',
-  tablet-down: '(max-width: 991.99px)',
-  mobile: '(max-width: 767.99px)',
+  desktop: '(min-width: #{map-get($breakpoints, 'md')})',
+  tablet-up: '(min-width: #{map-get($breakpoints, 'sm')})',
+  tablet: '(max-width: #{map-get($breakpoints, 'md') - 0.02px}) and (min-width: #{map-get($breakpoints, 'sm')})',
+  tablet-down: '(max-width: #{map-get($breakpoints, 'md') - 0.02px})',
+  mobile: '(max-width: #{map-get($breakpoints, 'sm') - 0.02px})',
 );
 
 // 響應式設計，在特定的螢幕大小時，會產生的最大欄位數，每個欄位寬度都是均分的
@@ -23,14 +37,14 @@ $responsive-max-col: (
   mobile: 4,
 );
 
-// fill 自動填滿系列
-$fill-on-breakpoint: (
-  filled: 'none',
-  tablet-filled: 'tablet',
-  mobile-filled: 'mobile',
+// flexible 能彈性地自動調整大小
+$flex-on-breakpoint: (
+  flexible: 'none',
+  flexible-tablet: 'tablet-down',
+  flexible-mobile: 'mobile',
 );
 
-// first, last 排序系列
+// order 排序系列
 $order-on-breakpoint: (
   desktop: 'desktop',
   tablet: 'tablet',

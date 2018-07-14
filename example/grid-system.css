@@ -1,5 +1,5 @@
 /**
- * simple-grid-system v1.3.0-beta - CSS Flexbox Grid System (https://github.com/VisionYi/simple-grid-system)
+ * simple-grid-system v1.3.0-beta.2 - CSS Flexbox Grid System (https://github.com/VisionYi/simple-grid-system)
  * Author - Shane-Yi Hong
  * License - MIT (https://github.com/VisionYi/simple-grid-system/blob/master/LICENSE)
  */
@@ -12,18 +12,16 @@ html {
   box-sizing: inherit;
 }
 
-/* 容器: 基本上跟 bootstrap v4.x 的作法是一樣的構造 */
+/* 容器: 基本上跟 bootstrap v4.x 的作法是一樣的構造，也加強了 CSS 的覆蓋 */
 .container,
 .container-fluid {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin: auto;
+  padding: 0 15px;
 }
 
-.container:after,
-.container-fluid:after {
+.container::after,
+.container-fluid::after {
   content: '';
   display: table;
   clear: both;
@@ -55,28 +53,29 @@ html {
 
 /* 區塊的顯示與隱藏 */
 @media (min-width: 992px) {
-  .tablet-mobile-only,
-  .mobile-tablet-only,
-  .mobile-only,
-  .tablet-only {
+  .hidden-desktop,
+  .hidden-tablet-desktop,
+  .show-only-tablet,
+  .show-only-mobile {
     display: none !important;
   }
 }
 
-@media (max-width: 991.99px) and (min-width: 768px) {
-  .desktop-mobile-only,
-  .mobile-desktop-only,
-  .mobile-only,
-  .desktop-only {
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .hidden-tablet,
+  .hidden-tablet-desktop,
+  .hidden-tablet-mobile,
+  .show-only-desktop,
+  .show-only-mobile {
     display: none !important;
   }
 }
 
-@media (max-width: 767.99px) {
-  .desktop-tablet-only,
-  .tablet-desktop-only,
-  .tablet-only,
-  .desktop-only {
+@media (max-width: 767.98px) {
+  .hidden-mobile,
+  .hidden-tablet-mobile,
+  .show-only-desktop,
+  .show-only-tablet {
     display: none !important;
   }
 }
@@ -93,9 +92,7 @@ html {
   display: flex;
   position: relative;
   flex-flow: row wrap;
-  margin-left: -7.5px;
-  margin-right: -7.5px;
-  margin-bottom: -15px;
+  margin: -7.5px -7.5px;
 }
 
 .col,
@@ -116,14 +113,9 @@ html {
 .col-15,
 .col-16,
 .col-auto {
-  display: block;
   position: relative;
-  padding-left: 7.5px;
-  padding-right: 7.5px;
-  margin-bottom: 15px;
-  background-clip: content-box;
+  padding: 7.5px 7.5px;
   max-width: 100%;
-  min-width: 0;
   width: 100%;
   flex: 0 0 auto;
 }
@@ -477,7 +469,7 @@ html {
   }
 }
 
-@media (max-width: 991.99px) and (min-width: 768px) {
+@media (max-width: 991.98px) and (min-width: 768px) {
   .tablet-1 > .col,
   .tablet-1 > [class*=col-] {
     margin-left: 0;
@@ -510,7 +502,7 @@ html {
   }
 }
 
-@media (max-width: 767.99px) {
+@media (max-width: 767.98px) {
   .mobile-1 > .col,
   .mobile-1 > [class*=col-] {
     margin-left: 0;
@@ -533,237 +525,213 @@ html {
   }
 }
 
-/* fill 自動填滿系列 */
-.filled > .col,
-.filled > [class*=col-] {
+.flexible.col,
+.flexible[class*=col-] {
   margin-left: 0;
 }
 
-.filled > .col-auto {
+.flexible.col,
+.flexible.col-auto {
+  flex: 1 1 0%;
+}
+
+.flexible.col-1 {
   flex: 1 1 auto;
 }
 
-.filled > .col-1 {
-  flex: 1 1 auto;
-}
-
-.filled > .col-2 {
+.flexible.col-2 {
   flex: 2 2 auto;
 }
 
-.filled > .col-3 {
+.flexible.col-3 {
   flex: 3 3 auto;
 }
 
-.filled > .col-4 {
+.flexible.col-4 {
   flex: 4 4 auto;
 }
 
-.filled > .col-5 {
+.flexible.col-5 {
   flex: 5 5 auto;
 }
 
-.filled > .col-6 {
+.flexible.col-6 {
   flex: 6 6 auto;
 }
 
-.filled > .col-7 {
+.flexible.col-7 {
   flex: 7 7 auto;
 }
 
-.filled > .col-8 {
+.flexible.col-8 {
   flex: 8 8 auto;
 }
 
-.filled > .col-9 {
+.flexible.col-9 {
   flex: 9 9 auto;
 }
 
-.filled > .col-10 {
+.flexible.col-10 {
   flex: 10 10 auto;
 }
 
-.filled > .col-11 {
+.flexible.col-11 {
   flex: 11 11 auto;
 }
 
-.filled > .col-12 {
+.flexible.col-12 {
   flex: 12 12 auto;
 }
 
-.filled > .col-13 {
+.flexible.col-13 {
   flex: 13 13 auto;
 }
 
-.filled > .col-14 {
+.flexible.col-14 {
   flex: 14 14 auto;
 }
 
-.filled > .col-15 {
-  flex: 15 15 auto;
-}
-
-.filled > .col-16 {
-  flex: 16 16 auto;
-}
-
-@media (max-width: 991.99px) and (min-width: 768px) {
-  .tablet-filled > .col,
-  .tablet-filled > [class*=col-] {
+@media (max-width: 991.98px) {
+  .flexible-tablet.col,
+  .flexible-tablet[class*=col-] {
     margin-left: 0;
   }
-  .tablet-filled > .col-auto {
+  .flexible-tablet.col,
+  .flexible-tablet.col-auto {
+    flex: 1 1 0%;
+  }
+  .flexible-tablet.col-1 {
     flex: 1 1 auto;
   }
-  .tablet-filled > .col-1 {
-    flex: 1 1 auto;
-  }
-  .tablet-filled > .col-2 {
+  .flexible-tablet.col-2 {
     flex: 2 2 auto;
   }
-  .tablet-filled > .col-3 {
+  .flexible-tablet.col-3 {
     flex: 3 3 auto;
   }
-  .tablet-filled > .col-4 {
+  .flexible-tablet.col-4 {
     flex: 4 4 auto;
   }
-  .tablet-filled > .col-5 {
+  .flexible-tablet.col-5 {
     flex: 5 5 auto;
   }
-  .tablet-filled > .col-6 {
+  .flexible-tablet.col-6 {
     flex: 6 6 auto;
   }
-  .tablet-filled > .col-7 {
+  .flexible-tablet.col-7 {
     flex: 7 7 auto;
   }
-  .tablet-filled > .col-8 {
+  .flexible-tablet.col-8 {
     flex: 8 8 auto;
   }
-  .tablet-filled > .col-9 {
+  .flexible-tablet.col-9 {
     flex: 9 9 auto;
   }
-  .tablet-filled > .col-10 {
+  .flexible-tablet.col-10 {
     flex: 10 10 auto;
   }
-  .tablet-filled > .col-11 {
+  .flexible-tablet.col-11 {
     flex: 11 11 auto;
   }
-  .tablet-filled > .col-12 {
+  .flexible-tablet.col-12 {
     flex: 12 12 auto;
   }
-  .tablet-filled > .col-13 {
+  .flexible-tablet.col-13 {
     flex: 13 13 auto;
   }
-  .tablet-filled > .col-14 {
+  .flexible-tablet.col-14 {
     flex: 14 14 auto;
-  }
-  .tablet-filled > .col-15 {
-    flex: 15 15 auto;
-  }
-  .tablet-filled > .col-16 {
-    flex: 16 16 auto;
   }
 }
 
-@media (max-width: 767.99px) {
-  .mobile-filled > .col,
-  .mobile-filled > [class*=col-] {
+@media (max-width: 767.98px) {
+  .flexible-mobile.col,
+  .flexible-mobile[class*=col-] {
     margin-left: 0;
   }
-  .mobile-filled > .col-auto {
+  .flexible-mobile.col,
+  .flexible-mobile.col-auto {
+    flex: 1 1 0%;
+  }
+  .flexible-mobile.col-1 {
     flex: 1 1 auto;
   }
-  .mobile-filled > .col-1 {
-    flex: 1 1 auto;
-  }
-  .mobile-filled > .col-2 {
+  .flexible-mobile.col-2 {
     flex: 2 2 auto;
   }
-  .mobile-filled > .col-3 {
+  .flexible-mobile.col-3 {
     flex: 3 3 auto;
   }
-  .mobile-filled > .col-4 {
+  .flexible-mobile.col-4 {
     flex: 4 4 auto;
   }
-  .mobile-filled > .col-5 {
+  .flexible-mobile.col-5 {
     flex: 5 5 auto;
   }
-  .mobile-filled > .col-6 {
+  .flexible-mobile.col-6 {
     flex: 6 6 auto;
   }
-  .mobile-filled > .col-7 {
+  .flexible-mobile.col-7 {
     flex: 7 7 auto;
   }
-  .mobile-filled > .col-8 {
+  .flexible-mobile.col-8 {
     flex: 8 8 auto;
   }
-  .mobile-filled > .col-9 {
+  .flexible-mobile.col-9 {
     flex: 9 9 auto;
   }
-  .mobile-filled > .col-10 {
+  .flexible-mobile.col-10 {
     flex: 10 10 auto;
   }
-  .mobile-filled > .col-11 {
+  .flexible-mobile.col-11 {
     flex: 11 11 auto;
   }
-  .mobile-filled > .col-12 {
+  .flexible-mobile.col-12 {
     flex: 12 12 auto;
   }
-  .mobile-filled > .col-13 {
+  .flexible-mobile.col-13 {
     flex: 13 13 auto;
   }
-  .mobile-filled > .col-14 {
+  .flexible-mobile.col-14 {
     flex: 14 14 auto;
-  }
-  .mobile-filled > .col-15 {
-    flex: 15 15 auto;
-  }
-  .mobile-filled > .col-16 {
-    flex: 16 16 auto;
   }
 }
 
-/* first, last 排序系列 */
 @media (min-width: 992px) {
-  .desktop-first {
+  .order-first-desktop {
     order: -1;
   }
-  .desktop-last {
+  .order-last-desktop {
     order: 1;
   }
 }
 
-@media (max-width: 991.99px) and (min-width: 768px) {
-  .tablet-first {
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .order-first-tablet {
     order: -1;
   }
-  .tablet-last {
+  .order-last-tablet {
     order: 1;
   }
 }
 
-@media (max-width: 767.99px) {
-  .mobile-first {
+@media (max-width: 767.98px) {
+  .order-first-mobile {
     order: -1;
   }
-  .mobile-last {
+  .order-last-mobile {
     order: 1;
   }
 }
 
 /* 去除 所有的間距 */
 .no-gap {
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .no-gap > .col,
 .no-gap > [class*=col-] {
-  background-clip: initial;
-  padding-left: 0;
-  padding-right: 0;
-  margin-bottom: 0;
+  padding: 0;
 }
 
 /* 去除 欄與欄之間的間距 */
@@ -774,19 +742,20 @@ html {
 
 .no-gap-col > .col,
 .no-gap-col > [class*=col-] {
-  background-clip: initial;
   padding-left: 0;
   padding-right: 0;
 }
 
 /* 去除 行與行之間的間距 */
 .no-gap-row {
+  margin-top: 0;
   margin-bottom: 0;
 }
 
 .no-gap-row > .col,
 .no-gap-row > [class*=col-] {
-  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /**
@@ -815,39 +784,19 @@ html {
   justify-content: space-between;
 }
 
-.align-top, .align-middle, .align-bottom {
-  height: calc(100% + 15px);
-}
-
-.align-top.no-gap, .align-top.no-gap-row, .align-middle.no-gap, .align-middle.no-gap-row, .align-bottom.no-gap, .align-bottom.no-gap-row {
-  height: 100%;
-}
-
 .align-top {
   align-items: flex-start;
-  align-content: flex-start;
 }
 
 .align-middle {
   align-items: center;
-  align-content: center;
 }
 
 .align-bottom {
   align-items: flex-end;
-  align-content: flex-end;
 }
 
 /* 填滿一整行，用來強制中斷欄位跳到新的一行 */
 .w-100 {
-  width: 100%;
-}
-
-/**
- * 如果 .grid 外面再包一層有使用背景屬性的 div 元素時，底部會產生多餘的背景
- * 此類別屬性能修補此 Bug，請加在外面那一層的 div 元素上
- */
-.fix-extra-bottom:after {
-  content: '';
-  display: table;
+  width: 100% !important;
 }

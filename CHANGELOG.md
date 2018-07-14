@@ -1,11 +1,25 @@
+## v1.3.0-beta.2 (2018.07.13)
+#### 修改內容:
+- `filled` 改成 `flexible` 樣式名稱
+  - 主要放置於 col 層可以更彈性運用，能夠自動調整欄位的寬度大小，用於填滿剩餘空間
+  - 樣式種類有 `flexible`、`flexible-tablet`、`flexible-mobile`
+- `container` 樣式內容加強了 CSS 屬性的覆蓋
+- RWD breakpoints 斷點改善
+- 改善 `grid` 與 `col` 系列的 CSS 間距屬性，還有 `no-gap` 樣式系列內容也跟著改善
+- `align-top`、`align-middle`、`align-bottom` 樣式內容改善
+
+#### 更改名稱:
+- order 排序系列 -> `order-first-*`、`order-last-*`
+- 隱藏與顯示系列 -> `hidden-*`、`show-only-*`
+
 ## v1.3.0-beta.1 (2018.06.15)
 #### 修改內容:
-  - 改善 col 層相關的基礎屬性內容，可以更好地讓 flex & width 屬性互相搭配，減少程式碼行數
-  - 改善 `no-gap` 樣式系列與其相關的樣式內容
+- 改善 col 層相關的基礎屬性內容，可以更好地讓 flex & width 屬性互相搭配，減少程式碼行數
+- 改善 `no-gap` 樣式系列與其相關的樣式內容
 
 #### 新增內容:
-  - `col-auto` 樣式，使欄位寬度等於本身內容的長度，會隨著內容自動改變欄位寬度
-  - `offset-auto` 樣式，內容為 `margin-left: auto;`，使欄位推移到整個容器的最右側
+- `col-auto` 樣式，使欄位寬度等於本身內容的長度，會隨著內容自動改變欄位寬度
+- `offset-auto` 樣式，內容為 `margin-left: auto;`，使欄位推移到整個容器的最右側
 
 
 ## v1.3.0-beta.0 (2018.04.30)

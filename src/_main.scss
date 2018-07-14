@@ -6,16 +6,14 @@ html {
   box-sizing: inherit;
 }
 
-/* 容器: 基本上跟 bootstrap v4.x 的作法是一樣的構造 */
+/* 容器: 基本上跟 bootstrap v4.x 的作法是一樣的構造，也加強了 CSS 的覆蓋 */
 .container,
 .container-fluid {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin: auto;
+  padding: 0 15px;
 
-  &:after {
+  &::after {
     content: '';
     display: table;
     clear: both;
@@ -23,43 +21,37 @@ html {
 }
 
 .container {
-  @media (min-width: 576px) {
-    max-width: 540px;
-  }
-  @media (min-width: 768px) {
-    max-width: 720px;
-  }
-  @media (min-width: 992px) {
-    max-width: 960px;
-  }
-  @media (min-width: 1200px) {
-    max-width: 1140px;
+  @each $point, $width in $breakpoints {
+    @media (min-width: $width) {
+      max-width: map-get($container-max-width, $point);
+    }
   }
 }
 
 /* 區塊的顯示與隱藏 */
-.tablet-mobile-only,
-.mobile-tablet-only,
-.mobile-only,
-.tablet-only {
+.hidden-desktop,
+.hidden-tablet-desktop,
+.show-only-tablet,
+.show-only-mobile {
   @include respond-to('desktop') {
     display: none !important;
   }
 }
 
-.desktop-mobile-only,
-.mobile-desktop-only,
-.mobile-only,
-.desktop-only {
+.hidden-tablet,
+.hidden-tablet-desktop,
+.hidden-tablet-mobile,
+.show-only-desktop,
+.show-only-mobile {
   @include respond-to('tablet') {
     display: none !important;
   }
 }
 
-.desktop-tablet-only,
-.tablet-desktop-only,
-.tablet-only,
-.desktop-only {
+.hidden-mobile,
+.hidden-tablet-mobile,
+.show-only-desktop,
+.show-only-tablet {
   @include respond-to('mobile') {
     display: none !important;
   }
@@ -75,21 +67,14 @@ html {
   display: flex;
   position: relative;
   flex-flow: row wrap;
-  margin-left: -($col-gap / 2);
-  margin-right: -($col-gap / 2);
-  margin-bottom: -($row-gap);
+  margin: (-($row-gap / 2)) (-($col-gap / 2));
 }
 
 .col,
 %col {
-  display: block;
   position: relative;
-  padding-left: $col-gap / 2;
-  padding-right: $col-gap / 2;
-  margin-bottom: $row-gap;
-  background-clip: content-box;
+  padding: ($row-gap / 2) ($col-gap / 2);
   max-width: 100%;
-  min-width: 0;
   width: 100%;
   flex: 0 0 auto;
 }
@@ -141,24 +126,17 @@ html {
  */
 @include make-responsive-all();
 
-/* fill 自動填滿系列 */
-@include make-fill-all();
+@include make-flex-all();
 
-/* first, last 排序系列 */
 @include make-order-all();
 
 /* 去除 所有的間距 */
 .no-gap {
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
+  margin: 0;
 
   > .col,
   > [class*=col-] {
-    background-clip: initial;
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 0;
+    padding: 0;
   }
 }
 
@@ -169,7 +147,6 @@ html {
 
   > .col,
   > [class*=col-] {
-    background-clip: initial;
     padding-left: 0;
     padding-right: 0;
   }
@@ -177,11 +154,13 @@ html {
 
 /* 去除 行與行之間的間距 */
 .no-gap-row {
+  margin-top: 0;
   margin-bottom: 0;
 
   > .col,
   > [class*=col-] {
-    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -211,56 +190,19 @@ html {
   justify-content: space-between;
 }
 
-%have-gap-height {
-  height: calc(100% + #{$row-gap});
-}
-%no-gap-height {
-  height: 100%;
-}
-
 .align-top {
   align-items: flex-start;
-  align-content: flex-start;
-  @extend %have-gap-height;
-
-  &.no-gap,
-  &.no-gap-row {
-    @extend %no-gap-height;
-  }
 }
 
 .align-middle {
   align-items: center;
-  align-content: center;
-  @extend %have-gap-height;
-
-  &.no-gap,
-  &.no-gap-row {
-    @extend %no-gap-height;
-  }
 }
 
 .align-bottom {
   align-items: flex-end;
-  align-content: flex-end;
-  @extend %have-gap-height;
-
-  &.no-gap,
-  &.no-gap-row {
-    @extend %no-gap-height;
-  }
 }
 
 /* 填滿一整行，用來強制中斷欄位跳到新的一行 */
 .w-100 {
-  width: 100%;
-}
-
-/**
- * 如果 .grid 外面再包一層有使用背景屬性的 div 元素時，底部會產生多餘的背景
- * 此類別屬性能修補此 Bug，請加在外面那一層的 div 元素上
- */
-.fix-extra-bottom:after {
-  content: '';
-  display: table;
+  width: 100% !important;
 }

@@ -1,115 +1,126 @@
 body {
-    background-color: #fff;
-    color: #000;
-    font-family: "Open Sans", "Microsoft JhengHei", sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
+  background-color: #fff;
+  color: #000;
+  font-family: "Open Sans", "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
 }
 
 .container,
 .container-fluid {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 }
 
-[class^=grid] {
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
+[class^=grid]::after {
+  position: absolute;
+  content: "";
+  border: solid 1px #015372;
+  top: 7.5px;
+  left: 7.5px;
+  height: calc(100% - 15px - 2px);
+  width: calc(100% - 15px - 2px);
 }
 
 [class^=grid] + [class^=grid] {
-    margin-top: 20px;
+  border-top: 25px solid transparent;
 }
 
 [class^=col] {
-    background-color: #42cafd;
-    color: #333;
-    line-height: 3.2;
-    text-align: center;
+  background-clip: content-box;
+  background-color: #42cafd;
+  color: #333;
+  line-height: 3.2;
+  text-align: center;
 }
 
-[class^=col][class$=only] {
-    background-color: #FDEB42;
+[class^=col][class*=show-],
+[class^=col][class*=hidden-] {
+  background-color: #FDEB42;
 }
 
 [class^=col] [class^=grid] > [class^=col] {
-    background-color: #029DD7;
+  background-color: #029DD7;
 }
 
 [class^=col] [class^=col] [class^=grid] > [class^=col] {
-    background-color: #0278A4;
+  background-color: #0278A4;
 }
 
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 h2 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 h3 {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 a {
-    text-decoration: none;
-    font-size: 1rem;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 pre {
-    margin: 0;
-    padding: 15px;
-    overflow: auto;
-    font-size: 0.8rem;
-    line-height: 1.5;
-    background-color: #f7f7f7;
-    border: 1px solid #ccd5ff;
-    border-radius: 3px;
-    color: #333;
+  margin: 0;
+  padding: 15px;
+  overflow: auto;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  background-color: #f7f7f7;
+  border: 1px solid #ccd5ff;
+  border-radius: 3px;
+  color: #333;
 }
 
 .project {
-    color: #4685b9;
-    text-align: center;
+  color: #4685b9;
+  text-align: center;
 }
 
 .list {
-    padding-left: 15px;
-    margin-bottom: 0;
-    line-height: 1.8;
+  padding-left: 15px;
+  margin-bottom: 0;
+  line-height: 1.8;
 }
 
 .title {
-    color: #4685b9;
+  color: #4685b9;
 }
 
 .view-github {
-    position: absolute;
-    top: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .github-icon {
-    display: none;
-    margin-left: 15px;
-    vertical-align: text-bottom;
+  display: none;
+  margin-left: 15px;
+  vertical-align: text-bottom;
 }
 
 .top {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .gray {
-    color: rgb(125, 125, 125);
+  color: rgb(125, 125, 125);
 }
 
 @media (max-width: 767px) {
-    .view-github {
-        display: none;
-    }
+  .view-github {
+    display: none;
+  }
 
-    .github-icon {
-        display: inline-block;
-    }
+  .github-icon {
+    display: inline-block;
+  }
 }
