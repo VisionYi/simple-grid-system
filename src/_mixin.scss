@@ -35,10 +35,11 @@
 
   .#{$class-name}.col,
   .#{$class-name}.col-auto {
-    flex: 1 1 0%;
+    flex: 1 1 auto;
+    width: 0;
   }
 
-  @for $i from 1 through ($columns - 2) {
+  @for $i from 1 through ($columns - 1) {
     .#{$class-name}.col-#{$i} {
       flex: $i $i auto;
     }

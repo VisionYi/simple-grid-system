@@ -1,3 +1,8 @@
+## v1.3.0-beta.3 (2018.07.27)
+- `offset-auto` 修改成 `ml-auto`、`mr-auto`、`mx-auto` 輔助使用
+- 改善 `flexible` 樣式系列的內容
+- 移除 `no-gaps-col` 與 `no-gaps-row` CSS 樣式，只保留 `no-gaps`
+
 ## v1.3.0-beta.2 (2018.07.13)
 #### 修改內容:
 - `filled` 改成 `flexible` 樣式名稱
@@ -5,7 +10,7 @@
   - 樣式種類有 `flexible`、`flexible-tablet`、`flexible-mobile`
 - `container` 樣式內容加強了 CSS 屬性的覆蓋
 - RWD breakpoints 斷點改善
-- 改善 `grid` 與 `col` 系列的 CSS 間距屬性，還有 `no-gap` 樣式系列內容也跟著改善
+- 改善 `grid` 與 `col` 系列的 CSS 間距屬性，還有 `no-gaps` 樣式系列內容也跟著改善
 - `align-top`、`align-middle`、`align-bottom` 樣式內容改善
 
 #### 更改名稱:
@@ -15,7 +20,7 @@
 ## v1.3.0-beta.1 (2018.06.15)
 #### 修改內容:
 - 改善 col 層相關的基礎屬性內容，可以更好地讓 flex & width 屬性互相搭配，減少程式碼行數
-- 改善 `no-gap` 樣式系列與其相關的樣式內容
+- 改善 `no-gaps` 樣式系列與其相關的樣式內容
 
 #### 新增內容:
 - `col-auto` 樣式，使欄位寬度等於本身內容的長度，會隨著內容自動改變欄位寬度
@@ -44,7 +49,7 @@
 
 #### 新增內容
 - `desktop-*` 樣式系列，響應式自動縮放的桌面(電腦)螢幕版
-- `no-gap` 樣式系列，去除網格的間隙
+- `no-gaps` 樣式系列，去除網格的間隙
 - `first`, `last` 樣式系列，在不同螢幕大小下時可排序欄位
 - `align-*` 樣式系列，垂直和平行的對齊功能，為原始的集中與分配功能之加強版
 - `grid`, `col` 兩個樣式:

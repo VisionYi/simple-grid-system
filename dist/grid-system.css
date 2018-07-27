@@ -426,9 +426,324 @@ html {
   width: auto;
 }
 
-/* 使欄位推移到整個容器的最右側 */
-.offset-auto {
-  margin-left: auto;
+.flexible.col,
+.flexible[class*=col-] {
+  margin-left: 0;
+}
+
+.flexible.col,
+.flexible.col-auto {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 0;
+}
+
+.flexible.col-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.flexible.col-2 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 2 auto;
+          flex: 2 2 auto;
+}
+
+.flexible.col-3 {
+  -webkit-box-flex: 3;
+      -ms-flex: 3 3 auto;
+          flex: 3 3 auto;
+}
+
+.flexible.col-4 {
+  -webkit-box-flex: 4;
+      -ms-flex: 4 4 auto;
+          flex: 4 4 auto;
+}
+
+.flexible.col-5 {
+  -webkit-box-flex: 5;
+      -ms-flex: 5 5 auto;
+          flex: 5 5 auto;
+}
+
+.flexible.col-6 {
+  -webkit-box-flex: 6;
+      -ms-flex: 6 6 auto;
+          flex: 6 6 auto;
+}
+
+.flexible.col-7 {
+  -webkit-box-flex: 7;
+      -ms-flex: 7 7 auto;
+          flex: 7 7 auto;
+}
+
+.flexible.col-8 {
+  -webkit-box-flex: 8;
+      -ms-flex: 8 8 auto;
+          flex: 8 8 auto;
+}
+
+.flexible.col-9 {
+  -webkit-box-flex: 9;
+      -ms-flex: 9 9 auto;
+          flex: 9 9 auto;
+}
+
+.flexible.col-10 {
+  -webkit-box-flex: 10;
+      -ms-flex: 10 10 auto;
+          flex: 10 10 auto;
+}
+
+.flexible.col-11 {
+  -webkit-box-flex: 11;
+      -ms-flex: 11 11 auto;
+          flex: 11 11 auto;
+}
+
+.flexible.col-12 {
+  -webkit-box-flex: 12;
+      -ms-flex: 12 12 auto;
+          flex: 12 12 auto;
+}
+
+.flexible.col-13 {
+  -webkit-box-flex: 13;
+      -ms-flex: 13 13 auto;
+          flex: 13 13 auto;
+}
+
+.flexible.col-14 {
+  -webkit-box-flex: 14;
+      -ms-flex: 14 14 auto;
+          flex: 14 14 auto;
+}
+
+.flexible.col-15 {
+  -webkit-box-flex: 15;
+      -ms-flex: 15 15 auto;
+          flex: 15 15 auto;
+}
+
+@media (max-width: 991.98px) {
+  .flexible-tablet.col,
+  .flexible-tablet[class*=col-] {
+    margin-left: 0;
+  }
+  .flexible-tablet.col,
+  .flexible-tablet.col-auto {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    width: 0;
+  }
+  .flexible-tablet.col-1 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+  .flexible-tablet.col-2 {
+    -webkit-box-flex: 2;
+        -ms-flex: 2 2 auto;
+            flex: 2 2 auto;
+  }
+  .flexible-tablet.col-3 {
+    -webkit-box-flex: 3;
+        -ms-flex: 3 3 auto;
+            flex: 3 3 auto;
+  }
+  .flexible-tablet.col-4 {
+    -webkit-box-flex: 4;
+        -ms-flex: 4 4 auto;
+            flex: 4 4 auto;
+  }
+  .flexible-tablet.col-5 {
+    -webkit-box-flex: 5;
+        -ms-flex: 5 5 auto;
+            flex: 5 5 auto;
+  }
+  .flexible-tablet.col-6 {
+    -webkit-box-flex: 6;
+        -ms-flex: 6 6 auto;
+            flex: 6 6 auto;
+  }
+  .flexible-tablet.col-7 {
+    -webkit-box-flex: 7;
+        -ms-flex: 7 7 auto;
+            flex: 7 7 auto;
+  }
+  .flexible-tablet.col-8 {
+    -webkit-box-flex: 8;
+        -ms-flex: 8 8 auto;
+            flex: 8 8 auto;
+  }
+  .flexible-tablet.col-9 {
+    -webkit-box-flex: 9;
+        -ms-flex: 9 9 auto;
+            flex: 9 9 auto;
+  }
+  .flexible-tablet.col-10 {
+    -webkit-box-flex: 10;
+        -ms-flex: 10 10 auto;
+            flex: 10 10 auto;
+  }
+  .flexible-tablet.col-11 {
+    -webkit-box-flex: 11;
+        -ms-flex: 11 11 auto;
+            flex: 11 11 auto;
+  }
+  .flexible-tablet.col-12 {
+    -webkit-box-flex: 12;
+        -ms-flex: 12 12 auto;
+            flex: 12 12 auto;
+  }
+  .flexible-tablet.col-13 {
+    -webkit-box-flex: 13;
+        -ms-flex: 13 13 auto;
+            flex: 13 13 auto;
+  }
+  .flexible-tablet.col-14 {
+    -webkit-box-flex: 14;
+        -ms-flex: 14 14 auto;
+            flex: 14 14 auto;
+  }
+  .flexible-tablet.col-15 {
+    -webkit-box-flex: 15;
+        -ms-flex: 15 15 auto;
+            flex: 15 15 auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .flexible-mobile.col,
+  .flexible-mobile[class*=col-] {
+    margin-left: 0;
+  }
+  .flexible-mobile.col,
+  .flexible-mobile.col-auto {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    width: 0;
+  }
+  .flexible-mobile.col-1 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+  .flexible-mobile.col-2 {
+    -webkit-box-flex: 2;
+        -ms-flex: 2 2 auto;
+            flex: 2 2 auto;
+  }
+  .flexible-mobile.col-3 {
+    -webkit-box-flex: 3;
+        -ms-flex: 3 3 auto;
+            flex: 3 3 auto;
+  }
+  .flexible-mobile.col-4 {
+    -webkit-box-flex: 4;
+        -ms-flex: 4 4 auto;
+            flex: 4 4 auto;
+  }
+  .flexible-mobile.col-5 {
+    -webkit-box-flex: 5;
+        -ms-flex: 5 5 auto;
+            flex: 5 5 auto;
+  }
+  .flexible-mobile.col-6 {
+    -webkit-box-flex: 6;
+        -ms-flex: 6 6 auto;
+            flex: 6 6 auto;
+  }
+  .flexible-mobile.col-7 {
+    -webkit-box-flex: 7;
+        -ms-flex: 7 7 auto;
+            flex: 7 7 auto;
+  }
+  .flexible-mobile.col-8 {
+    -webkit-box-flex: 8;
+        -ms-flex: 8 8 auto;
+            flex: 8 8 auto;
+  }
+  .flexible-mobile.col-9 {
+    -webkit-box-flex: 9;
+        -ms-flex: 9 9 auto;
+            flex: 9 9 auto;
+  }
+  .flexible-mobile.col-10 {
+    -webkit-box-flex: 10;
+        -ms-flex: 10 10 auto;
+            flex: 10 10 auto;
+  }
+  .flexible-mobile.col-11 {
+    -webkit-box-flex: 11;
+        -ms-flex: 11 11 auto;
+            flex: 11 11 auto;
+  }
+  .flexible-mobile.col-12 {
+    -webkit-box-flex: 12;
+        -ms-flex: 12 12 auto;
+            flex: 12 12 auto;
+  }
+  .flexible-mobile.col-13 {
+    -webkit-box-flex: 13;
+        -ms-flex: 13 13 auto;
+            flex: 13 13 auto;
+  }
+  .flexible-mobile.col-14 {
+    -webkit-box-flex: 14;
+        -ms-flex: 14 14 auto;
+            flex: 14 14 auto;
+  }
+  .flexible-mobile.col-15 {
+    -webkit-box-flex: 15;
+        -ms-flex: 15 15 auto;
+            flex: 15 15 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .order-first-desktop {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .order-last-desktop {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .order-first-tablet {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .order-last-tablet {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .order-first-mobile {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .order-last-mobile {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
 }
 
 /**
@@ -534,339 +849,14 @@ html {
   }
 }
 
-.flexible.col,
-.flexible[class*=col-] {
-  margin-left: 0;
-}
-
-.flexible.col,
-.flexible.col-auto {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 0%;
-          flex: 1 1 0%;
-}
-
-.flexible.col-1 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.flexible.col-2 {
-  -webkit-box-flex: 2;
-      -ms-flex: 2 2 auto;
-          flex: 2 2 auto;
-}
-
-.flexible.col-3 {
-  -webkit-box-flex: 3;
-      -ms-flex: 3 3 auto;
-          flex: 3 3 auto;
-}
-
-.flexible.col-4 {
-  -webkit-box-flex: 4;
-      -ms-flex: 4 4 auto;
-          flex: 4 4 auto;
-}
-
-.flexible.col-5 {
-  -webkit-box-flex: 5;
-      -ms-flex: 5 5 auto;
-          flex: 5 5 auto;
-}
-
-.flexible.col-6 {
-  -webkit-box-flex: 6;
-      -ms-flex: 6 6 auto;
-          flex: 6 6 auto;
-}
-
-.flexible.col-7 {
-  -webkit-box-flex: 7;
-      -ms-flex: 7 7 auto;
-          flex: 7 7 auto;
-}
-
-.flexible.col-8 {
-  -webkit-box-flex: 8;
-      -ms-flex: 8 8 auto;
-          flex: 8 8 auto;
-}
-
-.flexible.col-9 {
-  -webkit-box-flex: 9;
-      -ms-flex: 9 9 auto;
-          flex: 9 9 auto;
-}
-
-.flexible.col-10 {
-  -webkit-box-flex: 10;
-      -ms-flex: 10 10 auto;
-          flex: 10 10 auto;
-}
-
-.flexible.col-11 {
-  -webkit-box-flex: 11;
-      -ms-flex: 11 11 auto;
-          flex: 11 11 auto;
-}
-
-.flexible.col-12 {
-  -webkit-box-flex: 12;
-      -ms-flex: 12 12 auto;
-          flex: 12 12 auto;
-}
-
-.flexible.col-13 {
-  -webkit-box-flex: 13;
-      -ms-flex: 13 13 auto;
-          flex: 13 13 auto;
-}
-
-.flexible.col-14 {
-  -webkit-box-flex: 14;
-      -ms-flex: 14 14 auto;
-          flex: 14 14 auto;
-}
-
-@media (max-width: 991.98px) {
-  .flexible-tablet.col,
-  .flexible-tablet[class*=col-] {
-    margin-left: 0;
-  }
-  .flexible-tablet.col,
-  .flexible-tablet.col-auto {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 0%;
-            flex: 1 1 0%;
-  }
-  .flexible-tablet.col-1 {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
-  .flexible-tablet.col-2 {
-    -webkit-box-flex: 2;
-        -ms-flex: 2 2 auto;
-            flex: 2 2 auto;
-  }
-  .flexible-tablet.col-3 {
-    -webkit-box-flex: 3;
-        -ms-flex: 3 3 auto;
-            flex: 3 3 auto;
-  }
-  .flexible-tablet.col-4 {
-    -webkit-box-flex: 4;
-        -ms-flex: 4 4 auto;
-            flex: 4 4 auto;
-  }
-  .flexible-tablet.col-5 {
-    -webkit-box-flex: 5;
-        -ms-flex: 5 5 auto;
-            flex: 5 5 auto;
-  }
-  .flexible-tablet.col-6 {
-    -webkit-box-flex: 6;
-        -ms-flex: 6 6 auto;
-            flex: 6 6 auto;
-  }
-  .flexible-tablet.col-7 {
-    -webkit-box-flex: 7;
-        -ms-flex: 7 7 auto;
-            flex: 7 7 auto;
-  }
-  .flexible-tablet.col-8 {
-    -webkit-box-flex: 8;
-        -ms-flex: 8 8 auto;
-            flex: 8 8 auto;
-  }
-  .flexible-tablet.col-9 {
-    -webkit-box-flex: 9;
-        -ms-flex: 9 9 auto;
-            flex: 9 9 auto;
-  }
-  .flexible-tablet.col-10 {
-    -webkit-box-flex: 10;
-        -ms-flex: 10 10 auto;
-            flex: 10 10 auto;
-  }
-  .flexible-tablet.col-11 {
-    -webkit-box-flex: 11;
-        -ms-flex: 11 11 auto;
-            flex: 11 11 auto;
-  }
-  .flexible-tablet.col-12 {
-    -webkit-box-flex: 12;
-        -ms-flex: 12 12 auto;
-            flex: 12 12 auto;
-  }
-  .flexible-tablet.col-13 {
-    -webkit-box-flex: 13;
-        -ms-flex: 13 13 auto;
-            flex: 13 13 auto;
-  }
-  .flexible-tablet.col-14 {
-    -webkit-box-flex: 14;
-        -ms-flex: 14 14 auto;
-            flex: 14 14 auto;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .flexible-mobile.col,
-  .flexible-mobile[class*=col-] {
-    margin-left: 0;
-  }
-  .flexible-mobile.col,
-  .flexible-mobile.col-auto {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 0%;
-            flex: 1 1 0%;
-  }
-  .flexible-mobile.col-1 {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
-  .flexible-mobile.col-2 {
-    -webkit-box-flex: 2;
-        -ms-flex: 2 2 auto;
-            flex: 2 2 auto;
-  }
-  .flexible-mobile.col-3 {
-    -webkit-box-flex: 3;
-        -ms-flex: 3 3 auto;
-            flex: 3 3 auto;
-  }
-  .flexible-mobile.col-4 {
-    -webkit-box-flex: 4;
-        -ms-flex: 4 4 auto;
-            flex: 4 4 auto;
-  }
-  .flexible-mobile.col-5 {
-    -webkit-box-flex: 5;
-        -ms-flex: 5 5 auto;
-            flex: 5 5 auto;
-  }
-  .flexible-mobile.col-6 {
-    -webkit-box-flex: 6;
-        -ms-flex: 6 6 auto;
-            flex: 6 6 auto;
-  }
-  .flexible-mobile.col-7 {
-    -webkit-box-flex: 7;
-        -ms-flex: 7 7 auto;
-            flex: 7 7 auto;
-  }
-  .flexible-mobile.col-8 {
-    -webkit-box-flex: 8;
-        -ms-flex: 8 8 auto;
-            flex: 8 8 auto;
-  }
-  .flexible-mobile.col-9 {
-    -webkit-box-flex: 9;
-        -ms-flex: 9 9 auto;
-            flex: 9 9 auto;
-  }
-  .flexible-mobile.col-10 {
-    -webkit-box-flex: 10;
-        -ms-flex: 10 10 auto;
-            flex: 10 10 auto;
-  }
-  .flexible-mobile.col-11 {
-    -webkit-box-flex: 11;
-        -ms-flex: 11 11 auto;
-            flex: 11 11 auto;
-  }
-  .flexible-mobile.col-12 {
-    -webkit-box-flex: 12;
-        -ms-flex: 12 12 auto;
-            flex: 12 12 auto;
-  }
-  .flexible-mobile.col-13 {
-    -webkit-box-flex: 13;
-        -ms-flex: 13 13 auto;
-            flex: 13 13 auto;
-  }
-  .flexible-mobile.col-14 {
-    -webkit-box-flex: 14;
-        -ms-flex: 14 14 auto;
-            flex: 14 14 auto;
-  }
-}
-
-@media (min-width: 992px) {
-  .order-first-desktop {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
-  }
-  .order-last-desktop {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-}
-
-@media (max-width: 991.98px) and (min-width: 768px) {
-  .order-first-tablet {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
-  }
-  .order-last-tablet {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .order-first-mobile {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
-  }
-  .order-last-mobile {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-}
-
 /* 去除 所有的間距 */
-.no-gap {
+.no-gaps {
   margin: 0;
 }
 
-.no-gap > .col,
-.no-gap > [class*=col-] {
+.no-gaps > .col,
+.no-gaps > [class*=col-] {
   padding: 0;
-}
-
-/* 去除 欄與欄之間的間距 */
-.no-gap-col {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.no-gap-col > .col,
-.no-gap-col > [class*=col-] {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* 去除 行與行之間的間距 */
-.no-gap-row {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.no-gap-row > .col,
-.no-gap-row > [class*=col-] {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 /**
@@ -923,4 +913,18 @@ html {
 /* 填滿一整行，用來強制中斷欄位跳到新的一行 */
 .w-100 {
   width: 100% !important;
+}
+
+/* 輔助使用，可以把欄位向右推移或向左推移 */
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }

@@ -2,7 +2,7 @@ body {
   background-color: #fff;
   color: #000;
   font-family: "Open Sans", "Microsoft JhengHei", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0;
   padding: 0;
 }
@@ -11,44 +11,8 @@ p {
   margin: 0;
 }
 
-.container,
-.container-fluid {
-  padding-bottom: 40px;
-}
-
-[class^=grid]::after {
-  position: absolute;
-  content: "";
-  border: solid 1px #015372;
-  top: 7.5px;
-  left: 7.5px;
-  height: calc(100% - 15px - 2px);
-  width: calc(100% - 15px - 2px);
-}
-
-[class^=grid] + [class^=grid] {
-  border-top: 25px solid transparent;
-}
-
-[class^=col] {
-  background-clip: content-box;
-  background-color: #42cafd;
-  color: #333;
-  line-height: 3.2;
-  text-align: center;
-}
-
-[class^=col][class*=show-],
-[class^=col][class*=hidden-] {
-  background-color: #FDEB42;
-}
-
-[class^=col] [class^=grid] > [class^=col] {
-  background-color: #029DD7;
-}
-
-[class^=col] [class^=col] [class^=grid] > [class^=col] {
-  background-color: #0278A4;
+img {
+  vertical-align: middle;
 }
 
 h1 {
@@ -70,14 +34,80 @@ a {
 
 pre {
   margin: 0;
-  padding: 15px;
+  padding: 1rem;
   overflow: auto;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.5;
   background-color: #f7f7f7;
   border: 1px solid #ccd5ff;
   border-radius: 3px;
   color: #333;
+}
+
+.container,
+.container-fluid {
+  padding-bottom: 2.5rem;
+}
+
+[class^=grid]::after {
+  position: absolute;
+  content: "";
+  border: solid 1px #028BBE;
+  top: 7.5px;
+  left: 7.5px;
+  height: calc(100% - 15px - 2px);
+  width: calc(100% - 15px - 2px);
+}
+
+[class^=grid] [class^=grid]::after {
+  border: solid 1px #026990;
+  z-index: 2;
+}
+
+[class^=grid] + [class^=grid] {
+  border-top: 1.5rem solid transparent;
+}
+
+[class^=col] {
+  background-clip: content-box;
+  background-color: #42cafd;
+  color: #333;
+  line-height: 3.2;
+  text-align: center;
+}
+
+[class^=col][class*=show-],
+[class^=col][class*=hidden-] {
+  background-color: #FDEB42;
+}
+
+[class^=col] [class^=col] {
+  background-color: #029DD7;
+}
+
+[class^=col] [class^=col] [class^=col] {
+  background-color: #0278A4;
+}
+
+[class^=grid][border-normal]::after {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+[class^=grid][no-border]::after {
+  content: none;
+}
+
+[class^=col][content-normal] {
+  background-color: transparent;
+  line-height: initial;
+  text-align: inherit;
+}
+
+[class^=col][has-border] {
+  border: solid 1px #026990;
 }
 
 .project {
@@ -86,7 +116,7 @@ pre {
 }
 
 .list {
-  padding-left: 15px;
+  padding-left: 1rem;
   margin-bottom: 0;
   line-height: 1.8;
 }
@@ -109,6 +139,7 @@ pre {
 
 .top {
   font-size: 1.25rem;
+  cursor: pointer;
 }
 
 .gray {

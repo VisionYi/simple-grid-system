@@ -38,7 +38,7 @@
   - grid 系列
   - 響應式設計系列
   - align 系列
-  - no-gap 系列
+  - no-gaps
 
 - col 層的樣式名稱
   - col 系列
@@ -46,6 +46,10 @@
   - flexible 系列
   - order 排序系列
   - hidden & show-only 隱藏與顯示系列
+
+- classes helpers 輔助使用的樣式名稱
+  - w-100
+  - ml-auto、mr-auto、mx-auto
 
 #### 1. 基本使用 `grid-*` 與 `col-*`，可以使用 3 種網格，內容都是相容的
 - `grid-10`、`grid-12`、`grid-16`
@@ -62,17 +66,15 @@
 </div>
 ```
 
-#### 2. 需要推移欄位或製造空的欄位，可以在欄位 (col) 這一層加入 `offset-*`
+#### 2. 需要推移欄位或製造空的欄位，可以在欄位 (col) 這一層加入 `offset-*` 系列的樣式名稱
 -  `grid-10` > `offset-1` ~ `offset-9`
 -  `grid-12` > `offset-1` ~ `offset-11`
 -  `grid-16` > `offset-1` ~ `offset-15`
--  `offset-auto`
 
 範例 :
 ```html
 <div class="grid-12">
   <div class="col-4 offset-2"></div>
-  <div class="col-4 offset-auto"></div>
 </div>
 ```
 
@@ -133,7 +135,7 @@
 </div>
 ```
 
-#### 6. 想在不同螢幕尺寸下排序欄位位置，可以在欄位 (col) 這一層加入 `order-first-*`、`order-last-*` 樣式系列
+#### 6. 想在不同螢幕尺寸下排序欄位位置，可以在欄位 (col) 這一層加入 `order-first-*`、`order-last-*` 系列的樣式名稱
 - `order-first-*` 將欄位移至最前的位置
 - `order-last-*` 將欄位移至最後的位置
 
@@ -152,15 +154,13 @@
 </div>
 ```
 
-#### 7. 如果想要消除網格中的間距，可以在網格 (grid) 這一層加入 `no-gap` 系列的樣式名稱
+#### 7. 如果想要消除網格中的間距，可以在網格 (grid) 這一層加入 `no-gaps` 樣式名稱
 - 每格欄位的間距預設為 15px
-- `no-gap` 將消除 **所有的間距**
-- `no-gap-col` 將消除 **欄與欄之間的間距**
-- `no-gap-row` 將消除 **行與行之間的間距**
+- `no-gaps` 將消除 **所有的間距**
 
 範例 :
 ```html
-<div class="grid-12 no-gap">
+<div class="grid-12 no-gaps">
   ...
 </div>
 ```
@@ -187,11 +187,16 @@
 - `container` 一般型
 - `container-fluid` 流動型
 
-#### 10. 其他特殊的 class 樣式名稱
+#### 10. 其他輔助使用的 CSS 樣式名稱
 - `w-100`
   - CSS 內容為 `width: 100% !important`
   - 用於強制中斷欄位跳到新的一行，常與**分配、集中功能**一起搭配使用
-  - 可直接加入在欄位與欄位之間單獨成一行
+  - 可以直接加入在欄位與欄位之間單獨成一行
+  - 也可以當作 helper classes
+
+- `ml-auto`、`mr-auto`、`mx-auto`
+  - CSS 內容分別為 `margin-left: auto !important` 與 `margin-right: auto !important`
+  - 主要加入在欄位 (col) 這一層，用於把欄位向右推移或向左推移
   - 也可以當作 helper classes
 
 \# 看更多的 Demo 範例請詳見: [View on demo page](https://visionyi.github.io/simple-grid-system/example)

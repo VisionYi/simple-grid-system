@@ -22,7 +22,7 @@
     <img class="view-github" width="150" height="150" src="./view-on-github.png" alt="view on GitHub">
   </a>
   <h1 class="project">
-    Simple Grid System (v1.3.0-beta)
+    Simple Grid System (v1.3.0-beta.3)
     <a href="https://github.com/VisionYi/simple-grid-system" title="View on Github">
       <svg class="github-icon" aria-hidden="true" height="30" width="30" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
     </a>
@@ -31,157 +31,234 @@
   <div class="container">
     <ul class="list">
       <li><a href="#main">Grid System RWD 網格系統 - 響應式網頁設計</a></li>
-      <li><a href="#auto-flexible">Flexible, auto fit sizing to fill the remaining space 彈性伸縮，自動調整大小進而填滿剩餘空間</a></li>
+      <li><a href="#other-column-grid">12 column, 16 column, 10 column grid system 擁有 12、16、10 欄位的網格系統</a></li>
       <li><a href="#automatic-line-breaks">Automatic line breaks 自動換行</a></li>
-      <li><a href="#empty-columns">Right or left empty columns 左右空(位移)的欄位</a></li>
+      <li><a href="#column-auto">Column auto 自訂寬度的欄位版型，依照內容而改變寬度</a></li>
+      <li><a href="#auto-flexible">Flexible, auto fit sizing to fill the remaining space 彈性伸縮，自動調整大小進而填滿剩餘空間</a></li>
+      <li><a href="#empty-columns">Empty columns 空(位移)的欄位</a></li>
       <li><a href="#distribution">Distribution, Put together 分配、集中</a></li>
       <li><a href="#column-breaks">Column breaks, directly break to a new line 中斷欄位，直接跳到新的一行</a></li>
       <li><a href="#varied-responsive-design">Varied responsive design, Nesting columns 多變化的響應式設計、巢狀疊層</a></li>
-      <li><a href="#other-column-grid">12 column, 16 column, 10 column grid system 擁有 12、16、10 欄位的網格系統</a></li>
+      <li><a href="#order-classes">Order classes 欄位排序</a></li>
+      <li><a href="#no-gaps">No gaps (gutters) 消除網格中的間距，可用來自訂客製化的間距</a></li>
     </ul>
   </div>
 
   <div class="container">
-    <h2 id="main" class="title">Grid System RWD 網格系統 - 響應式網頁設計: 桌面、平板、手機 3 種螢幕上自動縮放 <a class="top" href="#" title="Top">🔝</a></h2>
-    <div class="grid-12 tablet-4 mobile-3">
-      <div class="col-2">
-        <div class="show-only-desktop">col-2</div>
-        <div class="show-only-tablet">25%</div>
-        <div class="show-only-mobile">33.3%</div>
+    <h2 id="main" class="title">Grid System RWD 網格系統 - 響應式網頁設計: 桌面、平板、手機 3 種螢幕上自動縮放 <a class="top" title="Back to Top">🔝</a></h2>
+    <div class="grid">
+      <div class="col">col</div>
       </div>
-      <div class="col-2">
-        <div class="show-only-desktop">col-2</div>
-        <div class="show-only-tablet">25%</div>
-        <div class="show-only-mobile">33.3%</div>
+    <div class="grid desktop-3 tablet-2 mobile-1">
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(33.3%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(50%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(100%)</span></div>
       </div>
-      <div class="col-2">
-        <div class="show-only-desktop">col-2</div>
-        <div class="show-only-tablet">25%</div>
-        <div class="show-only-mobile">33.3%</div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(33.3%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(50%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(100%)</span></div>
       </div>
-      <div class="col-2">
-        <div class="show-only-desktop">col-2</div>
-        <div class="show-only-tablet">25%</div>
-        <div class="show-only-mobile">33.3%</div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(33.3%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(50%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(100%)</span></div>
       </div>
-      <div class="col-2">
-        <div class="show-only-desktop">col-2</div>
-        <div class="show-only-tablet">25%</div>
-        <div class="show-only-mobile">33.3%</div>
       </div>
-      <div class="col-2">
-        <div class="show-only-desktop">col-2</div>
-        <div class="show-only-tablet">25%</div>
-        <div class="show-only-mobile">33.3%</div>
+    <div class="grid desktop-4 tablet-3 mobile-2">
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(25%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(33.3%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
       </div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(25%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(33.3%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
     </div>
-    <div class="grid-12 tablet-3 mobile-2">
-      <div class="col-3">
-        <div class="show-only-desktop">col-3</div>
-        <div class="show-only-tablet">33.3%</div>
-        <div class="show-only-mobile">25%</div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(25%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(33.3%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
       </div>
-      <div class="col-3">
-        <div class="show-only-desktop">col-3</div>
-        <div class="show-only-tablet">33.3%</div>
-        <div class="show-only-mobile">25%</div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(25%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(33.3%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
       </div>
-      <div class="col-3">
-        <div class="show-only-desktop">col-3</div>
-        <div class="show-only-tablet">33.3%</div>
-        <div class="show-only-mobile">25%</div>
       </div>
-      <div class="col-3">
-        <div class="show-only-desktop">col-3</div>
-        <div class="show-only-tablet">33.3%</div>
-        <div class="show-only-mobile">25%</div>
+    <div class="grid desktop-6 tablet-4 mobile-2">
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(16.6%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(25%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
       </div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(16.6%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(25%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
     </div>
-    <div class="grid-12 tablet-2 mobile-1">
-      <div class="col-4">
-        <div class="show-only-desktop">col-4</div>
-        <div class="show-only-tablet">50%</div>
-        <div class="show-only-mobile">100%</div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(16.6%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(25%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
       </div>
-      <div class="col-4">
-        <div class="show-only-desktop">col-4</div>
-        <div class="show-only-tablet">50%</div>
-        <div class="show-only-mobile">100%</div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(16.6%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(25%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
       </div>
-      <div class="col-4">
-        <div class="show-only-desktop">col-4</div>
-        <div class="show-only-tablet">50%</div>
-        <div class="show-only-mobile">100%</div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(16.6%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(25%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
       </div>
-    </div>
-    <div class="grid-12 mobile-1">
-      <div class="col-7">
-        <div class="hidden-mobile">col-7</div>
-        <div class="hidden-tablet-desktop">100%</div>
-      </div>
-      <div class="col-5">
-        <div class="hidden-mobile">col-5</div>
-        <div class="hidden-tablet-desktop">100%</div>
+      <div class="col">
+        <div class="show-only-desktop">col <span class="gray">(16.6%)</span></div>
+        <div class="show-only-tablet">col <span class="gray">(25%)</span></div>
+        <div class="show-only-mobile">col <span class="gray">(50%)</span></div>
       </div>
     </div>
     <h3>Source Code</h3>
 <pre>
-&lt;div class="grid-12 tablet-4 mobile-3">
-  &lt;div class="col-2">&lt;/div>
-  &lt;div class="col-2">&lt;/div>
-  &lt;div class="col-2">&lt;/div>
-  &lt;div class="col-2">&lt;/div>
-  &lt;div class="col-2">&lt;/div>
-  &lt;div class="col-2">&lt;/div>
+&lt;div class="grid">
+  &lt;div class="col">&lt;/div>
 &lt;/div>
-&lt;div class="grid-12 tablet-3 mobile-2">
-  &lt;div class="col-3">&lt;/div>
-  &lt;div class="col-3">&lt;/div>
-  &lt;div class="col-3">&lt;/div>
-  &lt;div class="col-3">&lt;/div>
+
+&lt;div class="grid desktop-3 tablet-2 mobile-1">
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
 &lt;/div>
+
+&lt;div class="grid desktop-4 tablet-3 mobile-2">
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
+&lt;/div>
+
+&lt;div class="grid desktop-6 tablet-4 mobile-2">
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
+  &lt;div class="col">&lt;/div>
+&lt;/div>
+</pre>
+  </div>
+
+  <div class="container">
+    <h2 id="other-column-grid" class="title">12 column, 16 column, 10 column grid system 擁有 12、16、10 欄位的網格系統 <a class="top" title="Back to Top">🔝</a></h2>
+    <div class="grid-12 tablet-2 mobile-1">
+      <div class="col-4">
+        <span class="show-only-desktop">col-4</span>
+        <span class="show-only-tablet">50%</span>
+        <span class="show-only-mobile">100%</span>
+        <span class="gray">(grid-12)</span>
+      </div>
+      <div class="col-4">
+        <span class="show-only-desktop">col-4</span>
+        <span class="show-only-tablet">50%</span>
+        <span class="show-only-mobile">100%</span>
+        <span class="gray">(grid-12)</span>
+      </div>
+      <div class="col-4">
+        <span class="show-only-desktop">col-4</span>
+        <span class="show-only-tablet">50%</span>
+        <span class="show-only-mobile">100%</span>
+        <span class="gray">(grid-12)</span>
+      </div>
+    </div>
+    <div class="grid-16 tablet-3 mobile-2">
+      <div class="col-4">
+        <span class="show-only-desktop">col-4</span>
+        <span class="show-only-tablet">33.3%</span>
+        <span class="show-only-mobile">50%</span>
+        <span class="gray">(grid-16)</span>
+      </div>
+      <div class="col-4">
+        <span class="show-only-desktop">col-4</span>
+        <span class="show-only-tablet">33.3%</span>
+        <span class="show-only-mobile">50%</span>
+        <span class="gray">(grid-16)</span>
+      </div>
+      <div class="col-4">
+        <span class="show-only-desktop">col-4</span>
+        <span class="show-only-tablet">33.3%</span>
+        <span class="show-only-mobile">50%</span>
+        <span class="gray">(grid-16)</span>
+      </div>
+      <div class="col-4">
+        <span class="show-only-desktop">col-4</span>
+        <span class="show-only-tablet">33.3%</span>
+        <span class="show-only-mobile">50%</span>
+        <span class="gray">(grid-16)</span>
+      </div>
+    </div>
+    <div class="grid-10 tablet-4 mobile-3">
+      <div class="col-2">
+        <span class="show-only-desktop">col-2</span>
+        <span class="show-only-tablet">25%</span>
+        <span class="show-only-mobile">33.3%</span>
+        <span class="gray">(grid-10)</span>
+      </div>
+      <div class="col-2">
+        <span class="show-only-desktop">col-2</span>
+        <span class="show-only-tablet">25%</span>
+        <span class="show-only-mobile">33.3%</span>
+        <span class="gray">(grid-10)</span>
+      </div>
+      <div class="col-2">
+        <span class="show-only-desktop">col-2</span>
+        <span class="show-only-tablet">25%</span>
+        <span class="show-only-mobile">33.3%</span>
+        <span class="gray">(grid-10)</span>
+      </div>
+      <div class="col-2">
+        <span class="show-only-desktop">col-2</span>
+        <span class="show-only-tablet">25%</span>
+        <span class="show-only-mobile">33.3%</span>
+        <span class="gray">(grid-10)</span>
+      </div>
+      <div class="col-2">
+        <span class="show-only-desktop">col-2</span>
+        <span class="show-only-tablet">25%</span>
+        <span class="show-only-mobile">33.3%</span>
+        <span class="gray">(grid-10)</span>
+      </div>
+    </div>
+    <h3>Source Code</h3>
+<pre>
 &lt;div class="grid-12 tablet-2 mobile-1">
   &lt;div class="col-4">&lt;/div>
   &lt;div class="col-4">&lt;/div>
   &lt;div class="col-4">&lt;/div>
 &lt;/div>
-&lt;div class="grid-12 mobile-1">
-  &lt;div class="col-7">&lt;/div>
-  &lt;div class="col-5">&lt;/div>
+
+&lt;div class="grid-16 tablet-3 mobile-2">
+  &lt;div class="col-4">&lt;/div>
+  &lt;div class="col-4">&lt;/div>
+  &lt;div class="col-4">&lt;/div>
+  &lt;div class="col-4">&lt;/div>
+&lt;/div>
+
+&lt;div class="grid-10 tablet-4 mobile-3">
+  &lt;div class="col-2">&lt;/div>
+  &lt;div class="col-2">&lt;/div>
+  &lt;div class="col-2">&lt;/div>
+  &lt;div class="col-2">&lt;/div>
+  &lt;div class="col-2">&lt;/div>
 &lt;/div>
 </pre>
   </div>
 
   <div class="container">
-    <h2 id="auto-flexible" class="title">Flexible, auto fit sizing to fill the remaining space 彈性伸縮，自動調整大小進而填滿剩餘空間 <a class="top" href="#" title="Top">🔝</a></h2>
-    <div class="grid">
-      <div class="col-auto">col-auto</div>
-      <div class="col flexible">col flexible</div>
-    </div>
-    <div class="grid">
-      <div class="col-auto">col-auto</div>
-      <div class="col flexible">col flexible</div>
-      <div class="col flexible">col flexible</div>
-      <div class="col-auto">col-auto</div>
-    </div>
-    <h3>Source Code</h3>
-<pre>
-&lt;div class="grid">
-  &lt;div class="col-auto">&lt;/div>
-  &lt;div class="col flexible">&lt;/div>
-&lt;/div>
-&lt;div class="grid">
-  &lt;div class="col-auto">&lt;/div>
-  &lt;div class="col flexible">&lt;/div>
-  &lt;div class="col flexible">&lt;/div>
-  &lt;div class="col-auto">&lt;/div>
-&lt;/div>
-</pre>
-  </div>
-
-  <div class="container">
-    <h2 id="automatic-line-breaks" class="title">Automatic line breaks 自動換行 <a class="top" href="#" title="Top">🔝</a></h2>
+    <h2 id="automatic-line-breaks" class="title">Automatic line breaks 自動換行 <a class="top" title="Back to Top">🔝</a></h2>
     <div class="grid-12">
+      <div class="col">col</div>
       <div class="col-2">col-2</div>
       <div class="col-4">col-4</div>
       <div class="col-6">col-6</div>
@@ -192,6 +269,7 @@
     <h3>Source Code</h3>
 <pre>
 &lt;div class="grid-12">
+  &lt;div class="col">&lt;/div>
   &lt;div class="col-2">&lt;/div>
   &lt;div class="col-4">&lt;/div>
   &lt;div class="col-6">&lt;/div>
@@ -203,7 +281,95 @@
   </div>
 
   <div class="container">
-    <h2 id="empty-columns" class="title">Empty columns 空(位移)的欄位 <a class="top" href="#" title="Top">🔝</a></h2>
+    <h2 id="column-auto" class="title">Column auto 自訂寬度的欄位版型，依照內容而改變寬度 <a class="top" title="Back to Top">🔝</a></h2>
+    <div class="grid">
+      <div class="col-auto">&nbsp;col-auto&nbsp;</div>
+      <div class="col-auto">
+        <p style="width: 150px">col-auto 150px</p>
+      </div>
+      <div class="col-auto">
+        <p style="width: 300px">col-auto 300px</p>
+      </div>
+    </div>
+    <h3>Source Code</h3>
+<pre>
+&lt;div class="grid">
+  &lt;div class="col-auto">&lt;/div>
+  &lt;div class="col-auto">
+    &lt;p style="width: 150px">&lt;/p>
+  &lt;/div>
+  &lt;div class="col-auto">
+    &lt;p style="width: 300px">&lt;/p>
+  &lt;/div>
+&lt;/div>
+</pre>
+  </div>
+
+  <div class="container">
+    <h2 id="auto-flexible" class="title">Flexible, auto fit sizing to fill the remaining space 彈性伸縮，自動調整大小進而填滿剩餘空間 <a class="top" title="Back to Top">🔝</a></h2>
+    <div class="grid">
+      <div class="col-auto">&nbsp;col-auto&nbsp;</div>
+      <div class="col flexible">&nbsp;col flexible&nbsp;</div>
+    </div>
+    <div class="grid">
+      <div class="col-auto">&nbsp;col-auto&nbsp;</div>
+      <div class="col flexible">&nbsp;col flexible&nbsp;</div>
+      <div class="col flexible">&nbsp;col flexible&nbsp;</div>
+      <div class="col-auto">&nbsp;col-auto&nbsp;</div>
+    </div>
+    <div class="grid mobile-1">
+      <div class="col-auto">
+        <div class="hidden-mobile">&nbsp;col-auto&nbsp;</div>
+        <div class="hidden-tablet-desktop">100%</div>
+      </div>
+      <div class="col-auto flexible-tablet">
+        <div class="hidden-mobile">&nbsp;col-auto flexible-tablet&nbsp;</div>
+        <div class="hidden-tablet-desktop">100%</div>
+      </div>
+      <div class="col-auto flexible-tablet">
+        <div class="hidden-mobile">&nbsp;col-auto flexible-tablet&nbsp;</div>
+        <div class="hidden-tablet-desktop">100%</div>
+      </div>
+    </div>
+    <div class="grid-12 mobile-1">
+      <div class="col-3 flexible-tablet">
+        <div class="hidden-mobile">&nbsp;col-3 flexible-tablet&nbsp;</div>
+        <div class="hidden-tablet-desktop">100%</div>
+      </div>
+      <div class="col-6 flexible-tablet">
+        <div class="hidden-mobile">&nbsp;col-6 flexible-tablet&nbsp;</div>
+        <div class="hidden-tablet-desktop">100%</div>
+      </div>
+    </div>
+    <h3>Source Code</h3>
+<pre>
+&lt;div class="grid">
+  &lt;div class="col-auto">&lt;/div>
+  &lt;div class="col flexible">&lt;/div>
+&lt;/div>
+
+&lt;div class="grid">
+  &lt;div class="col-auto">&lt;/div>
+  &lt;div class="col flexible">&lt;/div>
+  &lt;div class="col flexible">&lt;/div>
+  &lt;div class="col-auto">&lt;/div>
+&lt;/div>
+
+&lt;div class="grid mobile-1">
+  &lt;div class="col-auto">&lt;/div>
+  &lt;div class="col-auto flexible-tablet">&lt;/div>
+  &lt;div class="col-auto flexible-tablet">&lt;/div>
+&lt;/div>
+
+&lt;div class="grid-12 mobile-1">
+  &lt;div class="col-3 flexible-tablet">&lt;/div>
+  &lt;div class="col-6 flexible-tablet">&lt;/div>
+&lt;/div>
+</pre>
+  </div>
+
+  <div class="container">
+    <h2 id="empty-columns" class="title">Empty columns 空(位移)的欄位 <a class="top" title="Back to Top">🔝</a></h2>
     <div class="grid-12 mobile-2">
       <div class="col-4 offset-1">
         <div class="hidden-mobile">col-4 offset-1</div>
@@ -215,8 +381,12 @@
       </div>
     </div>
     <div class="grid">
-      <div class="col-auto">col-auto</div>
-      <div class="col-auto offset-auto">col-auto offset-auto</div>
+      <div class="col-auto">&nbsp;col-auto&nbsp;</div>
+      <div class="col-auto ml-auto">&nbsp;col-auto ml-auto&nbsp;</div>
+    </div>
+    <div class="grid">
+      <div class="col-auto">&nbsp;col-auto&nbsp;</div>
+      <div class="col-auto mx-auto flexible-mobile">&nbsp;col-auto mx-auto flexible-mobile&nbsp;</div>
     </div>
     <h3>Source Code</h3>
 <pre>
@@ -224,15 +394,21 @@
   &lt;div class="col-4 offset-1">&lt;/div>
   &lt;div class="col-4 offset-2">&lt;/div>
 &lt;/div>
+
 &lt;div class="grid">
   &lt;div class="col-auto">&lt;/div>
-  &lt;div class="col-auto offset-auto">&lt;/div>
+  &lt;div class="col-auto ml-auto">&lt;/div>
+&lt;/div>
+
+&lt;div class="grid">
+  &lt;div class="col-auto">&lt;/div>
+  &lt;div class="col-auto mx-auto flexible-mobile">&lt;/div>
 &lt;/div>
 </pre>
   </div>
 
   <div class="container">
-    <h2 id="distribution" class="title">Distribution, Put together 分配、集中 <a class="top" href="#" title="Top">🔝</a></h2>
+    <h2 id="distribution" class="title">Distribution, Put together 分配、集中 <a class="top" title="Back to Top">🔝</a></h2>
     <div class="grid-12 mobile-3">
       <div class="col-3">
         <div class="hidden-mobile">col-3</div>
@@ -382,30 +558,36 @@
   </div>
 
   <div class="container">
-    <h2 id="column-breaks" class="title">Column breaks, directly break to a new line 中斷欄位，直接跳到新的一行 <a class="top" href="#" title="Top">🔝</a></h2>
+    <h2 id="column-breaks" class="title">Column breaks, directly break to a new line 中斷欄位，直接跳到新的一行 <a class="top" title="Back to Top">🔝</a></h2>
     <div class="grid-12 align-center mobile-1 tablet-2">
       <div class="col-6">
-        <div class="hidden-mobile">col-6 <span class="gray">(align-center)</span></div>
-        <div class="hidden-tablet-desktop">100%</div>
+        <div class="show-only-desktop">col-6 <span class="gray">(align-center)</span></div>
+        <div class="show-only-tablet">50% <span class="gray">(align-center)</span></div>
+        <div class="show-only-mobile">100%</div>
       </div>
       <div class="w-100"></div>
       <div class="col-5">
-        <div class="hidden-mobile">col-5 <span class="gray">(align-center)</span></div>
-        <div class="hidden-tablet-desktop">100%</div>
+        <div class="show-only-desktop">col-5 <span class="gray">(align-center)</span></div>
+        <div class="show-only-tablet">50% <span class="gray">(align-center)</span></div>
+        <div class="show-only-mobile">100%</div>
       </div>
       <div class="col-5">
-        <div class="hidden-mobile">col-5 <span class="gray">(align-center)</span></div>
-        <div class="hidden-tablet-desktop">100%</div>
+        <div class="show-only-desktop">col-5 <span class="gray">(align-center)</span></div>
+        <div class="show-only-tablet">50% <span class="gray">(align-center)</span></div>
+        <div class="show-only-mobile">100%</div>
       </div>
       <div class="w-100"></div>
       <div class="col-5">
-        <div class="hidden-mobile">col-5 <span class="gray">(align-center)</span></div>
-        <div class="hidden-tablet-desktop">100%</div>
+        <div class="show-only-desktop">col-5 <span class="gray">(align-center)</span></div>
+        <div class="show-only-tablet">50% <span class="gray">(align-center)</span></div>
+        <div class="show-only-mobile">100%</div>
       </div>
       <div class="col-5">
-        <div class="hidden-mobile">col-5 <span class="gray">(align-center)</span></div>
-        <div class="hidden-tablet-desktop">100%</div>
+        <div class="show-only-desktop">col-5 <span class="gray">(align-center)</span></div>
+        <div class="show-only-tablet">50% <span class="gray">(align-center)</span></div>
+        <div class="show-only-mobile">100%</div>
       </div>
+
     </div>
     <h3>Source Code</h3>
 <pre>
@@ -422,21 +604,21 @@
   </div>
 
   <div class="container">
-    <h2 id="varied-responsive-design" class="title">Varied responsive design, Nesting columns 多變化的響應式設計、巢狀疊層 <a class="top" href="#" title="Top">🔝</a></h2>
+    <h2 id="varied-responsive-design" class="title">Varied responsive design, Nesting columns 多變化的響應式設計、巢狀疊層 <a class="top" title="Back to Top">🔝</a></h2>
     <div class="grid desktop-4 tablet-3 mobile-2">
       <div class="col">
         <div class="show-only-desktop">col</div>
-        <div class="show-only-tablet">33.33%</div>
+        <div class="show-only-tablet">33.3%</div>
         <div class="show-only-mobile">50%</div>
       </div>
       <div class="col">
         <div class="show-only-desktop">col</div>
-        <div class="show-only-tablet">33.33%</div>
+        <div class="show-only-tablet">33.3%</div>
         <div class="show-only-mobile">50%</div>
       </div>
       <div class="col hidden-mobile">
         <div class="show-only-desktop">col hidden-mobile</div>
-        <div class="show-only-tablet">33.33% hidden-mobile</div>
+        <div class="show-only-tablet">33.3% hidden-mobile</div>
       </div>
       <div class="col hidden-tablet-mobile">col hidden-tablet-mobile</div>
     </div>
@@ -483,8 +665,8 @@
               <div class="col-auto"><p style="width: 150px;">col-auto 150px</p></div>
               <div class="w-100 hidden-mobile"></div>
               <div class="col flexible">
-                <div class="hidden-mobile">col-9 flexible -> col-3 -> col flexible</div>
-                <div class="hidden-tablet-desktop">col-9 flexible -> 100% -> col flexible</div>
+                <div class="hidden-mobile">&nbsp;col-9 flexible -> col-3 -> col flexible&nbsp;</div>
+                <div class="hidden-tablet-desktop">&nbsp;col-9 flexible -> 100% -> col flexible&nbsp;</div>
               </div>
             </div>
           </div>
@@ -527,14 +709,14 @@
 &lt;div class="grid-12">
   &lt;div class="col-9 flexible">
     &lt;div class="grid-12 mobile-1">
-      &lt;div class="col-4">
+      &lt;div class="col-3">
         &lt;div class="grid align-center">
-          &lt;div class="col-auto">&lt;p style="width: 180px;">&lt;/p>&lt;/div>
+          &lt;div class="col-auto">&lt;p style="width: 150px">&lt;/p>&lt;/div>
           &lt;div class="w-100 hidden-mobile">&lt;/div>
           &lt;div class="col flexible">&lt;/div>
         &lt;/div>
       &lt;/div>
-      &lt;div class="col-8">&lt;/div>
+      &lt;div class="col-9">&lt;/div>
     &lt;/div>
   &lt;/div>
   &lt;div class="col-3 show-only-desktop">&lt;/div>
@@ -543,104 +725,58 @@
   </div>
 
   <div class="container">
-    <h2 id="other-column-grid" class="title">12 column, 16 column, 10 column grid system 擁有 12、16、10 欄位的網格系統 <a class="top" href="#" title="Top">🔝</a></h2>
-    <div class="grid-12 tablet-2 mobile-1">
-      <div class="col-4">
-        <span class="show-only-desktop">col-4</span>
-        <span class="show-only-tablet">50%</span>
-        <span class="show-only-mobile">100%</span>
-        <span class="gray">(grid-12)</span>
-      </div>
-      <div class="col-4">
-        <span class="show-only-desktop">col-4</span>
-        <span class="show-only-tablet">50%</span>
-        <span class="show-only-mobile">100%</span>
-        <span class="gray">(grid-12)</span>
-      </div>
-      <div class="col-4">
-        <span class="show-only-desktop">col-4</span>
-        <span class="show-only-tablet">50%</span>
-        <span class="show-only-mobile">100%</span>
-        <span class="gray">(grid-12)</span>
-      </div>
+    <h2 id="order-classes" class="title">Order classes 欄位排序 <a class="top" title="Back to Top">🔝</a></h2>
+    <div class="grid-12">
+      <div class="col-4 order-last-mobile">No.1, order-last-mobile</div>
+      <div class="col-4">No.2</div>
+      <div class="col-4 order-first-desktop">No.3, order-first-desktop</div>
     </div>
-    <div class="grid-16 tablet-3 mobile-2">
-      <div class="col-4">
-        <span class="show-only-desktop">col-4</span>
-        <span class="show-only-tablet">33.33%</span>
-        <span class="show-only-mobile">50%</span>
-        <span class="gray">(grid-16)</span>
-      </div>
-      <div class="col-4">
-        <span class="show-only-desktop">col-4</span>
-        <span class="show-only-tablet">33.33%</span>
-        <span class="show-only-mobile">50%</span>
-        <span class="gray">(grid-16)</span>
-      </div>
-      <div class="col-4">
-        <span class="show-only-desktop">col-4</span>
-        <span class="show-only-tablet">33.33%</span>
-        <span class="show-only-mobile">50%</span>
-        <span class="gray">(grid-16)</span>
-      </div>
-      <div class="col-4">
-        <span class="show-only-desktop">col-4</span>
-        <span class="show-only-tablet">33.33%</span>
-        <span class="show-only-mobile">50%</span>
-        <span class="gray">(grid-16)</span>
-      </div>
+    <h3>Source Code</h3>
+<pre>
+&lt;div class="grid-12">
+  &lt;div class="col-4 order-last-mobile"> No.1 &lt;/div>
+  &lt;div class="col-4"> No.2 &lt;/div>
+  &lt;div class="col-4 order-first-desktop"> No.3 &lt;/div>
+&lt;/div>
+</pre>
+
+  </div>
+  <div class="container">
+    <h2 id="no-gaps" class="title">No gaps (gutters) 消除網格中的間距，可用來自訂客製化的間距 <a class="top" title="Back to Top">🔝</a></h2>
+    <div class="grid-12 no-gaps" no-border>
+      <div class="col-3 flexible" has-border>col-3 flexible <span class="gray">(no-gaps)</span></div>
+      <div class="col-3 flexible" has-border>col-3 flexible <span class="gray">(no-gaps)</span></div>
+      <div class="w-100 show-only-mobile"></div>
+      <div class="col-6 flexible" has-border>col-6 flexible <span class="gray">(no-gaps)</span></div>
     </div>
-    <div class="grid-10 tablet-4 mobile-3">
-      <div class="col-2">
-        <span class="show-only-desktop">col-2</span>
-        <span class="show-only-tablet">25%</span>
-        <span class="show-only-mobile">33.33%</span>
-        <span class="gray">(grid-10)</span>
+    <div class="grid no-gaps mobile-1" border-normal>
+      <div class="col-auto" style="text-align: center" content-normal>
+        <img src="https://picsum.photos/200/200/?random">
       </div>
-      <div class="col-2">
-        <span class="show-only-desktop">col-2</span>
-        <span class="show-only-tablet">25%</span>
-        <span class="show-only-mobile">33.33%</span>
-        <span class="gray">(grid-10)</span>
-      </div>
-      <div class="col-2">
-        <span class="show-only-desktop">col-2</span>
-        <span class="show-only-tablet">25%</span>
-        <span class="show-only-mobile">33.33%</span>
-        <span class="gray">(grid-10)</span>
-      </div>
-      <div class="col-2">
-        <span class="show-only-desktop">col-2</span>
-        <span class="show-only-tablet">25%</span>
-        <span class="show-only-mobile">33.33%</span>
-        <span class="gray">(grid-10)</span>
-      </div>
-      <div class="col-2">
-        <span class="show-only-desktop">col-2</span>
-        <span class="show-only-tablet">25%</span>
-        <span class="show-only-mobile">33.33%</span>
-        <span class="gray">(grid-10)</span>
+      <div class="col flexible" content-normal>
+        <p style="padding: 30px;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac neque consequat, hendrerit dui et, malesuada justo. Nullam dignissim scelerisque nunc.
+        </p>
       </div>
     </div>
     <h3>Source Code</h3>
 <pre>
-&lt;div class="grid-12 tablet-2 mobile-1">
-  &lt;div class="col-4">&lt;/div>
-  &lt;div class="col-4">&lt;/div>
-  &lt;div class="col-4">&lt;/div>
+&lt;div class="grid-12 no-gaps">
+  &lt;div class="col-3 flexible">&lt;/div>
+  &lt;div class="col-3 flexible">&lt;/div>
+  &lt;div class="w-100 show-only-mobile">&lt;/div>
+  &lt;div class="col-6 flexible">&lt;/div>
 &lt;/div>
-&lt;div class="grid-16 tablet-3 mobile-2">
-  &lt;div class="col-4">&lt;/div>
-  &lt;div class="col-4">&lt;/div>
-  &lt;div class="col-4">&lt;/div>
-  &lt;div class="col-4">&lt;/div>
-&lt;/div>
-&lt;div class="grid-10 tablet-4 mobile-3">
-  &lt;div class="col-2">&lt;/div>
-  &lt;div class="col-2">&lt;/div>
-  &lt;div class="col-2">&lt;/div>
-  &lt;div class="col-2">&lt;/div>
-  &lt;div class="col-2">&lt;/div>
+
+&lt;div class="grid no-gaps mobile-1">
+  &lt;div class="col-auto" style="text-align: center">
+    &lt;img src="https://picsum.photos/200/200/?random">
+  &lt;/div>
+  &lt;div class="col flexible">
+    &lt;p style="padding: 30px">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac neque consequat, hendrerit dui et, malesuada justo. Nullam dignissim scelerisque nunc.
+    &lt;/p>
+  &lt;/div>
 &lt;/div>
 </pre>
   </div>
