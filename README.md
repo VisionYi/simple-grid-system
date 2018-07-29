@@ -35,8 +35,8 @@
 ### How to use CSS classes
 #### CSS 樣式種類目錄
 - grid 層的樣式名稱
-  - [grid 系列](#1-grid-amp-col-系列)
-  - [響應式 desktop、tablet、mobile 系列](#3-響應式-desktop、tablet、mobile-系列)
+  - [grid 系列](#1-grid--col-系列)
+  - [響應式 desktop、tablet、mobile 系列](#3-響應式-desktoptabletmobile-系列)
   - [align 系列](#5-align-系列)
   - [no-gaps](#8-no-gaps)
 
@@ -45,15 +45,14 @@
   - [offset 系列](#2-offset-系列)
   - [flexible 系列](#4-flexible-系列)
   - [order 系列](#6-order-系列)
-  - [hidden、show-only 系列](#7-hidden、show-only-系列)
+  - [hidden、show-only 系列](#7-hiddenshow-only-系列)
 
 - classes helpers 輔助的樣式名稱
   - [w-100](#9-classes-helpers-輔助的樣式名稱)
   - [ml-auto、mr-auto、mx-auto](#9-classes-helpers-輔助的樣式名稱)
 
 #### 1. grid & col 系列
-基本使用 `grid` 與 `col` 製作最簡易的網格，`col` 預設的欄位寬度都是 **100%**
-如果想自訂欄位的寬度或隨著內容而變化，可以使用 `col-auto` 預設欄位寬度為 **auto**
+基本使用 `grid` 與 `col` 製作最簡易的網格，`col` 預設的欄位寬度都是 **100%**，如果想自訂欄位的寬度或隨著內容而變化，可以使用 `col-auto` 預設欄位寬度為 **auto**
 
 - `grid`
 - `col`、`col-auto`
@@ -66,8 +65,7 @@
 </div>
 ```
 
-可以直接設計欄位寬度的比例，我們擁有 12、16、10 欄位的數字網格，內容都是相容的
-使用 `grid-*` 表示網格種類，使用 `col-*` 表示佔據的欄位格數比例
+另外也擁有 12、16、10 欄位的 3 種網格，使用 `grid-*` 表示網格的種類，使用 `col-*` 表示此欄位佔據的格數比例
 
 - `grid-10`、`grid-12`、`grid-16`
 - `grid-10` > `col-1` ~ `col-10`
