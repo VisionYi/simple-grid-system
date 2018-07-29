@@ -7,7 +7,7 @@ var postCSS = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
 
-const FILE_NAME = 'grid-system';
+const FILE_NAME = 'simple-grid';
 
 /**
  * 讓發佈的主檔案加上 作者、版本、license 資訊
@@ -16,7 +16,7 @@ function getHeader() {
     var pkg = require('./package.json');
     var template = [
         '/**',
-        ' * <%= pkg.name %> v<%= pkg.version %> - <%= pkg.description %>',
+        ' * Simple Grid System v<%= pkg.version %> (https://github.com/VisionYi/simple-grid-system)',
         ' * Author - <%= pkg.author %>',
         ' * License - <%= pkg.license %>',
         ' */',

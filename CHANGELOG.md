@@ -1,7 +1,36 @@
+## v1.3.0 (2018.07.29)
+以下與 v1.2.2 版本比較 :
+- 改善了 dome page 頁面與 README.md 說明文件的內容
+
+- SASS/SCSS 目錄結構改善
+
+- RWD breakpoints 斷點修改
+
+- container 直接改成 bootstrap v4.x 版的 container 內容
+
+- 目前 CSS 樣式種類 :
+  - grid 層的樣式名稱
+    - grid 系列
+    - 響應式 desktop、tablet、mobile 系列
+    - align 系列
+    - no-gaps
+
+  - col 層的樣式名稱
+    - col 系列
+    - offset 系列
+    - flexible 系列
+    - order 系列
+    - hidden、show-only 系列
+
+  - classes helpers 輔助的樣式名稱
+    - w-100
+    - ml-auto、mr-auto、mx-auto
+
 ## v1.3.0-beta.3 (2018.07.27)
 - `offset-auto` 修改成 `ml-auto`、`mr-auto`、`mx-auto` 輔助使用
 - 改善 `flexible` 樣式系列的內容
 - 移除 `no-gaps-col` 與 `no-gaps-row` CSS 樣式，只保留 `no-gaps`
+
 
 ## v1.3.0-beta.2 (2018.07.13)
 #### 修改內容:
@@ -16,6 +45,7 @@
 #### 更改名稱:
 - order 排序系列 -> `order-first-*`、`order-last-*`
 - 隱藏與顯示系列 -> `hidden-*`、`show-only-*`
+
 
 ## v1.3.0-beta.1 (2018.06.15)
 #### 修改內容:

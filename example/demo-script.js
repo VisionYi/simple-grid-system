@@ -6,8 +6,10 @@ function scrollToTop() {
   }
 }
 
-const allTop = document.querySelectorAll('.top');
+const allTop = document.querySelectorAll('.back-top');
 
 allTop.forEach(function (item) {
   item.addEventListener('click', scrollToTop);
 });
+
+hljs.initHighlightingOnLoad();

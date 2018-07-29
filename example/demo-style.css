@@ -1,13 +1,14 @@
 body {
-  background-color: #fff;
-  color: #000;
-  font-family: "Open Sans", "Microsoft JhengHei", sans-serif;
+  font-family: "Microsoft JhengHei", 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  margin: 0;
-  padding: 0;
+  color: #000;
+  line-height: 1.5;
+  background-color: #fff;
 }
 
-p {
+p,
+code,
+pre {
   margin: 0;
 }
 
@@ -17,10 +18,13 @@ img {
 
 h1 {
   font-size: 2rem;
+  color: #4685b9;
+  text-align: center;
 }
 
 h2 {
   font-size: 1.5rem;
+  color: #4685b9;
 }
 
 h3 {
@@ -33,16 +37,51 @@ a {
 }
 
 pre {
-  margin: 0;
-  padding: 1rem;
-  overflow: auto;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #f7f7f7;
+  display: flex;
   border: 1px solid #ccd5ff;
   border-radius: 3px;
-  color: #333;
+  font-size: 14px;
+  line-height: 1.3;
 }
+
+pre .hljs {
+  width: 100%;
+  padding: 0 1rem 0 0;
+}
+
+.list {
+  padding-left: 1rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+.list__item:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+.list a:hover {
+  text-decoration: underline;
+}
+
+.view-github {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.github-icon {
+  display: inline-block;
+  margin-left: 0.75rem;
+  vertical-align: text-bottom;
+}
+
+.back-top {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.gray {
+  color: rgb(125, 125, 125);
+}
+
 
 .container,
 .container-fluid {
@@ -108,50 +147,4 @@ pre {
 
 [class^=col][has-border] {
   border: solid 1px #026990;
-}
-
-.project {
-  color: #4685b9;
-  text-align: center;
-}
-
-.list {
-  padding-left: 1rem;
-  margin-bottom: 0;
-  line-height: 1.8;
-}
-
-.title {
-  color: #4685b9;
-}
-
-.view-github {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.github-icon {
-  display: none;
-  margin-left: 15px;
-  vertical-align: text-bottom;
-}
-
-.top {
-  font-size: 1.25rem;
-  cursor: pointer;
-}
-
-.gray {
-  color: rgb(125, 125, 125);
-}
-
-@media (max-width: 767px) {
-  .view-github {
-    display: none;
-  }
-
-  .github-icon {
-    display: inline-block;
-  }
 }
