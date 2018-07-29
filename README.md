@@ -29,7 +29,7 @@
 
 ### Include the CSS file in your page
 ```html
-<link rel="stylesheet" href="grid-system.min.css" type="text/css">
+<link rel="stylesheet" href="simple-grid.min.css" type="text/css">
 ```
 
 ### How to use CSS classes
