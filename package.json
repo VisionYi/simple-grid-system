@@ -21,9 +21,9 @@
   "license": "MIT (https://github.com/VisionYi/simple-grid-system/blob/master/LICENSE)",
   "devDependencies": {
     "autoprefixer": "^8.6.5",
-    "browser-sync": "^2.24.6",
+    "browser-sync": "^2.24.7",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.4",
+    "gulp-clean-css": "^3.10.0",
     "gulp-header": "^1.8.12",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.4.0",
